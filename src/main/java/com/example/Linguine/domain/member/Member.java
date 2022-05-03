@@ -1,4 +1,4 @@
-package com.example.Linguine;
+package com.example.Linguine.domain.member;
 
 public class Member {
     private String Name;
