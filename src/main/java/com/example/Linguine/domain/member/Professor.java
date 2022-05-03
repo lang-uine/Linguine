@@ -1,4 +1,4 @@
-package com.example.Linguine.member;
+package com.example.Linguine.domain.member;
 
 public class Professor extends Member{
 
