@@ -1,4 +1,4 @@
-package com.example.Linguine;
+package com.example.Linguine.member;
 
 public class Student extends Member{
 
