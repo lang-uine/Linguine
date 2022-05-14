@@ -1,0 +1,47 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/?serverTimezone=UTC&characterEncoding=UTF-8
+#    username: admin
+#    password: sodelicious206
+#
+#    jpa:
+#      hibernate:
+#        ddl-auto: create
+#        #2022-05-08_yeoooo DDL이 설정되어있다면 자동으로 테이블을 drop하고 다시 만들어준다.
+#      properties:
+#        hibernate:
+#          show_sql: true
+#          #2022-05-08_yeoooo show_sql 옵션은 hibernate가 날리는 모든 쿼리를 보여준다.
+#          format_sql: true
+#          #2022-05-08_yeoooo format_sql 옵션은 inline이 아닌 format에 맞춰서 보여준다.
+#    logging:
+#      level:
+#        org.hibernate.SQL: debug
+#        org.hibernate.type: trace
+#        #2022-05-08_yeoooo jpa, hibernate가 날리는 모든 쿼리를 보여준다.
+#        #2022-05-08_yeoooo 하지만 show_sql(sys.out.print)과는 다르게 log로 보여준다. 권장.
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp://localhost/~/dev/java/Linguine
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+        #2022-05-08_yeoooo: DDL이 설정되어있다면 자동으로 테이블을 drop하고 다시 만들어준다.
+    properties:
+      hibernate:
+        show_sql: true
+          #2022-05-08_yeoooo: show_sql 옵션은 hibernate가 날리는 모든 쿼리를 보여준다.
+        format_sql: true
+          #2022-05-08_yeoooo: format_sql 옵션은 inline이 아닌 format에 맞춰서 보여준다.
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+        #2022-05-08_yeoooo: jpa, hibernate가 날리는 모든 쿼리를 보여준다.
+        #2022-05-08_yeoooo: 하지만 show_sql(sys.out.print)과는 다르게 log로 보여준다. 권장.
+
