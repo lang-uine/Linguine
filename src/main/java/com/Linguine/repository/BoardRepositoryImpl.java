@@ -22,12 +22,12 @@ public class BoardRepositoryImpl implements BoardRepository{
 
     @Override
     public Long save(Post post) {
-//        if (post.getPost_id() == null) {
+        if (post.getId() == null) {
             em.persist(post);
-//        }else{
-//            em.merge(post);
-//        }
-        return post.getPost_id();
+        }else{
+            em.merge(post);
+        }
+        return post.getId();
     }
 
     @Override
@@ -40,3 +40,4 @@ public class BoardRepositoryImpl implements BoardRepository{
         return em.createQuery("select i from Post i", Post.class).getResultList();
     }
 }
+

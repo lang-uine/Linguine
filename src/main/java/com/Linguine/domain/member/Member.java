@@ -1,58 +1,39 @@
 package com.Linguine.domain.member;
 
+import com.Linguine.domain.board.Comments;
+import com.Linguine.domain.board.Post;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Entity
+@Setter//2022-06-03_yeoooo: 테스트를 위해 임시로 열어둔 Setter,Builder등으로 교체되어야 함
+@ToString
 public class Member {
-    private String Name;
-    private String Id;
-    private String Password;
-    private String PH;
-    private String Email;
-    private String Nickname;
 
-    public String getName() {
-        return Name;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public void setName(String name) {
-        Name = name;
-    }
+    private String public_Id;
+    private String name;
+    private String password;
+    private String ph;
+    private String email;
+    private String nickName;
 
-    public String getId() {
-        return Id;
-    }
+    @Enumerated(EnumType.STRING)
+    private MemberSpec spec;//멤버 종류(PROFESSOR, STUDENT)
 
-    public void setId(String id) {
-        Id = id;
-    }
+    @OneToMany(mappedBy = "member")
+    private List<Post> posts = new ArrayList<>();
 
-    public String getPassword() {
-        return Password;
-    }
+    @OneToMany(mappedBy = "member")
+    private List<Comments> comments = new ArrayList<>();
 
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public String getPH() {
-        return PH;
-    }
-
-    public void setPH(String PH) {
-        this.PH = PH;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getNickname() {
-        return Nickname;
-    }
-
-    public void setNickname(String nickname) {
-        Nickname = nickname;
-    }
 }

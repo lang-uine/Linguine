@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @ToString(callSuper = true)
 @Entity
-@DiscriminatorValue("trading_post")
+@DiscriminatorValue("T")
 public class TradingPost extends Post {
     private int price;
     private boolean isBuying;

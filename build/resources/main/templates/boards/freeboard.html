@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>게시글 번호</th>
+                <th>제목</th>
+                <th th:align="right">댓글 수</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post : ${posts}">
+
+                <td th:text="${post.getId()}"></td>
+<!--                <td> <a th:text="${post.getTitle()}" th:name = "postid" th th:value="${post.getId()}" th:href="'/boards/free/'+${post.getId()}+'_'+${post.getTitle()}"></a></td>-->
+                <td><a th:href="@{/boards/free/post(id=${post.getId()})}" th:text="${post.getTitle()}"></a></td>
+                <td th:align="right" th:text="${post.getCommentsCnt()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+            <a th:align="center" class="btn btn-lg btn-secondary" href="/boards/newPost">게시글 등록</a>
+
+        <div th:replace="fragments/footer :: footer"/>
+    </div> <!-- /container -->
+</div>
+</body>
+</html>

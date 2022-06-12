@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public interface BoardService {
-    public Long savePost(Post post);
+    public Long save(Post post);
     public List<Post> findAllPost();
     public Post findOne(Long postId);
 
