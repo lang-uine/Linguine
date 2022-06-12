@@ -13,14 +13,13 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class BoardServiceImpl implements BoardService{
     //2022-05-08-yeoooo 1개의 생성자는 Autowired 없이 바로 의존성 주입
-
     private final BoardRepository boardRepository;
 
     @Override
     @Transactional
-    public Long savePost(Post post) {
+    public Long save(Post post) {
         boardRepository.save(post);
-        return post.getPost_id();
+        return post.getId();
     }
 
     @Override

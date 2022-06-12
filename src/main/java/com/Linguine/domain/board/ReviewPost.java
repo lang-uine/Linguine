@@ -1,12 +1,14 @@
 package com.Linguine.domain.board;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @Getter
-@DiscriminatorValue("review_P")
+@Setter
+@DiscriminatorValue("R")
 public class ReviewPost extends Post{
 }
