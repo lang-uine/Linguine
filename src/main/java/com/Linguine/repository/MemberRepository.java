@@ -1,7 +1,9 @@
 package com.Linguine.repository;
 
 import com.Linguine.domain.member.Member;
+import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface MemberRepository {
@@ -9,6 +11,6 @@ public interface MemberRepository {
     public Member findOne(Long id);
     public List<Member> findAll();
     public List<Member> findByName(String name);
-
+//    public int updateMemberLastLogin(String email, LocalDateTime localDateTime);
 
 }

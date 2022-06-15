@@ -21,7 +21,7 @@ public class Member {
     private Long id;
 
     private String public_Id;
-    private String name;
+//    private String name;
     private String password;
     private String ph;
     private String email;

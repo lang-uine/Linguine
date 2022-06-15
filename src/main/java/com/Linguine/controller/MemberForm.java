@@ -14,7 +14,7 @@ import javax.validation.constraints.NotEmpty;
 public class MemberForm {
     @NotEmpty(message = "아이디를 입력하세요.")
     private String public_id;
-    private String name;
+//    private String name;
     private String nickName;
 
     private String password;

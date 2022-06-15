@@ -17,10 +17,20 @@ import javax.validation.Valid;
 public class BoardController {
     private final BoardService boardService;
 
-    @GetMapping("/boards/free")
-    public String board(Model model) {
+    @GetMapping("/boards/freeboard")
+    public String freeboard(Model model) {
         model.addAttribute("posts", boardService.findAllPost());
         return "/boards/freeboard";
+    }
+    @GetMapping("/boards/tradeboard")
+    public String tradeboard(Model model) {
+        model.addAttribute("posts", boardService.findAllPost());
+        return "/boards/tradeboard";
+    }
+    @GetMapping("/boards/reviewboard")
+    public String reviewboard(Model model) {
+        model.addAttribute("posts", boardService.findAllPost());
+        return "/boards/reviewboard";
     }
 
     @GetMapping("/boards/newPost")
@@ -35,6 +45,6 @@ public class BoardController {
         freePost.setTitle(form.getTitle());
         freePost.setContents(form.getContent());
         boardService.save(freePost);
-        return "redirect:/boards/free";
+        return "redirect:/boards/freeboard";
     }
 }

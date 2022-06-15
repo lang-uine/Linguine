@@ -3,10 +3,17 @@
 <head th:replace="fragments/header :: header">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
-<div>
-    제목 : <span th:text = "${post.getTitle()}"></span>
-    본문 : <span th:text="${post.getContents()}"></span>
+<body class="sb-nav-fixed">
+<div th:replace="fragments/bodyHeader :: bodyHeader"/>
+<nav th:replace="fragments/navigation :: navigation"/>
+<div id="layoutSidenav">
+    <div th:replace="fragments/sidenav :: #layoutSidenav_nav"/>
+    <div id="layoutSidenav_content">
+        <div>
+            제목 : <span th:text="${post.getTitle()}"></span>
+            본문 : <span th:text="${post.getContents()}"></span>
+        </div>
+    </div>
 </div>
 </body>
 </html>
