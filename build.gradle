@@ -42,8 +42,12 @@ dependencies {
 	//따로 gradle에 추가해주어야 함
 
 	//start log4j implementation
-
 	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	//end of log4j
+
+	//start spring security
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//end of spring security
 
 }
 

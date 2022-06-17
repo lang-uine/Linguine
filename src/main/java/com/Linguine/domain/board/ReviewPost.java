@@ -9,6 +9,6 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
-@DiscriminatorValue("R")
+@DiscriminatorValue("review")
 public class ReviewPost extends Post{
 }

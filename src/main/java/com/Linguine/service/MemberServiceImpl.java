@@ -22,19 +22,19 @@ public class MemberServiceImpl implements MemberService{
     @Transactional
     @Override
     public Long join(Member member) {
-        validateDuplicateMember(member);
+//        validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
     }
 
-    @Override
-    public void validateDuplicateMember(Member member) {
-        //EXCEPTION
-        List<Member> findMembers = memberRepository.findByName(member.getName());
-        if (!findMembers.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 회원입니다");
-        }
-    }
+//    @Override
+//    public void validateDuplicateMember(Member member) {
+//        //EXCEPTION
+//        List<Member> findMembers = memberRepository.findByName(member.getName());
+//        if (!findMembers.isEmpty()) {
+//            throw new IllegalStateException("이미 존재하는 회원입니다");
+//        }
+//    }
 
     @Override
     public List<Member> findMembers() {

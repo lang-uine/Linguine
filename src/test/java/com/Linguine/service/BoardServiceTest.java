@@ -40,7 +40,7 @@ class BoardServiceTest {
     public void joinTest() throws Exception {
         //given
         Member member = new Member();
-        member.setName("kim");
+        member.setPublic_Id("kim");
         //when
         memberService.join(member);
 

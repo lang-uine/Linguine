@@ -9,6 +9,7 @@ public interface BoardService {
     public Long save(Post post);
     public List<Post> findAllPost();
     public Post findOne(Long postId);
+    public List<? extends Post> findByCategory(String category);
 
 
 

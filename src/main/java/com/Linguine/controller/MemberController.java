@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -17,23 +18,56 @@ import javax.validation.Valid;
 public class MemberController {
     private final MemberService memberService;
 
-    @GetMapping("/members/new")
-    public String createForm(Model model) {
+    @GetMapping("/register")
+    public String registerForm(Model model) {
         model.addAttribute("memberForm", new MemberForm());
-        return "/members/memberForm";
+        return "/members/register";
     }
 
-    @PostMapping("/members/new")
-    public String create(@Valid MemberForm form, BindingResult result) {
+    @PostMapping("/register")
+    public String register(@Valid MemberForm form, BindingResult result) {
+        if (result.hasErrors()) {
+            return "members/register";
+        }
         Member member = new Member();
         member.setName(form.getName());
-        member.setPublic_Id(form.getPublic_id());
-        member.setNickName(form.getNickName());
-        member.setPassword(form.getPassword());
-        member.setPh(form.getPh());
         member.setEmail(form.getEmail());
+        member.setPassword(form.getPassword());
+        member.setNickName(form.getNickName());
         memberService.join(member);
-
         return "redirect:/";
     }
+
+    @GetMapping("/password")
+    public String password(Model model) {
+        return "/members/password";
+    }
+//    @GetMapping("/login")
+//    public String login(Model model,
+//                        @RequestParam(value = "error", required = false) String error,
+//                        @RequestParam(value = "exception", required = false) String exception) {
+//        model.addAttribute("error", error);
+//        model.addAttribute("exception", exception);
+//        return "/members/login";
+//    }
+
+//    @GetMapping("/members/new")
+//    public String createForm(Model model) {
+//        model.addAttribute("memberForm", new MemberForm());
+//        return "/members/memberForm";
+//    }
+
+//    @PostMapping("/members/new")
+//    public String create(@Valid MemberForm form, BindingResult result) {
+//        Member member = new Member();
+//        member.setName(form.getName());
+//        member.setPublic_Id(form.getPublic_id());
+//        member.setNickName(form.getNickName());
+//        member.setPassword(form.getPassword());
+//        member.setPh(form.getPh());
+//        member.setEmail(form.getEmail());
+//        memberService.join(member);
+//
+//        return "redirect:/";
+//    }
 }
