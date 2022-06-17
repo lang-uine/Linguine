@@ -32,4 +32,8 @@ public class BoardServiceImpl implements BoardService{
         return boardRepository.findOne(postId);
     }
 
+    @Override
+    public List<? extends Post> findByCategory(String category) {
+        return boardRepository.findByCategory(category);
+    }
 }

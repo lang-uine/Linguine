@@ -1,16 +1,14 @@
 package com.Linguine.repository;
 
+import com.Linguine.domain.board.FreePost;
 import com.Linguine.domain.board.Post;
+import com.Linguine.domain.board.ReviewPost;
+import com.Linguine.domain.board.TradingPost;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 @Repository
@@ -38,6 +36,17 @@ public class BoardRepositoryImpl implements BoardRepository{
     @Override
     public List<Post> findAll() {
         return em.createQuery("select i from Post i", Post.class).getResultList();
+    }
+
+    @Override
+    public List<? extends Post> findByCategory(String category) {
+        if (category.equals("free")) {
+            return em.createQuery("select i from FreePost i", FreePost.class).getResultList();
+        }  else if (category.equals("trade")) {
+            return em.createQuery("select i from TradingPost i", TradingPost.class).getResultList();
+        } else {
+            return em.createQuery("select i from ReviewPost i", ReviewPost.class).getResultList();
+        }
     }
 }
 

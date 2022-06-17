@@ -4,6 +4,6 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("F")
+@DiscriminatorValue("free")
 public class FreePost extends Post{
 }

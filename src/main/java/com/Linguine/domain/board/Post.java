@@ -5,8 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -32,7 +32,9 @@ public abstract class Post{
     @JoinColumn(name = "member_id")
     private Member member;
 
-    private LocalDateTime posted_Data;
+
+    private String posted_Date = getNow();
+
     private String owner;
     private String title;
     private String contents;
@@ -44,6 +46,11 @@ public abstract class Post{
 
     public void addCountComment(int cnt) {
         this.commentsCnt += 1;
+    }
+
+    public String getNow() {
+        LocalDateTime now = LocalDateTime.now();
+        return now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
 

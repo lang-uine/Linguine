@@ -22,22 +22,23 @@
                             <tr>
                                 <th>게시글 번호</th>
                                 <th>제목</th>
+                                <th>게시일</th>
                                 <th>댓글 수</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="post : ${posts}">
+                            <tr th:each="post,i : ${posts}">
 
-                                <td th:text="${post.getId()}"></td>
-                                <!--                <td> <a th:text="${post.getTitle()}" th:name = "postid" th th:value="${post.getId()}" th:href="'/boards/free/'+${post.getId()}+'_'+${post.getTitle()}"></a></td>-->
+                                <td th:text="${i.index+1}"></td>
                                 <td><a th:href="@{/boards/free/post(id=${post.getId()})}"
                                        th:text="${post.getTitle()}"></a></td>
+                                <td th:text="${post.getPosted_Date()}"></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                    <a th:align="center" class="btn btn-lg btn-secondary" href="/boards/newPost">게시글 등록</a>
+                    <a th:align="center" class="btn btn-lg btn-secondary" th:href="@{/boards/write(category=${category})}">게시글 등록</a>
                 </div>
             </div>
         </main>

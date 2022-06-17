@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body class="sb-nav-fixed">
+<div th:replace="fragments/bodyHeader :: bodyHeader"/>
+<nav th:replace="fragments/navigation :: navigation"/>
+<div id="layoutSidenav">
+    <div th:replace="fragments/sidenav :: #layoutSidenav_nav"/>
+    <div id="layoutSidenav_content">
+        <div class="container-fluid px-5" style="border:1px solid #cecece; border-radius: 1rem">
+            <h1>글 작성</h1>
+            <form role="form" th:action= "@{/boards/write(category = ${category})}" th:object="${newPostForm}" method="post">
+                <div class="form-group">
+                    제목 <input type="text" th:field="*{title}" class="form-control"/>
+                    <textarea th:field="*{content}" class="form-control" rows="15" cols="fluid" style="resize: none;"/>
+                </div>
+                <button type="submit" class="btn btn-secondary">게시글 등록</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</body>
+</html>
