@@ -18,6 +18,30 @@ import javax.validation.Valid;
 public class MemberController {
     private final MemberService memberService;
 
+    @GetMapping("/register")
+    public String registerForm(Model model) {
+        model.addAttribute("memberForm", new MemberForm());
+        return "/members/register";
+    }
+
+    @PostMapping("/register")
+    public String register(@Valid MemberForm form, BindingResult result) {
+        if (result.hasErrors()) {
+            return "members/register";
+        }
+        Member member = new Member();
+        member.setName(form.getName());
+        member.setEmail(form.getEmail());
+        member.setPassword(form.getPassword());
+        member.setNickName(form.getNickName());
+        memberService.join(member);
+        return "redirect:/";
+    }
+
+    @GetMapping("/password")
+    public String password(Model model) {
+        return "/members/password";
+    }
 //    @GetMapping("/login")
 //    public String login(Model model,
 //                        @RequestParam(value = "error", required = false) String error,

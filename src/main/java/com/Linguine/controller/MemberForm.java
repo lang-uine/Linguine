@@ -12,14 +12,17 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 @Setter
 public class MemberForm {
-    @NotEmpty(message = "아이디를 입력하세요.")
-    private String public_id;
-//    private String name;
+//    private String public_id;
+    @NotEmpty(message = "이름를 입력하세요.")
+    private String name;
+    @NotEmpty(message = "닉네임을 입력하세요.")
     private String nickName;
 
+    @NotEmpty(message = "패스워드를 입력하세요.")
     private String password;
     private String password_confirm;
-    private String ph;
+
+    @NotEmpty(message = "이메일을 입력하세요.")
     private String email;
     private MemberSpec spec;
 
