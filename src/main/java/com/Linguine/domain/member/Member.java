@@ -25,7 +25,7 @@ public class Member {
     private String nickName;
 
     @Enumerated(EnumType.STRING)
-    private MemberSpec spec;//멤버 종류(PROFESSOR, STUDENT)
+    private MemberSpec spec;//2022-06-03_yeoooo: 멤버 종류(PROFESSOR, STUDENT)
 
     @OneToMany(mappedBy = "member")
     private List<Post> posts = new ArrayList<>();

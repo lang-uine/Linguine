@@ -40,6 +40,15 @@ public class MemberRepositoryImpl implements MemberRepository{
                 .setParameter("public_id", public_id)
                 .getResultList();
     }
+    static final String UPDATE_MEMBER_LAST_LOGIN = "UPDATE Member "
+            + "SET LAST_LOGIN_TIME = :lastLoginTime "
+            + "WHERE EMAIL = :email";
+
+    @Transactional
+    @Modifying
+    @Query(value=UPDATE_MEMBER_LAST_LOGIN, nativeQuery = true)
+    public int updateMemberLastLogin(@Param("email") String email, @Param("lastLoginTime") LocalDateTime lastLoginTime);
+    public Member findByEmail(String emfail);
 
 //    @Override
 //    @Transactional

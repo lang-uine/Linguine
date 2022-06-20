@@ -12,5 +12,6 @@ public interface MemberRepository {
     public List<Member> findAll();
     public List<Member> findByName(String name);
 //    public int updateMemberLastLogin(String email, LocalDateTime localDateTime);
+    public int updateMemberLastLogin(@Param("email") String email, @Param("lastLoginTime") LocalDateTime lastLoginTime);
 
 }
