@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Linguine.repository.MemberRepositoryTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-06-23T14:05:45" hostname="igyeong-wons-MacBook-Pro.local" time="0.268">
+  <properties/>
+  <testcase name="MemberRepositoryTest()" classname="com.Linguine.repository.MemberRepositoryTest" time="0.268">
+    <failure message="org.opentest4j.AssertionFailedError: &#10;expected: null&#10; but was: Member(id=null, name=kim, password=$2a$10$19nGK2CLho/Mt5wzJpQDnukvD414ywYsrqIW2ak1GhaI8OPDaaGl2, email=123@naver.com, nickName=kimNick, lastLoginTime=null, spec=null, posts=[], comments=[])" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: 
+expected: null
+ but was: Member(id=null, name=kim, password=$2a$10$19nGK2CLho/Mt5wzJpQDnukvD414ywYsrqIW2ak1GhaI8OPDaaGl2, email=123@naver.com, nickName=kimNick, lastLoginTime=null, spec=null, posts=[], comments=[])
+	at java.base@15.0.5/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@15.0.5/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base@15.0.5/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@15.0.5/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at app//com.Linguine.repository.MemberRepositoryTest.MemberRepositoryTest(MemberRepositoryTest.java:40)
+	at java.base@15.0.5/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@15.0.5/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base@15.0.5/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@15.0.5/java.lang.reflect.Method.invoke(Method.java:564)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@15.0.5/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@15.0.5/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@15.0.5/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@15.0.5/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base@15.0.5/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@15.0.5/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.7)
+
+2022-06-23 23:05:43.042  INFO 7914 --- [    Test worker] c.L.r.MemberRepositoryTest               : Starting MemberRepositoryTest using Java 15.0.5 on igyeong-wons-MacBook-Pro.local with PID 7914 (started by kyeong in /Users/kyeong/dev/java/Linguine)
+2022-06-23 23:05:43.047  INFO 7914 --- [    Test worker] c.L.r.MemberRepositoryTest               : No active profile set, falling back to 1 default profile: "default"
+2022-06-23 23:05:43.336  INFO 7914 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 23:05:43.358  INFO 7914 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+2022-06-23 23:05:43.809  INFO 7914 --- [    Test worker] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 23:05:43.830  INFO 7914 --- [    Test worker] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-23 23:05:43.919  INFO 7914 --- [    Test worker] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 23:05:43.935 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration boolean -> org.hibernate.type.BooleanType@571d0925
+2022-06-23 23:05:43.935 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration boolean -> org.hibernate.type.BooleanType@571d0925
+2022-06-23 23:05:43.935 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@571d0925
+2022-06-23 23:05:43.936 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@4b09d1c3
+2022-06-23 23:05:43.936 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration true_false -> org.hibernate.type.TrueFalseType@629cbb1
+2022-06-23 23:05:43.936 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration yes_no -> org.hibernate.type.YesNoType@35ab4260
+2022-06-23 23:05:43.937 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration byte -> org.hibernate.type.ByteType@26d73519
+2022-06-23 23:05:43.938 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration byte -> org.hibernate.type.ByteType@26d73519
+2022-06-23 23:05:43.938 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@26d73519
+2022-06-23 23:05:43.939 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration character -> org.hibernate.type.CharacterType@20a9f5fb
+2022-06-23 23:05:43.939 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration char -> org.hibernate.type.CharacterType@20a9f5fb
+2022-06-23 23:05:43.940 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@20a9f5fb
+2022-06-23 23:05:43.940 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration short -> org.hibernate.type.ShortType@dc8b2ff
+2022-06-23 23:05:43.943 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration short -> org.hibernate.type.ShortType@dc8b2ff
+2022-06-23 23:05:43.943 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@dc8b2ff
+2022-06-23 23:05:43.945 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration integer -> org.hibernate.type.IntegerType@2c2aab92
+2022-06-23 23:05:43.946 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration int -> org.hibernate.type.IntegerType@2c2aab92
+2022-06-23 23:05:43.946 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@2c2aab92
+2022-06-23 23:05:43.947 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration long -> org.hibernate.type.LongType@3a4f8e8a
+2022-06-23 23:05:43.948 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration long -> org.hibernate.type.LongType@3a4f8e8a
+2022-06-23 23:05:43.948 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Long -> org.hibernate.type.LongType@3a4f8e8a
+2022-06-23 23:05:43.948 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration float -> org.hibernate.type.FloatType@4768b95c
+2022-06-23 23:05:43.949 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration float -> org.hibernate.type.FloatType@4768b95c
+2022-06-23 23:05:43.949 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@4768b95c
+2022-06-23 23:05:43.949 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration double -> org.hibernate.type.DoubleType@29f95272
+2022-06-23 23:05:43.949 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration double -> org.hibernate.type.DoubleType@29f95272
+2022-06-23 23:05:43.949 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@29f95272
+2022-06-23 23:05:43.950 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@4fee14b
+2022-06-23 23:05:43.950 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@4fee14b
+2022-06-23 23:05:43.950 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@1c7843c3
+2022-06-23 23:05:43.950 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@1c7843c3
+2022-06-23 23:05:43.950 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration string -> org.hibernate.type.StringType@7079f8f0
+2022-06-23 23:05:43.950 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.String -> org.hibernate.type.StringType@7079f8f0
+2022-06-23 23:05:43.955 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@6abe62bb
+2022-06-23 23:05:43.956 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@30704f85
+2022-06-23 23:05:43.957 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration url -> org.hibernate.type.UrlType@545604a9
+2022-06-23 23:05:43.958 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.net.URL -> org.hibernate.type.UrlType@545604a9
+2022-06-23 23:05:43.958 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Duration -> org.hibernate.type.DurationType@61c4cebd
+2022-06-23 23:05:43.958 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.Duration -> org.hibernate.type.DurationType@61c4cebd
+2022-06-23 23:05:43.961 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Instant -> org.hibernate.type.InstantType@41059616
+2022-06-23 23:05:43.961 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.Instant -> org.hibernate.type.InstantType@41059616
+2022-06-23 23:05:43.962 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@65f5cae3
+2022-06-23 23:05:43.963 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@65f5cae3
+2022-06-23 23:05:43.963 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration LocalDate -> org.hibernate.type.LocalDateType@70022d44
+2022-06-23 23:05:43.964 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@70022d44
+2022-06-23 23:05:43.965 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@36871e98
+2022-06-23 23:05:43.965 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@36871e98
+2022-06-23 23:05:43.968 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@1aaf46e6
+2022-06-23 23:05:43.969 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@1aaf46e6
+2022-06-23 23:05:43.970 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@4a4ff5ed
+2022-06-23 23:05:43.970 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@4a4ff5ed
+2022-06-23 23:05:43.975 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@47ef5a33
+2022-06-23 23:05:43.975 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@47ef5a33
+2022-06-23 23:05:43.976 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration date -> org.hibernate.type.DateType@27e21083
+2022-06-23 23:05:43.976 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Date -> org.hibernate.type.DateType@27e21083
+2022-06-23 23:05:43.976 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration time -> org.hibernate.type.TimeType@3ba46845
+2022-06-23 23:05:43.976 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3ba46845
+2022-06-23 23:05:43.977 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration timestamp -> org.hibernate.type.TimestampType@33430fc
+2022-06-23 23:05:43.977 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@33430fc
+2022-06-23 23:05:43.977 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@33430fc
+2022-06-23 23:05:43.978 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@299a43d9
+2022-06-23 23:05:43.979 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration calendar -> org.hibernate.type.CalendarType@603f4e3e
+2022-06-23 23:05:43.979 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@603f4e3e
+2022-06-23 23:05:43.979 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@603f4e3e
+2022-06-23 23:05:43.980 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5f3f57ff
+2022-06-23 23:05:43.981 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@1b1ea1d9
+2022-06-23 23:05:43.982 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration locale -> org.hibernate.type.LocaleType@4e2824b1
+2022-06-23 23:05:43.982 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@4e2824b1
+2022-06-23 23:05:43.984 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration currency -> org.hibernate.type.CurrencyType@5bd3ca3c
+2022-06-23 23:05:43.985 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@5bd3ca3c
+2022-06-23 23:05:43.994 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration timezone -> org.hibernate.type.TimeZoneType@351d93bd
+2022-06-23 23:05:43.994 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@351d93bd
+2022-06-23 23:05:43.995 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration class -> org.hibernate.type.ClassType@39514976
+2022-06-23 23:05:43.995 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@39514976
+2022-06-23 23:05:43.996 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@106459d9
+2022-06-23 23:05:43.996 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@106459d9
+2022-06-23 23:05:43.997 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@208e5b23
+2022-06-23 23:05:43.997 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration binary -> org.hibernate.type.BinaryType@a99c42c
+2022-06-23 23:05:43.997 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration byte[] -> org.hibernate.type.BinaryType@a99c42c
+2022-06-23 23:05:43.997 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [B -> org.hibernate.type.BinaryType@a99c42c
+2022-06-23 23:05:43.998 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@5cf2f5d6
+2022-06-23 23:05:43.998 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@5cf2f5d6
+2022-06-23 23:05:43.998 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@5cf2f5d6
+2022-06-23 23:05:43.999 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration row_version -> org.hibernate.type.RowVersionType@2558f65c
+2022-06-23 23:05:43.999 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration image -> org.hibernate.type.ImageType@40017e98
+2022-06-23 23:05:44.000 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration characters -> org.hibernate.type.CharArrayType@66a472b9
+2022-06-23 23:05:44.000 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration char[] -> org.hibernate.type.CharArrayType@66a472b9
+2022-06-23 23:05:44.000 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [C -> org.hibernate.type.CharArrayType@66a472b9
+2022-06-23 23:05:44.001 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@6dbbdf92
+2022-06-23 23:05:44.005 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@6dbbdf92
+2022-06-23 23:05:44.006 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@6dbbdf92
+2022-06-23 23:05:44.007 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration text -> org.hibernate.type.TextType@48d5ca17
+2022-06-23 23:05:44.008 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration ntext -> org.hibernate.type.NTextType@6febec41
+2022-06-23 23:05:44.009 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration blob -> org.hibernate.type.BlobType@42d174ad
+2022-06-23 23:05:44.010 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@42d174ad
+2022-06-23 23:05:44.010 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@65d90b7f
+2022-06-23 23:05:44.010 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration clob -> org.hibernate.type.ClobType@732d078d
+2022-06-23 23:05:44.010 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@732d078d
+2022-06-23 23:05:44.011 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration nclob -> org.hibernate.type.NClobType@6f112f70
+2022-06-23 23:05:44.011 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@6f112f70
+2022-06-23 23:05:44.011 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@df9d400
+2022-06-23 23:05:44.011 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@4cc4d454
+2022-06-23 23:05:44.012 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration serializable -> org.hibernate.type.SerializableType@2fd4312a
+2022-06-23 23:05:44.013 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration object -> org.hibernate.type.ObjectType@18513c23
+2022-06-23 23:05:44.013 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@18513c23
+2022-06-23 23:05:44.014 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@304744a1
+2022-06-23 23:05:44.014 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@73385d3f
+2022-06-23 23:05:44.014 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@6814262d
+2022-06-23 23:05:44.014 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7fc1fd31
+2022-06-23 23:05:44.015 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@75a9cc24
+2022-06-23 23:05:44.015 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@4449a60b
+2022-06-23 23:05:44.015 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@da5d5e1
+2022-06-23 23:05:44.015 DEBUG 7914 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@7d7d8911
+2022-06-23 23:05:44.041  INFO 7914 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-06-23 23:05:44.087  INFO 7914 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-06-23 23:05:44.102  INFO 7914 --- [    Test worker] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-23 23:05:44.124 DEBUG 7914 --- [    Test worker] o.h.t.s.TypeConfiguration$Scope          : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5d74507c] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@2a984952]
+2022-06-23 23:05:44.267 DEBUG 7914 --- [    Test worker] o.h.t.EnumType                           : Using NAMED-based conversion for Enum com.Linguine.domain.member.MemberSpec
+2022-06-23 23:05:44.268 DEBUG 7914 --- [    Test worker] o.h.t.s.TypeConfiguration$Scope          : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5d74507c] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@1da32baf]
+2022-06-23 23:05:44.445 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop table if exists comments CASCADE 
+Hibernate: 
+    
+    drop table if exists comments CASCADE 
+2022-06-23 23:05:44.448  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144448 | took 1ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop table if exists comments CASCADE 
+
+    drop table if exists comments CASCADE ;
+2022-06-23 23:05:44.448 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop table if exists member CASCADE 
+Hibernate: 
+    
+    drop table if exists member CASCADE 
+2022-06-23 23:05:44.449  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144449 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop table if exists member CASCADE 
+
+    drop table if exists member CASCADE ;
+2022-06-23 23:05:44.449 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop table if exists post CASCADE 
+Hibernate: 
+    
+    drop table if exists post CASCADE 
+2022-06-23 23:05:44.449  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144449 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop table if exists post CASCADE 
+
+    drop table if exists post CASCADE ;
+2022-06-23 23:05:44.449 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop sequence if exists hibernate_sequence
+Hibernate: 
+    
+    drop sequence if exists hibernate_sequence
+2022-06-23 23:05:44.450  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144450 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop sequence if exists hibernate_sequence
+
+    drop sequence if exists hibernate_sequence;
+2022-06-23 23:05:44.452 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+2022-06-23 23:05:44.452  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144452 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-06-23 23:05:44.453 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    )
+Hibernate: 
+    
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    )
+2022-06-23 23:05:44.454  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144454 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    )
+
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    );
+2022-06-23 23:05:44.455 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    )
+2022-06-23 23:05:44.456  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144456 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    )
+
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    );
+2022-06-23 23:05:44.457 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        comments_cnt integer not null,
+        contents varchar(255),
+        owner varchar(255),
+        posted_date varchar(255),
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    )
+Hibernate: 
+    
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        comments_cnt integer not null,
+        contents varchar(255),
+        owner varchar(255),
+        posted_date varchar(255),
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    )
+2022-06-23 23:05:44.458  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144458 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        comments_cnt integer not null,
+        contents varchar(255),
+        owner varchar(255),
+        posted_date varchar(255),
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    )
+
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        comments_cnt integer not null,
+        contents varchar(255),
+        owner varchar(255),
+        posted_date varchar(255),
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    );
+2022-06-23 23:05:44.459 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member
+Hibernate: 
+    
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member
+2022-06-23 23:05:44.461  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144461 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member
+
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member;
+2022-06-23 23:05:44.461 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post
+Hibernate: 
+    
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post
+2022-06-23 23:05:44.462  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144462 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post
+
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post;
+2022-06-23 23:05:44.463 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member
+Hibernate: 
+    
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member
+2022-06-23 23:05:44.464  INFO 7914 --- [    Test worker] p6spy                                    : #1655993144464 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member
+
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member;
+2022-06-23 23:05:44.465  INFO 7914 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 23:05:44.470 TRACE 7914 --- [    Test worker] o.h.t.s.TypeConfiguration$Scope          : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@1da32baf] for TypeConfiguration
+2022-06-23 23:05:44.471  INFO 7914 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 23:05:44.678  WARN 7914 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 23:05:44.760  WARN 7914 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-06-23 23:05:44.761  INFO 7914 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/**']
+2022-06-23 23:05:44.761  WARN 7914 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-06-23 23:05:44.761  INFO 7914 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/**']
+2022-06-23 23:05:44.762  WARN 7914 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-06-23 23:05:44.762  INFO 7914 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/img/**']
+2022-06-23 23:05:44.812  INFO 7914 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d94c50e, org.springframework.security.web.context.SecurityContextPersistenceFilter@33efa7d4, org.springframework.security.web.header.HeaderWriterFilter@76c2d002, org.springframework.security.web.authentication.logout.LogoutFilter@d8cece4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c8d685e, org.springframework.security.web.session.ConcurrentSessionFilter@fc6cac6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50b78155, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a5c0b8, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6956081d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@135f160e, org.springframework.security.web.session.SessionManagementFilter@793248d, org.springframework.security.web.access.ExceptionTranslationFilter@202ba60a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40f931ec]
+2022-06-23 23:05:45.026  INFO 7914 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-06-23 23:05:45.155  INFO 7914 --- [    Test worker] c.L.r.MemberRepositoryTest               : Started MemberRepositoryTest in 2.28 seconds (JVM running for 2.897)
+2022-06-23 23:05:45.370 DEBUG 7914 --- [    Test worker] o.h.SQL                                  : 
+    select
+        member0_.id as id1_1_,
+        member0_.register_time as register2_1_,
+        member0_.update_time as update_t3_1_,
+        member0_.email as email4_1_,
+        member0_.last_login_time as last_log5_1_,
+        member0_.name as name6_1_,
+        member0_.nick_name as nick_nam7_1_,
+        member0_.password as password8_1_,
+        member0_.spec as spec9_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+Hibernate: 
+    select
+        member0_.id as id1_1_,
+        member0_.register_time as register2_1_,
+        member0_.update_time as update_t3_1_,
+        member0_.email as email4_1_,
+        member0_.last_login_time as last_log5_1_,
+        member0_.name as name6_1_,
+        member0_.nick_name as nick_nam7_1_,
+        member0_.password as password8_1_,
+        member0_.spec as spec9_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2022-06-23 23:05:45.378 TRACE 7914 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [VARCHAR] - [123@naver.com]
+2022-06-23 23:05:45.383  INFO 7914 --- [    Test worker] p6spy                                    : #1655993145383 | took 4ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select member0_.id as id1_1_, member0_.register_time as register2_1_, member0_.update_time as update_t3_1_, member0_.email as email4_1_, member0_.last_login_time as last_log5_1_, member0_.name as name6_1_, member0_.nick_name as nick_nam7_1_, member0_.password as password8_1_, member0_.spec as spec9_1_ from member member0_ where member0_.email=?
+select member0_.id as id1_1_, member0_.register_time as register2_1_, member0_.update_time as update_t3_1_, member0_.email as email4_1_, member0_.last_login_time as last_log5_1_, member0_.name as name6_1_, member0_.nick_name as nick_nam7_1_, member0_.password as password8_1_, member0_.spec as spec9_1_ from member member0_ where member0_.email='123@naver.com';
+savedE = 123@naver.com
+judge = null
+memberService = com.Linguine.service.MemberServiceImpl@4cb59398
+memberRepository = org.springframework.data.jpa.repository.support.SimpleJpaRepository@5180f430
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
