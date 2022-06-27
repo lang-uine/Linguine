@@ -1,6 +1,9 @@
 package com.Linguine.controller;
 
 import com.Linguine.domain.member.Member;
+import com.Linguine.service.MemberService;
+import com.Linguine.service.MemberServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
@@ -14,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.Valid;
 
 @Controller
+@RequiredArgsConstructor
 public class LoginController{
+
+    private final MemberServiceImpl memberService;
 
     @GetMapping("/login")
     public String getLoginPage(Model model,
@@ -25,11 +31,6 @@ public class LoginController{
         return "/members/login";
     }
 
-//    @PostMapping("/login/action")
-//    public String ll(Model model) {
-//        System.out.println("gdgdgdgdgdgd");
-//        Member activeUser = (Member) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        System.out.println("activeUser = " + activeUser);
-//        return "redirect:/";
-//    }
+
+
 }

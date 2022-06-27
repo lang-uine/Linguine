@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional
 @RequiredArgsConstructor
-public class MemberServiceImpl implements UserDetailsService,MemberService {
+public class MemberServiceImpl implements MemberService,UserDetailsService{
 
     private final MemberRepository memberRepository;
 
@@ -50,6 +50,7 @@ public class MemberServiceImpl implements UserDetailsService,MemberService {
 //    }
 
     @Override
+    @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Member member = memberRepository.findByEmail(email);
         if(member == null){ throw new UsernameNotFoundException("Not Found account");}

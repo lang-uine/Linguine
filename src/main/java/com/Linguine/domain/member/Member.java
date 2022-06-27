@@ -15,9 +15,8 @@ import java.util.List;
 @Getter
 @Entity
 @EqualsAndHashCode(of= {"id"}, callSuper = true)
-@ToString
-//@Setter//2022-06-03_yeoooo: 테스트를 위해 임시로 열어둔 Setter,Builder등으로 교체되어야 함
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+//2022-06-03_yeoooo: 테스트를 위해 임시로 열어둔 Setter,Builder등으로 교체되어야 함 -> 교체완료
 public class Member extends BaseTimeEntity implements UserDetails {
 
     private static final long serialVersionUID = 1L;
