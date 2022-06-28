@@ -1,6 +1,7 @@
 package com.Linguine.service;
 
 import com.Linguine.domain.member.Member;
+import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,6 @@ public class MemberServiceImpl implements MemberService,UserDetailsService{
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Member member = memberRepository.findByEmail(email);
         if(member == null){ throw new UsernameNotFoundException("Not Found account");}
-        return member;
+        return new MemberDTO(member);
     }
 }

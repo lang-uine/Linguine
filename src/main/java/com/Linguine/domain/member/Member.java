@@ -35,7 +35,7 @@ public class Member extends BaseTimeEntity implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> collectors = new ArrayList<>();
         collectors.add(() -> {
-            return "계정별 등록할 권한";
+            return "ROLE_USER";
         });
 
         //collectors.add(new SimpleGrantedAuthority("Role"));
