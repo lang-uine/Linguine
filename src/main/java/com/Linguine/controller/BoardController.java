@@ -5,8 +5,10 @@ import com.Linguine.domain.board.FreePost;
 import com.Linguine.domain.board.Post;
 import com.Linguine.domain.board.ReviewPost;
 import com.Linguine.domain.board.TradingPost;
+import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,7 +36,12 @@ public class BoardController {
 
 
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
-    public String boardSelection(@RequestParam("category") String category, Model model) {
+    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO, Model model) {
+        if (memberDTO == null) {
+            model.addAttribute("activeUserName", "게스트");
+        } else {
+            model.addAttribute("activeUserName", memberDTO.getMember().getNickName());
+        }
         model.addAttribute("posts", boardService.findByCategory(category));
         model.addAttribute("category", category);
         return "boards/" + category + "board";
