@@ -38,6 +38,9 @@ public class MemberController {
                 .password(new BCryptPasswordEncoder().encode(form.getPassword()))
                 .lastLoginTime(LocalDateTime.now())
                 .build();
+        memberService.validateDuplicateNickName(member);
+        memberService.validateDuplicateEmail(member);
+
         memberService.join(member);
         return "redirect:/";
 

@@ -5,9 +5,9 @@
 </head>
 <body class="sb-nav-fixed">
 <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-<nav th:replace="fragments/navigation :: navigation(activeUserName)"/>
+<nav th:replace="fragments/navigation :: navigation(${activeUserName})"/>
 <div id="layoutSidenav">
-  <div th:replace="fragments/sidenav :: #layoutSidenav_nav(activeUserName)"/>
+  <div th:replace="fragments/sidenav :: #layoutSidenav_nav(${activeUserName})"/>
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid px-4" style = "margin-top: 50px">
