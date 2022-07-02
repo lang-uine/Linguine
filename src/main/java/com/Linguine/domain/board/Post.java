@@ -57,7 +57,7 @@ public class Post extends BaseTimeEntity {
 //        this.registerTime = getNow();
     }
 
-    public void addCountComment(int cnt) {
+    public void addCountComment() {
         this.commentsCnt += 1;
     }
 

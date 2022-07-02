@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.Linguine.domain.board.FreePostTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-01T12:39:21" hostname="igyeong-wons-MacBook-Pro.local" time="0.054">
-  <properties/>
-  <testcase name="FreePostTest()" classname="com.Linguine.domain.board.FreePostTest" time="0.054"/>
-  <system-out><![CDATA[post = Post(id=null, member=null, title=gd, contents=null, owner=null, commentsCnt=0, hitCnt=0, registerTime=null, comments=[])
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
