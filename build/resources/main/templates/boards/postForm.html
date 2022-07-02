@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments/header :: header"/>
 <body class="sb-nav-fixed">
 <div th:replace="fragments/bodyHeader :: bodyHeader"/>
@@ -19,12 +19,10 @@
                     <div class="form-group">
                         제목 <input type="text" th:field="*{title}" class="form-control"/>
                         내용
-<!--                        <textarea th:field="*{content}" class="form-control" rows="15" cols="fluid"-->
-<!--                                  style="resize: none;"/>-->
-                        <textarea id="summernote" style="resize: none"></textarea>
+                        <textarea th:field = "*{content}" id="summernote"></textarea>
                         <script>
                             $('#summernote').summernote({
-                                placeholder: 'Hello stand alone ui',
+                                placeholder: '내용을 입력하세요',
                                 tabsize: 2,
                                 height: 440,
                                 disableResizeEditor: true,
@@ -41,7 +39,7 @@
                                 ]
                             });
                         </script>
-<!--                        <div id = "editor" contenteditable="true" th:field = "*{content}" ></div>-->
+
                     </div>
                     <button type="submit" class="btn btn-secondary" style="margin-top: 10px">게시글 등록</button>
                 </form>

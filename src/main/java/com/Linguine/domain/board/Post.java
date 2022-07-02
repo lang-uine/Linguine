@@ -1,7 +1,9 @@
 package com.Linguine.domain.board;
 
+import com.Linguine.domain.member.BaseTimeEntity;
 import com.Linguine.domain.member.Member;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -19,11 +21,13 @@ import java.util.List;
 @ToString
 @Entity
 @Getter
-@Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "ptype")
-public abstract class Post{
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+@NoArgsConstructor
+@AllArgsConstructor
+public class Post extends BaseTimeEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
     private Long id;
 
@@ -32,17 +36,26 @@ public abstract class Post{
     @JoinColumn(name = "member_id")
     private Member member;
 
-
-    private String posted_Date = getNow();
-
-    private String owner;
     private String title;
     private String contents;
+    private Long owner;
     private int commentsCnt;
+    private int hitCnt;
 
+    @CreatedDate
+    private LocalDateTime registerTime;
 
     @OneToMany(mappedBy = "post")//, cascade = CascadeType.ALL)
     public List<Comments> comments = new ArrayList<>();
+
+    public Post(String title, String contents, Long owner, int commentsCnt, int hitCnt) {
+        this.title = title;
+        this.contents = contents;
+        this.owner = owner;
+        this.commentsCnt = commentsCnt;
+        this.hitCnt = hitCnt;
+//        this.registerTime = getNow();
+    }
 
     public void addCountComment(int cnt) {
         this.commentsCnt += 1;
@@ -50,8 +63,9 @@ public abstract class Post{
 
     public String getNow() {
         LocalDateTime now = LocalDateTime.now();
-        return now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        return now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
+
 
 
 }

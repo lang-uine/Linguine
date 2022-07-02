@@ -9,11 +9,28 @@
 <div id="layoutSidenav">
     <div th:replace="fragments/sidenav :: #layoutSidenav_nav(${activeUserName})"/>
     <div id="layoutSidenav_content">
-        <div>
-            제목 : <span th:text="${post.getTitle()}"></span>
-            본문 : <span th:text="${post.getContents()}"></span>
-        </div>
+
+        <main>
+            <div class="container" style="border: 1px solid #D3D3D3; margin-top: 50px">
+                <a style="size: 10px; color: navy; text-decoration: blink" href="/boards?category=free">자유 게시판 ></a>
+                <h4 th:text="${post.getTitle()}" style="margin-top: 3px"/>
+                <div class = "container-fluid">
+                <span style="font-size: 10px">글쓴이 : </span>
+                    <div style="font-size: 10px" th:text="${writer}"></div>
+                    <span style = "font-size: 10px">LastUpdate:  </span>
+                </div>
+                <hr/>
+                <span th:utext="${post.getContents()}"/>
+
+
+            </div>
+        </main>
+
+
+    </div>
     </div>
 </div>
+
+
 </body>
 </html>

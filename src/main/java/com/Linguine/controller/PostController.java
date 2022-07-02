@@ -1,6 +1,8 @@
 package com.Linguine.controller;
 
+import com.Linguine.domain.board.Post;
 import com.Linguine.service.BoardService;
+import com.Linguine.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +18,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PostController {
 
     private final BoardService boardService;
+    private final MemberService memberService;
 //    private final Logger logger;
 
     @RequestMapping(value = "/boards/free/post", method = RequestMethod.GET)
     public String post(@RequestParam("id") Long id,Model model){
-        model.addAttribute("post", boardService.findOne(id));
+        Post post = boardService.findOne(id);
+        model.addAttribute("post", post);
+        model.addAttribute("writer", memberService.findById(post.getOwner()).get().getNickName());
+
+
+
         return "boards/post";
     }
+
 }

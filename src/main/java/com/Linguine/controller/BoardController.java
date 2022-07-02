@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDateTime;
 
 @Controller
 @RequiredArgsConstructor
@@ -48,23 +49,48 @@ public class BoardController {
     }
 
     @PostMapping(value =  "boards/write")
-    public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category) {
-        Post post = null;
+    public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO) {
 
         if (category.equals("free")) {
-            System.out.println("post = " + post);
-            post = new FreePost();
+            FreePost post = FreePost.builder()
+                    .title(form.getTitle())
+                    .contents(form.getContent())
+                    .owner(memberDTO.getMember().getId())
+//                    .registerTime(post.getRegisterTime())
+                    .commentsCnt(0)
+                    .hitCnt(0)
+                    .build();
+            boardService.save(post);
+
         } else if (category.equals("trade")) {
-            post = new TradingPost();
-            System.out.println("post = " + post);
+
+            TradingPost post = TradingPost.builder()
+                    .title(form.getTitle())
+                    .contents(form.getContent())
+                    .owner(memberDTO.getMember().getId())
+//                    .registerTime(post.getRegisterTime())
+                    .commentsCnt(0)
+                    .hitCnt(0)
+                    //2022-07-1_yeoooo : 구매/판매 여부, 만기 여부, 가격
+//                    .isBuying(form.get)
+//                    .isExpired()
+//                    .price()
+                    .build();
+            boardService.save(post);
         } else {
-            post = new ReviewPost();
-            System.out.println("post = " + post);
+            ReviewPost post = ReviewPost.builder()
+                    .title(form.getTitle())
+                    .contents(form.getContent())
+                    .owner(memberDTO.getMember().getId())
+//                    .registerTime(post.getRegisterTime())
+                    .commentsCnt(0)
+                    .hitCnt(0)
+                    .build();
+            boardService.save(post);
         }
 
-        post.setTitle(form.getTitle());
-        post.setContents(form.getContent());
-        boardService.save(post);
+
+
         return "redirect:/boards?category="+category;
     }
 //    @PostMapping("boards/tradeboard/newPost")

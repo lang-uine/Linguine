@@ -32,7 +32,7 @@
                                 <td th:text="${i.index+1}"></td>
                                 <td><a th:href="@{/boards/free/post(id=${post.getId()})}"
                                        th:text="${post.getTitle()}"></a></td>
-                                <td th:text="${post.getPosted_Date()}"></td>
+                                <td th:text="${post.getRegisterTime()}"></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
                             </tr>
                             </tbody>

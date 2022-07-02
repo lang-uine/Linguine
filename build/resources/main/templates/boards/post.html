@@ -9,11 +9,34 @@
 <div id="layoutSidenav">
     <div th:replace="fragments/sidenav :: #layoutSidenav_nav(${activeUserName})"/>
     <div id="layoutSidenav_content">
-        <div>
-            제목 : <span th:text="${post.getTitle()}"></span>
-            본문 : <span th:text="${post.getContents()}"></span>
-        </div>
+        <!--        <div>-->
+        <!--            제목 : <span th:text="${post.getTitle()}"></span>-->
+        <!--            본문 : <span th:utext="${post.getContents()}"></span>-->
+        <!--            &lt;!&ndash; 2022-06-30_yeoooo : th:utext를 활용해 summernote로 부터 넘어온 html태그를 처리&ndash;&gt;-->
+
+        <!--        </div>-->
+
+        <main>
+            <div class="container" style="border: 1px solid #808080; margin-top: 50px">
+                <a style="size: 10px; color: navy; text-decoration: blink" href="/boards?category=free">자유 게시판 ></a>
+                <h4 th:text="${post.getTitle()}" style="margin-top: 3px"/>
+                <div class = "container-fluid">
+                <span style="font-size: 10px">글쓴이 : </span>
+                    <div style="font-size: 10px" th:text="${writer}"></div>
+                    <span style = "font-size: 10px">LastUpdate:  </span>
+                </div>
+                <hr/>
+                <span th:utext="${post.getContents()}"/>
+
+
+            </div>
+        </main>
+
+
+    </div>
     </div>
 </div>
+
+
 </body>
 </html>

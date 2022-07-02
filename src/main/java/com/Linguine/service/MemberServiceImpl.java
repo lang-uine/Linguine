@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -29,6 +30,9 @@ public class MemberServiceImpl implements MemberService,UserDetailsService{
     @Override
     public Member findByEmail(String email) {
         return memberRepository.findByEmail(email);
+    }
+    public Optional<Member> findById(Long id) {
+        return memberRepository.findById(id);
     }
 
     @Override
@@ -56,10 +60,7 @@ public class MemberServiceImpl implements MemberService,UserDetailsService{
 //        return memberRepository.findAll();
 //    }
 //
-//    @Override
-//    public Member findOne(Long memberId) {
-//        return memberRepository.findOne(memberId);
-//    }
+
 
     @Override
     @Transactional
