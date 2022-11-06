@@ -1,0 +1,10 @@
+#Mac security files
+.DS_Store
+
+#Build files
+*/.build
+*/build/*
+*.gradle
+
+#IDE files
+.idea

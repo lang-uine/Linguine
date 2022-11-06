@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BoardRepositoryImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BoardRepositoryImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.Linguine.repository.html">com.Linguine.repository</a> &gt; BoardRepositoryImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.388s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">BoardRepositoryImplTest()</td>
+<td class="success">0.388s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.7)
+
+2022-07-02 21:12:42.871  INFO 31979 --- [    Test worker] c.L.r.BoardRepositoryImplTest            : Starting BoardRepositoryImplTest using Java 15.0.5 on igyeong-wons-MacBook-Pro.local with PID 31979 (started by kyeong in /Users/kyeong/dev/java/Linguine)
+2022-07-02 21:12:42.883  INFO 31979 --- [    Test worker] c.L.r.BoardRepositoryImplTest            : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-07-02 21:12:43.382  INFO 31979 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-02 21:12:43.420  INFO 31979 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interfaces.
+2022-07-02 21:12:43.828  INFO 31979 --- [    Test worker] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-02 21:12:43.851  INFO 31979 --- [    Test worker] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-07-02 21:12:43.973  INFO 31979 --- [    Test worker] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-02 21:12:43.996 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration boolean -&gt; org.hibernate.type.BooleanType@3fe8ad3f
+2022-07-02 21:12:43.997 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration boolean -&gt; org.hibernate.type.BooleanType@3fe8ad3f
+2022-07-02 21:12:43.997 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Boolean -&gt; org.hibernate.type.BooleanType@3fe8ad3f
+2022-07-02 21:12:43.998 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration numeric_boolean -&gt; org.hibernate.type.NumericBooleanType@627acb38
+2022-07-02 21:12:43.999 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration true_false -&gt; org.hibernate.type.TrueFalseType@22cd8ec2
+2022-07-02 21:12:43.999 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration yes_no -&gt; org.hibernate.type.YesNoType@38667005
+2022-07-02 21:12:43.999 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration byte -&gt; org.hibernate.type.ByteType@40538370
+2022-07-02 21:12:44.000 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration byte -&gt; org.hibernate.type.ByteType@40538370
+2022-07-02 21:12:44.000 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Byte -&gt; org.hibernate.type.ByteType@40538370
+2022-07-02 21:12:44.000 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration character -&gt; org.hibernate.type.CharacterType@340c57e0
+2022-07-02 21:12:44.001 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration char -&gt; org.hibernate.type.CharacterType@340c57e0
+2022-07-02 21:12:44.001 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Character -&gt; org.hibernate.type.CharacterType@340c57e0
+2022-07-02 21:12:44.001 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration short -&gt; org.hibernate.type.ShortType@14201a90
+2022-07-02 21:12:44.001 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration short -&gt; org.hibernate.type.ShortType@14201a90
+2022-07-02 21:12:44.001 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Short -&gt; org.hibernate.type.ShortType@14201a90
+2022-07-02 21:12:44.002 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration integer -&gt; org.hibernate.type.IntegerType@10a0d93a
+2022-07-02 21:12:44.002 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration int -&gt; org.hibernate.type.IntegerType@10a0d93a
+2022-07-02 21:12:44.002 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Integer -&gt; org.hibernate.type.IntegerType@10a0d93a
+2022-07-02 21:12:44.002 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration long -&gt; org.hibernate.type.LongType@5fc1e4fb
+2022-07-02 21:12:44.002 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration long -&gt; org.hibernate.type.LongType@5fc1e4fb
+2022-07-02 21:12:44.004 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Long -&gt; org.hibernate.type.LongType@5fc1e4fb
+2022-07-02 21:12:44.004 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration float -&gt; org.hibernate.type.FloatType@7573c7b5
+2022-07-02 21:12:44.004 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration float -&gt; org.hibernate.type.FloatType@7573c7b5
+2022-07-02 21:12:44.004 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Float -&gt; org.hibernate.type.FloatType@7573c7b5
+2022-07-02 21:12:44.005 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration double -&gt; org.hibernate.type.DoubleType@1da53f4f
+2022-07-02 21:12:44.005 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration double -&gt; org.hibernate.type.DoubleType@1da53f4f
+2022-07-02 21:12:44.005 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Double -&gt; org.hibernate.type.DoubleType@1da53f4f
+2022-07-02 21:12:44.005 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration big_decimal -&gt; org.hibernate.type.BigDecimalType@3a54638b
+2022-07-02 21:12:44.006 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.math.BigDecimal -&gt; org.hibernate.type.BigDecimalType@3a54638b
+2022-07-02 21:12:44.006 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration big_integer -&gt; org.hibernate.type.BigIntegerType@7c8f047a
+2022-07-02 21:12:44.006 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.math.BigInteger -&gt; org.hibernate.type.BigIntegerType@7c8f047a
+2022-07-02 21:12:44.007 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration string -&gt; org.hibernate.type.StringType@7cdc4070
+2022-07-02 21:12:44.007 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.String -&gt; org.hibernate.type.StringType@7cdc4070
+2022-07-02 21:12:44.007 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration nstring -&gt; org.hibernate.type.StringNVarcharType@1218e12
+2022-07-02 21:12:44.008 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration ncharacter -&gt; org.hibernate.type.CharacterNCharType@26c59348
+2022-07-02 21:12:44.008 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration url -&gt; org.hibernate.type.UrlType@1c0e4262
+2022-07-02 21:12:44.008 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.net.URL -&gt; org.hibernate.type.UrlType@1c0e4262
+2022-07-02 21:12:44.009 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Duration -&gt; org.hibernate.type.DurationType@716ae973
+2022-07-02 21:12:44.009 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.Duration -&gt; org.hibernate.type.DurationType@716ae973
+2022-07-02 21:12:44.010 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Instant -&gt; org.hibernate.type.InstantType@34e25492
+2022-07-02 21:12:44.010 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.Instant -&gt; org.hibernate.type.InstantType@34e25492
+2022-07-02 21:12:44.010 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration LocalDateTime -&gt; org.hibernate.type.LocalDateTimeType@5909ae90
+2022-07-02 21:12:44.011 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.LocalDateTime -&gt; org.hibernate.type.LocalDateTimeType@5909ae90
+2022-07-02 21:12:44.011 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration LocalDate -&gt; org.hibernate.type.LocalDateType@5abbb273
+2022-07-02 21:12:44.011 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.LocalDate -&gt; org.hibernate.type.LocalDateType@5abbb273
+2022-07-02 21:12:44.011 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration LocalTime -&gt; org.hibernate.type.LocalTimeType@6533629
+2022-07-02 21:12:44.011 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.LocalTime -&gt; org.hibernate.type.LocalTimeType@6533629
+2022-07-02 21:12:44.012 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration OffsetDateTime -&gt; org.hibernate.type.OffsetDateTimeType@23df7fad
+2022-07-02 21:12:44.012 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.OffsetDateTime -&gt; org.hibernate.type.OffsetDateTimeType@23df7fad
+2022-07-02 21:12:44.012 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration OffsetTime -&gt; org.hibernate.type.OffsetTimeType@4b7ab7ab
+2022-07-02 21:12:44.012 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.OffsetTime -&gt; org.hibernate.type.OffsetTimeType@4b7ab7ab
+2022-07-02 21:12:44.013 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration ZonedDateTime -&gt; org.hibernate.type.ZonedDateTimeType@28f90752
+2022-07-02 21:12:44.014 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.time.ZonedDateTime -&gt; org.hibernate.type.ZonedDateTimeType@28f90752
+2022-07-02 21:12:44.015 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration date -&gt; org.hibernate.type.DateType@49e0b123
+2022-07-02 21:12:44.015 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Date -&gt; org.hibernate.type.DateType@49e0b123
+2022-07-02 21:12:44.015 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration time -&gt; org.hibernate.type.TimeType@592cb470
+2022-07-02 21:12:44.016 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Time -&gt; org.hibernate.type.TimeType@592cb470
+2022-07-02 21:12:44.016 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration timestamp -&gt; org.hibernate.type.TimestampType@22ae32ba
+2022-07-02 21:12:44.016 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Timestamp -&gt; org.hibernate.type.TimestampType@22ae32ba
+2022-07-02 21:12:44.016 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Date -&gt; org.hibernate.type.TimestampType@22ae32ba
+2022-07-02 21:12:44.018 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration dbtimestamp -&gt; org.hibernate.type.DbTimestampType@5fa5c8cf
+2022-07-02 21:12:44.018 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration calendar -&gt; org.hibernate.type.CalendarType@3c7d8a4
+2022-07-02 21:12:44.018 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Calendar -&gt; org.hibernate.type.CalendarType@3c7d8a4
+2022-07-02 21:12:44.018 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.GregorianCalendar -&gt; org.hibernate.type.CalendarType@3c7d8a4
+2022-07-02 21:12:44.019 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration calendar_date -&gt; org.hibernate.type.CalendarDateType@d4ecdb0
+2022-07-02 21:12:44.019 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration calendar_time -&gt; org.hibernate.type.CalendarTimeType@55d99dc3
+2022-07-02 21:12:44.019 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration locale -&gt; org.hibernate.type.LocaleType@7d18338b
+2022-07-02 21:12:44.019 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Locale -&gt; org.hibernate.type.LocaleType@7d18338b
+2022-07-02 21:12:44.020 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration currency -&gt; org.hibernate.type.CurrencyType@59f76e56
+2022-07-02 21:12:44.020 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.Currency -&gt; org.hibernate.type.CurrencyType@59f76e56
+2022-07-02 21:12:44.020 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration timezone -&gt; org.hibernate.type.TimeZoneType@42503099
+2022-07-02 21:12:44.020 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.TimeZone -&gt; org.hibernate.type.TimeZoneType@42503099
+2022-07-02 21:12:44.021 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration class -&gt; org.hibernate.type.ClassType@77856cc5
+2022-07-02 21:12:44.021 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Class -&gt; org.hibernate.type.ClassType@77856cc5
+2022-07-02 21:12:44.021 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration uuid-binary -&gt; org.hibernate.type.UUIDBinaryType@23c05889
+2022-07-02 21:12:44.021 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.util.UUID -&gt; org.hibernate.type.UUIDBinaryType@23c05889
+2022-07-02 21:12:44.021 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration uuid-char -&gt; org.hibernate.type.UUIDCharType@aee05f4
+2022-07-02 21:12:44.022 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration binary -&gt; org.hibernate.type.BinaryType@2b2b7e3c
+2022-07-02 21:12:44.022 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration byte[] -&gt; org.hibernate.type.BinaryType@2b2b7e3c
+2022-07-02 21:12:44.022 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [B -&gt; org.hibernate.type.BinaryType@2b2b7e3c
+2022-07-02 21:12:44.022 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration wrapper-binary -&gt; org.hibernate.type.WrapperBinaryType@6b030101
+2022-07-02 21:12:44.023 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Byte[] -&gt; org.hibernate.type.WrapperBinaryType@6b030101
+2022-07-02 21:12:44.023 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [Ljava.lang.Byte; -&gt; org.hibernate.type.WrapperBinaryType@6b030101
+2022-07-02 21:12:44.023 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration row_version -&gt; org.hibernate.type.RowVersionType@1a3b1f7e
+2022-07-02 21:12:44.023 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration image -&gt; org.hibernate.type.ImageType@dbc7e0a
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration characters -&gt; org.hibernate.type.CharArrayType@5ddd84d2
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration char[] -&gt; org.hibernate.type.CharArrayType@5ddd84d2
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [C -&gt; org.hibernate.type.CharArrayType@5ddd84d2
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration wrapper-characters -&gt; org.hibernate.type.CharacterArrayType@62b786dc
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration [Ljava.lang.Character; -&gt; org.hibernate.type.CharacterArrayType@62b786dc
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration Character[] -&gt; org.hibernate.type.CharacterArrayType@62b786dc
+2022-07-02 21:12:44.024 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration text -&gt; org.hibernate.type.TextType@7c31e410
+2022-07-02 21:12:44.025 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration ntext -&gt; org.hibernate.type.NTextType@4e8afdad
+2022-07-02 21:12:44.025 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration blob -&gt; org.hibernate.type.BlobType@173a5fad
+2022-07-02 21:12:44.025 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Blob -&gt; org.hibernate.type.BlobType@173a5fad
+2022-07-02 21:12:44.026 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration materialized_blob -&gt; org.hibernate.type.MaterializedBlobType@6fc0e448
+2022-07-02 21:12:44.026 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration clob -&gt; org.hibernate.type.ClobType@7c0e4e4e
+2022-07-02 21:12:44.026 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.Clob -&gt; org.hibernate.type.ClobType@7c0e4e4e
+2022-07-02 21:12:44.026 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration nclob -&gt; org.hibernate.type.NClobType@f3876ef
+2022-07-02 21:12:44.027 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.sql.NClob -&gt; org.hibernate.type.NClobType@f3876ef
+2022-07-02 21:12:44.027 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration materialized_clob -&gt; org.hibernate.type.MaterializedClobType@4c8d45cf
+2022-07-02 21:12:44.027 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration materialized_nclob -&gt; org.hibernate.type.MaterializedNClobType@1c58d7be
+2022-07-02 21:12:44.027 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration serializable -&gt; org.hibernate.type.SerializableType@3eee08f5
+2022-07-02 21:12:44.028 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration object -&gt; org.hibernate.type.ObjectType@ce2eaa7
+2022-07-02 21:12:44.028 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration java.lang.Object -&gt; org.hibernate.type.ObjectType@ce2eaa7
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_date -&gt; org.hibernate.type.AdaptedImmutableType@6814262d
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_time -&gt; org.hibernate.type.AdaptedImmutableType@7fc1fd31
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_timestamp -&gt; org.hibernate.type.AdaptedImmutableType@75a9cc24
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_dbtimestamp -&gt; org.hibernate.type.AdaptedImmutableType@4449a60b
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_calendar -&gt; org.hibernate.type.AdaptedImmutableType@da5d5e1
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_calendar_date -&gt; org.hibernate.type.AdaptedImmutableType@7d7d8911
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_binary -&gt; org.hibernate.type.AdaptedImmutableType@460eb276
+2022-07-02 21:12:44.029 DEBUG 31979 --- [    Test worker] o.h.t.BasicTypeRegistry                  : Adding type registration imm_serializable -&gt; org.hibernate.type.AdaptedImmutableType@4ffe3d42
+2022-07-02 21:12:44.060  INFO 31979 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-07-02 21:12:44.108  INFO 31979 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-07-02 21:12:44.123  INFO 31979 --- [    Test worker] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-07-02 21:12:44.151 DEBUG 31979 --- [    Test worker] o.h.t.s.TypeConfiguration$Scope          : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@16944b58] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@1dbc607d]
+2022-07-02 21:12:44.340 DEBUG 31979 --- [    Test worker] o.h.t.EnumType                           : Using NAMED-based conversion for Enum com.Linguine.domain.member.MemberSpec
+2022-07-02 21:12:44.340 DEBUG 31979 --- [    Test worker] o.h.t.s.TypeConfiguration$Scope          : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@16944b58] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@5cf33d25]
+2022-07-02 21:12:44.528 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop table if exists comments CASCADE 
+Hibernate: 
+    
+    drop table if exists comments CASCADE 
+2022-07-02 21:12:44.530  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964530 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop table if exists comments CASCADE 
+
+    drop table if exists comments CASCADE ;
+2022-07-02 21:12:44.530 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop table if exists member CASCADE 
+Hibernate: 
+    
+    drop table if exists member CASCADE 
+2022-07-02 21:12:44.530  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964530 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop table if exists member CASCADE 
+
+    drop table if exists member CASCADE ;
+2022-07-02 21:12:44.530 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop table if exists post CASCADE 
+Hibernate: 
+    
+    drop table if exists post CASCADE 
+2022-07-02 21:12:44.531  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964531 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop table if exists post CASCADE 
+
+    drop table if exists post CASCADE ;
+2022-07-02 21:12:44.531 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    drop sequence if exists hibernate_sequence
+Hibernate: 
+    
+    drop sequence if exists hibernate_sequence
+2022-07-02 21:12:44.531  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964531 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    drop sequence if exists hibernate_sequence
+
+    drop sequence if exists hibernate_sequence;
+2022-07-02 21:12:44.533 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+2022-07-02 21:12:44.533  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964533 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-07-02 21:12:44.534 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    )
+Hibernate: 
+    
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    )
+2022-07-02 21:12:44.539  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964539 | took 5ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    )
+
+    create table comments (
+       comment_id bigint not null,
+        comment_password varchar(255),
+        commented_date timestamp,
+        contents varchar(255),
+        member_id bigint,
+        post_id bigint,
+        primary key (comment_id)
+    );
+2022-07-02 21:12:44.539 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    )
+2022-07-02 21:12:44.540  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964540 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    )
+
+    create table member (
+       id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        email varchar(255),
+        last_login_time timestamp,
+        name varchar(255),
+        nick_name varchar(255),
+        password varchar(255),
+        spec varchar(255),
+        primary key (id)
+    );
+2022-07-02 21:12:44.540 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        comments_cnt integer not null,
+        contents varchar(255),
+        hit_cnt integer not null,
+        owner bigint,
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    )
+Hibernate: 
+    
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        comments_cnt integer not null,
+        contents varchar(255),
+        hit_cnt integer not null,
+        owner bigint,
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    )
+2022-07-02 21:12:44.541  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964541 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        comments_cnt integer not null,
+        contents varchar(255),
+        hit_cnt integer not null,
+        owner bigint,
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    )
+
+    create table post (
+       ptype varchar(31) not null,
+        post_id bigint generated by default as identity,
+        register_time timestamp,
+        update_time timestamp,
+        comments_cnt integer not null,
+        contents varchar(255),
+        hit_cnt integer not null,
+        owner bigint,
+        title varchar(255),
+        is_buying boolean,
+        is_expired boolean,
+        price integer,
+        member_id bigint,
+        primary key (post_id)
+    );
+2022-07-02 21:12:44.541 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member
+Hibernate: 
+    
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member
+2022-07-02 21:12:44.558  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964558 | took 16ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member
+
+    alter table comments 
+       add constraint FK5my97to6xmqeuycmeelttgj44 
+       foreign key (member_id) 
+       references member;
+2022-07-02 21:12:44.558 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post
+Hibernate: 
+    
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post
+2022-07-02 21:12:44.560  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964560 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post
+
+    alter table comments 
+       add constraint FKbqnvawwwv4gtlctsi3o7vs131 
+       foreign key (post_id) 
+       references post;
+2022-07-02 21:12:44.560 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member
+Hibernate: 
+    
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member
+2022-07-02 21:12:44.560  INFO 31979 --- [    Test worker] p6spy                                    : #1656763964560 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member
+
+    alter table post 
+       add constraint FK83s99f4kx8oiqm3ro0sasmpww 
+       foreign key (member_id) 
+       references member;
+2022-07-02 21:12:44.561  INFO 31979 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-02 21:12:44.564 TRACE 31979 --- [    Test worker] o.h.t.s.TypeConfiguration$Scope          : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@5cf33d25] for TypeConfiguration
+2022-07-02 21:12:44.565  INFO 31979 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-02 21:12:44.806  WARN 31979 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-02 21:12:44.930  WARN 31979 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-07-02 21:12:44.932  INFO 31979 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/**']
+2022-07-02 21:12:44.933  WARN 31979 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-07-02 21:12:44.933  INFO 31979 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/**']
+2022-07-02 21:12:44.933  WARN 31979 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-07-02 21:12:44.933  INFO 31979 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/img/**']
+2022-07-02 21:12:45.008  INFO 31979 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b44121e, org.springframework.security.web.context.SecurityContextPersistenceFilter@19b33b0d, org.springframework.security.web.header.HeaderWriterFilter@5694f6a0, org.springframework.security.web.authentication.logout.LogoutFilter@75693526, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@514c6ca0, org.springframework.security.web.session.ConcurrentSessionFilter@511ad0dd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d827673, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34893693, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@28705150, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28b286c0, org.springframework.security.web.session.SessionManagementFilter@237824b0, org.springframework.security.web.access.ExceptionTranslationFilter@25d87313, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@755a4ef5]
+2022-07-02 21:12:45.257  INFO 31979 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-02 21:12:45.443  INFO 31979 --- [    Test worker] c.L.r.BoardRepositoryImplTest            : Started BoardRepositoryImplTest in 2.984 seconds (JVM running for 5.776)
+2022-07-02 21:12:45.640 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    insert 
+    into
+        member
+        (id, register_time, update_time, email, last_login_time, name, nick_name, password, spec) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        member
+        (id, register_time, update_time, email, last_login_time, name, nick_name, password, spec) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?, ?)
+2022-07-02 21:12:45.643 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.643 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.644 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [123@naver.com]
+2022-07-02 21:12:45.644 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.644 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [VARCHAR] - [kim]
+2022-07-02 21:12:45.644 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [VARCHAR] - [hello me]
+2022-07-02 21:12:45.644 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [7] as [VARCHAR] - [$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K]
+2022-07-02 21:12:45.644 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [8] as [VARCHAR] - [null]
+2022-07-02 21:12:45.645  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965645 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+insert into member (id, register_time, update_time, email, last_login_time, name, nick_name, password, spec) values (default, ?, ?, ?, ?, ?, ?, ?, ?)
+insert into member (id, register_time, update_time, email, last_login_time, name, nick_name, password, spec) values (default, NULL, NULL, '123@naver.com', NULL, 'kim', 'hello me', '$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K', NULL);
+2022-07-02 21:12:45.653  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965653 | took 0ms | commit | connection 3| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.659 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+Hibernate: 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+2022-07-02 21:12:45.660 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.662  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965662 | took 1ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=?
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=1;
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register2_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t3_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([email4_1_0_] : [VARCHAR]) - [123@naver.com]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([last_log5_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([name6_1_0_] : [VARCHAR]) - [kim]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([nick_nam7_1_0_] : [VARCHAR]) - [hello me]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([password8_1_0_] : [VARCHAR]) - [$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K]
+2022-07-02 21:12:45.664 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([spec9_1_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.666 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.comments#1]
+2022-07-02 21:12:45.666 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.posts#1]
+2022-07-02 21:12:45.667  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965667 | took 0ms | commit | connection 4| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.672 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    insert 
+    into
+        post
+        (post_id, register_time, update_time, comments_cnt, contents, hit_cnt, member_id, owner, title, ptype) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?, ?, 'free')
+Hibernate: 
+    insert 
+    into
+        post
+        (post_id, register_time, update_time, comments_cnt, contents, hit_cnt, member_id, owner, title, ptype) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?, ?, 'free')
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [INTEGER] - [0]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [VARCHAR] - [hihi hello world]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [INTEGER] - [0]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [BIGINT] - [null]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [7] as [BIGINT] - [1]
+2022-07-02 21:12:45.673 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [8] as [VARCHAR] - [hi]
+2022-07-02 21:12:45.674  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965674 | took 0ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+insert into post (post_id, register_time, update_time, comments_cnt, contents, hit_cnt, member_id, owner, title, ptype) values (default, ?, ?, ?, ?, ?, ?, ?, ?, 'free')
+insert into post (post_id, register_time, update_time, comments_cnt, contents, hit_cnt, member_id, owner, title, ptype) values (default, NULL, NULL, 0, 'hihi hello world', 0, NULL, 1, 'hi', 'free');
+2022-07-02 21:12:45.674  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965674 | took 0ms | commit | connection 5| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.675 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+Hibernate: 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+2022-07-02 21:12:45.676 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.676  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965676 | took 0ms | statement | connection 6| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=?
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=1;
+2022-07-02 21:12:45.676 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([ptype1_2_0_] : [VARCHAR]) - [free]
+2022-07-02 21:12:45.676 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register3_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.676 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t4_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comments5_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents6_2_0_] : [VARCHAR]) - [hihi hello world]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([hit_cnt7_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_13_2_0_] : [BIGINT]) - [null]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([owner8_2_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title9_2_0_] : [VARCHAR]) - [hi]
+2022-07-02 21:12:45.677 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.board.Post.comments#1]
+2022-07-02 21:12:45.678  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965678 | took 0ms | commit | connection 6| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.678 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+Hibernate: 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+2022-07-02 21:12:45.681 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.682  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965682 | took 0ms | statement | connection 7| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=?
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=1;
+2022-07-02 21:12:45.682 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register2_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t3_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([email4_1_0_] : [VARCHAR]) - [123@naver.com]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([last_log5_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([name6_1_0_] : [VARCHAR]) - [kim]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([nick_nam7_1_0_] : [VARCHAR]) - [hello me]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([password8_1_0_] : [VARCHAR]) - [$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K]
+2022-07-02 21:12:45.683 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([spec9_1_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.684 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.comments#1]
+2022-07-02 21:12:45.684 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.posts#1]
+2022-07-02 21:12:45.684  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965684 | took 0ms | commit | connection 7| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.686 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+Hibernate: 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+2022-07-02 21:12:45.687 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.688  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965688 | took 0ms | statement | connection 8| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=?
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=1;
+2022-07-02 21:12:45.688 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([ptype1_2_0_] : [VARCHAR]) - [free]
+2022-07-02 21:12:45.689 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register3_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.689 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t4_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.689 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comments5_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.691 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents6_2_0_] : [VARCHAR]) - [hihi hello world]
+2022-07-02 21:12:45.691 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([hit_cnt7_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.691 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_13_2_0_] : [BIGINT]) - [null]
+2022-07-02 21:12:45.691 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([owner8_2_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.691 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title9_2_0_] : [VARCHAR]) - [hi]
+2022-07-02 21:12:45.691 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.board.Post.comments#1]
+2022-07-02 21:12:45.692  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965691 | took 0ms | commit | connection 8| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.698 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+Hibernate: 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+2022-07-02 21:12:45.699 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.700  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965700 | took 0ms | statement | connection 9| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=?
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=1;
+2022-07-02 21:12:45.701 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register2_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.701 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t3_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.701 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([email4_1_0_] : [VARCHAR]) - [123@naver.com]
+2022-07-02 21:12:45.701 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([last_log5_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.702 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([name6_1_0_] : [VARCHAR]) - [kim]
+2022-07-02 21:12:45.702 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([nick_nam7_1_0_] : [VARCHAR]) - [hello me]
+2022-07-02 21:12:45.702 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([password8_1_0_] : [VARCHAR]) - [$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K]
+2022-07-02 21:12:45.702 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([spec9_1_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.702 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.comments#1]
+2022-07-02 21:12:45.703 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.posts#1]
+2022-07-02 21:12:45.707  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965707 | took 0ms | commit | connection 9| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.709 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+Hibernate: 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+2022-07-02 21:12:45.711 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.712  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965712 | took 0ms | statement | connection 10| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=?
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=1;
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([ptype1_2_0_] : [VARCHAR]) - [free]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register3_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t4_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comments5_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents6_2_0_] : [VARCHAR]) - [hihi hello world]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([hit_cnt7_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_13_2_0_] : [BIGINT]) - [null]
+2022-07-02 21:12:45.712 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([owner8_2_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.713 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title9_2_0_] : [VARCHAR]) - [hi]
+2022-07-02 21:12:45.713 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.board.Post.comments#1]
+2022-07-02 21:12:45.715  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965715 | took 1ms | commit | connection 10| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.717 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+Hibernate: 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+2022-07-02 21:12:45.720 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.721  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965721 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=?
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=1;
+2022-07-02 21:12:45.721 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register2_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.721 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t3_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([email4_1_0_] : [VARCHAR]) - [123@naver.com]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([last_log5_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([name6_1_0_] : [VARCHAR]) - [kim]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([nick_nam7_1_0_] : [VARCHAR]) - [hello me]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([password8_1_0_] : [VARCHAR]) - [$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([spec9_1_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.comments#1]
+2022-07-02 21:12:45.722 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.posts#1]
+2022-07-02 21:12:45.723  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965723 | took 0ms | commit | connection 11| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.724 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2022-07-02 21:12:45.725  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965725 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2022-07-02 21:12:45.727 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    insert 
+    into
+        comments
+        (comment_password, commented_date, contents, member_id, post_id, comment_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        comments
+        (comment_password, commented_date, contents, member_id, post_id, comment_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2022-07-02 21:12:45.727 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [VARCHAR] - [null]
+2022-07-02 21:12:45.727 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.727 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [is this hello world?]
+2022-07-02 21:12:45.727 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [BIGINT] - [1]
+2022-07-02 21:12:45.728 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [BIGINT] - [1]
+2022-07-02 21:12:45.728 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [BIGINT] - [1]
+2022-07-02 21:12:45.728  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965728 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+insert into comments (comment_password, commented_date, contents, member_id, post_id, comment_id) values (?, ?, ?, ?, ?, ?)
+insert into comments (comment_password, commented_date, contents, member_id, post_id, comment_id) values (NULL, NULL, 'is this hello world?', 1, 1, 1);
+2022-07-02 21:12:45.729  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965729 | took 0ms | commit | connection 12| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.729 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2022-07-02 21:12:45.729  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965729 | took 0ms | statement | connection 13| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2022-07-02 21:12:45.730 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    insert 
+    into
+        comments
+        (comment_password, commented_date, contents, member_id, post_id, comment_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        comments
+        (comment_password, commented_date, contents, member_id, post_id, comment_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2022-07-02 21:12:45.730 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [VARCHAR] - [null]
+2022-07-02 21:12:45.730 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.730 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [No?]
+2022-07-02 21:12:45.730 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [BIGINT] - [1]
+2022-07-02 21:12:45.730 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [BIGINT] - [1]
+2022-07-02 21:12:45.730 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [BIGINT] - [2]
+2022-07-02 21:12:45.730  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965730 | took 0ms | statement | connection 13| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+insert into comments (comment_password, commented_date, contents, member_id, post_id, comment_id) values (?, ?, ?, ?, ?, ?)
+insert into comments (comment_password, commented_date, contents, member_id, post_id, comment_id) values (NULL, NULL, 'No?', 1, 1, 2);
+2022-07-02 21:12:45.730  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965730 | took 0ms | commit | connection 13| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.731 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2022-07-02 21:12:45.731  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965731 | took 0ms | statement | connection 14| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2022-07-02 21:12:45.731 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    insert 
+    into
+        comments
+        (comment_password, commented_date, contents, member_id, post_id, comment_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        comments
+        (comment_password, commented_date, contents, member_id, post_id, comment_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2022-07-02 21:12:45.732 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [VARCHAR] - [null]
+2022-07-02 21:12:45.732 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [TIMESTAMP] - [null]
+2022-07-02 21:12:45.732 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [i think right]
+2022-07-02 21:12:45.732 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [BIGINT] - [1]
+2022-07-02 21:12:45.732 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [BIGINT] - [1]
+2022-07-02 21:12:45.732 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [BIGINT] - [3]
+2022-07-02 21:12:45.732  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965732 | took 0ms | statement | connection 14| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+insert into comments (comment_password, commented_date, contents, member_id, post_id, comment_id) values (?, ?, ?, ?, ?, ?)
+insert into comments (comment_password, commented_date, contents, member_id, post_id, comment_id) values (NULL, NULL, 'i think right', 1, 1, 3);
+2022-07-02 21:12:45.733  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965733 | took 0ms | commit | connection 14| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+2022-07-02 21:12:45.824 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        comments0_.comment_id as comment_1_0_,
+        comments0_.comment_password as comment_2_0_,
+        comments0_.commented_date as commente3_0_,
+        comments0_.contents as contents4_0_,
+        comments0_.member_id as member_i5_0_,
+        comments0_.post_id as post_id6_0_ 
+    from
+        comments comments0_ 
+    where
+        comments0_.post_id=?
+Hibernate: 
+    select
+        comments0_.comment_id as comment_1_0_,
+        comments0_.comment_password as comment_2_0_,
+        comments0_.commented_date as commente3_0_,
+        comments0_.contents as contents4_0_,
+        comments0_.member_id as member_i5_0_,
+        comments0_.post_id as post_id6_0_ 
+    from
+        comments comments0_ 
+    where
+        comments0_.post_id=?
+2022-07-02 21:12:45.824 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.825  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965825 | took 0ms | statement | connection 15| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select comments0_.comment_id as comment_1_0_, comments0_.comment_password as comment_2_0_, comments0_.commented_date as commente3_0_, comments0_.contents as contents4_0_, comments0_.member_id as member_i5_0_, comments0_.post_id as post_id6_0_ from comments comments0_ where comments0_.post_id=?
+select comments0_.comment_id as comment_1_0_, comments0_.comment_password as comment_2_0_, comments0_.commented_date as commente3_0_, comments0_.contents as contents4_0_, comments0_.member_id as member_i5_0_, comments0_.post_id as post_id6_0_ from comments comments0_ where comments0_.post_id=1;
+2022-07-02 21:12:45.825 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comment_1_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.825 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comment_2_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.825 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([commente3_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.825 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents4_0_] : [VARCHAR]) - [is this hello world?]
+2022-07-02 21:12:45.825 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_i5_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([post_id6_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comment_1_0_] : [BIGINT]) - [2]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comment_2_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([commente3_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents4_0_] : [VARCHAR]) - [No?]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_i5_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([post_id6_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comment_1_0_] : [BIGINT]) - [3]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comment_2_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([commente3_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents4_0_] : [VARCHAR]) - [i think right]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_i5_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.826 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([post_id6_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.826 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+Hibernate: 
+    select
+        member0_.id as id1_1_0_,
+        member0_.register_time as register2_1_0_,
+        member0_.update_time as update_t3_1_0_,
+        member0_.email as email4_1_0_,
+        member0_.last_login_time as last_log5_1_0_,
+        member0_.name as name6_1_0_,
+        member0_.nick_name as nick_nam7_1_0_,
+        member0_.password as password8_1_0_,
+        member0_.spec as spec9_1_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.827  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965827 | took 0ms | statement | connection 15| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=?
+select member0_.id as id1_1_0_, member0_.register_time as register2_1_0_, member0_.update_time as update_t3_1_0_, member0_.email as email4_1_0_, member0_.last_login_time as last_log5_1_0_, member0_.name as name6_1_0_, member0_.nick_name as nick_nam7_1_0_, member0_.password as password8_1_0_, member0_.spec as spec9_1_0_ from member member0_ where member0_.id=1;
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register2_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t3_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([email4_1_0_] : [VARCHAR]) - [123@naver.com]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([last_log5_1_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([name6_1_0_] : [VARCHAR]) - [kim]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([nick_nam7_1_0_] : [VARCHAR]) - [hello me]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([password8_1_0_] : [VARCHAR]) - [$2a$10$rs170lBPanxw3zH72cONw.SL75tvyEAWZrTt.cceUjTUGwW5/xV9K]
+2022-07-02 21:12:45.827 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([spec9_1_0_] : [VARCHAR]) - [null]
+2022-07-02 21:12:45.828 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.comments#1]
+2022-07-02 21:12:45.828 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.member.Member.posts#1]
+2022-07-02 21:12:45.831  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965831 | took 0ms | commit | connection 15| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+res = [com.Linguine.domain.board.Comments@4104b6a6, com.Linguine.domain.board.Comments@21dd405a, com.Linguine.domain.board.Comments@31d11998]
+2022-07-02 21:12:45.832 DEBUG 31979 --- [    Test worker] o.h.SQL                                  : 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+Hibernate: 
+    select
+        post0_.post_id as post_id2_2_0_,
+        post0_.register_time as register3_2_0_,
+        post0_.update_time as update_t4_2_0_,
+        post0_.comments_cnt as comments5_2_0_,
+        post0_.contents as contents6_2_0_,
+        post0_.hit_cnt as hit_cnt7_2_0_,
+        post0_.member_id as member_13_2_0_,
+        post0_.owner as owner8_2_0_,
+        post0_.title as title9_2_0_,
+        post0_.is_buying as is_buyi10_2_0_,
+        post0_.is_expired as is_expi11_2_0_,
+        post0_.price as price12_2_0_,
+        post0_.ptype as ptype1_2_0_ 
+    from
+        post post0_ 
+    where
+        post0_.post_id=?
+2022-07-02 21:12:45.832 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [1]
+2022-07-02 21:12:45.833  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965833 | took 0ms | statement | connection 16| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=?
+select post0_.post_id as post_id2_2_0_, post0_.register_time as register3_2_0_, post0_.update_time as update_t4_2_0_, post0_.comments_cnt as comments5_2_0_, post0_.contents as contents6_2_0_, post0_.hit_cnt as hit_cnt7_2_0_, post0_.member_id as member_13_2_0_, post0_.owner as owner8_2_0_, post0_.title as title9_2_0_, post0_.is_buying as is_buyi10_2_0_, post0_.is_expired as is_expi11_2_0_, post0_.price as price12_2_0_, post0_.ptype as ptype1_2_0_ from post post0_ where post0_.post_id=1;
+2022-07-02 21:12:45.833 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([ptype1_2_0_] : [VARCHAR]) - [free]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([register3_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([update_t4_2_0_] : [TIMESTAMP]) - [null]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([comments5_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([contents6_2_0_] : [VARCHAR]) - [hihi hello world]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([hit_cnt7_2_0_] : [INTEGER]) - [0]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([member_13_2_0_] : [BIGINT]) - [null]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([owner8_2_0_] : [BIGINT]) - [1]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title9_2_0_] : [VARCHAR]) - [hi]
+2022-07-02 21:12:45.834 TRACE 31979 --- [    Test worker] o.h.t.CollectionType                     : Created collection wrapper: [com.Linguine.domain.board.Post.comments#1]
+2022-07-02 21:12:45.835  INFO 31979 --- [    Test worker] p6spy                                    : #1656763965835 | took 0ms | commit | connection 16| url jdbc:h2:tcp://localhost/~/dev/java/Linguine
+
+;
+0
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4.1</a> at 2022. 7. 2. 오후 9:12:45</p>
+</div>
+</div>
+</body>
+</html>

@@ -12,7 +12,7 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 @Setter
 public class MemberForm {
-//    private String public_id;
+
     @NotEmpty(message = "이름를 입력하세요.")
     private String name;
     @NotEmpty(message = "닉네임을 입력하세요.")
@@ -26,8 +26,5 @@ public class MemberForm {
     private String email;
     private MemberSpec spec;
 
-//    @AssertTrue(message = "비밀번호와 다릅니다.")
-//    public boolean confirm(String pw, String pw_confirm) {
-//        return pw == pw_confirm;
-//    }
+
 }

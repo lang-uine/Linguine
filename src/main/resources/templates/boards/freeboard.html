@@ -5,9 +5,9 @@
 </head>
 <body class="sb-nav-fixed">
 <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-<nav th:replace="fragments/navigation :: navigation"/>
+<nav th:replace="fragments/navigation :: navigation(${activeUserName})"/>
 <div id="layoutSidenav">
-    <div th:replace="fragments/sidenav :: #layoutSidenav_nav"/>
+    <div th:replace="fragments/sidenav :: #layoutSidenav_nav(${activeUserName})"/>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4" style = "margin-top: 50px">
@@ -32,7 +32,7 @@
                                 <td th:text="${i.index+1}"></td>
                                 <td><a th:href="@{/boards/free/post(id=${post.getId()})}"
                                        th:text="${post.getTitle()}"></a></td>
-                                <td th:text="${post.getPosted_Date()}"></td>
+                                <td th:text="${post.getRegisterTime()}"></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
                             </tr>
                             </tbody>

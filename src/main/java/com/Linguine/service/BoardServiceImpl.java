@@ -1,5 +1,6 @@
 package com.Linguine.service;
 
+import com.Linguine.domain.board.Comments;
 import com.Linguine.domain.board.Post;
 import com.Linguine.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,15 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
+    @Transactional
+    public Long saveComments(Comments comments) {
+        boardRepository.saveComments(comments);
+        comments.getPost().addCountComment();
+        return comments.getId();
+    }
+
+
+    @Override
     public List<Post> findAllPost() {
         return boardRepository.findAll();
     }
@@ -35,5 +45,10 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public List<? extends Post> findByCategory(String category) {
         return boardRepository.findByCategory(category);
+    }
+
+    @Override
+    public List<Comments> findAllCommentsById(Long id) {
+        return boardRepository.findAllCommentsById(id);
     }
 }
