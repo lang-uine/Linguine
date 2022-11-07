@@ -2,12 +2,12 @@
 .DS_Store
 
 #Build files
-*/.build
-*/build/*
+build/
 *.gradle
+!build.gradle
 
 #IDE files
-.idea/*
+.idea/
 
 #oauth yml
 application-oauth.yml
