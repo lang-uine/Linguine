@@ -1,4 +1,4 @@
-package com.Linguine.controller;
+package com.Linguine.domain.member;
 
 import com.Linguine.domain.member.MemberSpec;
 import lombok.Getter;
