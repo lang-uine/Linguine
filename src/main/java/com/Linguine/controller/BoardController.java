@@ -1,6 +1,7 @@
 package com.Linguine.controller;
 
 
+import com.Linguine.config.auth.SessionMember;
 import com.Linguine.domain.board.FreePost;
 import com.Linguine.domain.board.Post;
 import com.Linguine.domain.board.ReviewPost;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 
@@ -21,6 +23,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardService boardService;
+    private final HttpSession httpSession;
 
     //        @GetMapping("/boards/")//게시글 등록을 누르면 현재 url의 category를 따와서 어디에 글을 쓸건지 생각
 //        public String newFreepost(Model model, @RequestParam("category") String category ) {
@@ -39,7 +42,11 @@ public class BoardController {
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
     public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO, Model model) {
         if (memberDTO == null) {
-            model.addAttribute("activeUserName", "게스트");
+            SessionMember oauthMember = (SessionMember)httpSession.getAttribute("user");
+            if (oauthMember == null) {
+                model.addAttribute("activeUserName", "게스트");
+            }
+
         } else {
             model.addAttribute("activeUserName", memberDTO.getMember().getNickName());
         }

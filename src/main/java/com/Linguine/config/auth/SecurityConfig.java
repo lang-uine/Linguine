@@ -50,10 +50,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		*/
         //http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 
-        http.csrf().disable()	// csrf 토큰을 비활성화
+        http.csrf().disable()    // csrf 토큰을 비활성화
                 .authorizeRequests() // 요청 URL에 따라 접근 권한을 설정
                 .antMatchers("/boards/write/**").authenticated()//2022-06-29_yeoooo: antPatter에 따라 인증이 필요한 경로
-                .antMatchers("/","/login/**","/js/**","/css/**","/image/**","/register/**","/boards/**").permitAll() // 해당 경로들은 접근을 허용
+                .antMatchers("/", "/login/**", "/js/**", "/css/**", "/image/**", "/register/**", "/boards/**").permitAll() // 해당 경로들은 접근을 허용
                 .anyRequest() // 다른 모든 요청은
                 .authenticated() // 인증된 유저만 접근을 허용
                 .and()
@@ -86,7 +86,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .userInfoEndpoint() // oauth2 로그인 성공 후 가져올 때의 설정들
                 // 소셜로그인 성공 시 후속 조치를 진행할 UserService 인터페이스 구현체 등록
-                .userService(customOAuth2UserService); // 리소스 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시
+                .userService(customOAuth2UserService) // 리소스 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시
+
         ;
     }
 

@@ -26,8 +26,10 @@ public class HomeController {
         SessionMember oauthMember = (SessionMember) httpSession.getAttribute("user");
 
         if (oauthMember != null) {
-            model.addAttribute("activeUserName", oauthMember);
-            log.info("login : {}", oauthMember);
+            model.addAttribute("activeUserName", oauthMember.getName());
+            System.out.println("oauthMember = " + oauthMember.getName());
+
+
         }
         if(memberDTO == null) {
             model.addAttribute("activeUserName", "게스트");
