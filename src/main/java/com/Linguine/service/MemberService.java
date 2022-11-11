@@ -2,6 +2,7 @@ package com.Linguine.service;
 
 import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.MemberDTO;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Optional;
 
@@ -13,6 +14,7 @@ public interface MemberService{
 //    public List<Member> findMembers();
     public Optional<Member> findById(Long memberId);
 
+    public UserDetails loadUserByUsername(String email);
 
 
 }

@@ -30,6 +30,11 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
     }
 
     @Override
+    public Map<String, Object> getAttribute(String name) {
+        return null;
+    }
+
+    @Override
     public Map<String, Object> getAttributes() {
         return null;
     }
@@ -48,31 +53,31 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
 
     @Override
     public String getPassword() {
-        return null;
+        return member.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return member.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }

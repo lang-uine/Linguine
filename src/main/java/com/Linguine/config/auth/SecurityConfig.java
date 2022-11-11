@@ -1,5 +1,6 @@
 package com.Linguine.config.auth;
 
+import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.handler.AuthFailureHandler;
 import com.Linguine.domain.member.handler.AuthSucessHandler;
 import com.Linguine.service.MemberService;

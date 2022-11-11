@@ -29,6 +29,8 @@ public class Member extends BaseTimeEntity implements UserDetails {
     private String password;
     private String email;
     private String nickName;
+
+    private String userName;
     private LocalDateTime lastLoginTime;
 
     private Role role;
@@ -47,7 +49,7 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.getEmail();
+        return this.getUsername();
     }
 
 
@@ -72,13 +74,14 @@ public class Member extends BaseTimeEntity implements UserDetails {
     }
 
     @Builder
-    public Member(Long id, String email, String name, String nickName,String password, LocalDateTime lastLoginTime, Role role) {
+    public Member(Long id, String email, String name, String userName, String nickName,String password, LocalDateTime lastLoginTime, Role role) {
         super();
         this.id = id;
         this.name = name;
         this.nickName = nickName;
         this.email = email;
         this.password = password;
+        this.userName = userName;
         this.lastLoginTime = lastLoginTime;
         this.role = role;
     }
