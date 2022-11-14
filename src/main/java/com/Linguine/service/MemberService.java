@@ -14,7 +14,5 @@ public interface MemberService{
 //    public List<Member> findMembers();
     public Optional<Member> findById(Long memberId);
 
-    public UserDetails loadUserByUsername(String email);
-
 
 }

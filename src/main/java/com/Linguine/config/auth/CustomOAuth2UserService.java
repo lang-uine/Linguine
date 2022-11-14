@@ -1,11 +1,14 @@
 package com.Linguine.config.auth;
 
+import com.Linguine.domain.member.CustomUserDetails;
 import com.Linguine.domain.member.Member;
 import com.Linguine.repository.MemberRepository;
 import com.Linguine.service.MemberService;
 import lombok.RequiredArgsConstructor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
@@ -19,6 +22,7 @@ import java.util.Collections;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
     private final MemberRepository memberRepository;
 
@@ -39,10 +43,12 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
         Member member = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionMember(member)); // SessionUser (직렬화된 dto 클래스 사용)
+//        httpSession.setAttribute("user", new CustomUserDetails(member)); // SessionUser (직렬화된 dto 클래스 사용)
 
         return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.getRole().getKey())),
                 attributes.getAttributes(),
-                attributes.getNameAttributeKey());
+                attributes.getNameAttributeKey())
+                ;
     }
 
     // 유저 생성 및 수정 서비스 로직

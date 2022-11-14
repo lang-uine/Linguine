@@ -1,7 +1,7 @@
 package com.Linguine.config.auth;
 
+import com.Linguine.domain.member.CustomUserDetails;
 import com.Linguine.domain.member.Member;
-import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +24,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         System.out.println("username = " + username);
         Member member = memberRepository.findByUserName(username).orElseThrow(() ->
                 new UsernameNotFoundException("사용자가 존재하지 않습니다."));
-        return new MemberAdapter(member);
+        return new CustomUserDetails(member);
     }
 }

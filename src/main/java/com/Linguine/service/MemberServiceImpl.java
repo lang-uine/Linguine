@@ -1,14 +1,8 @@
 package com.Linguine.service;
 
-import com.Linguine.domain.member.CustomUserDetails;
 import com.Linguine.domain.member.Member;
-import com.Linguine.domain.member.MemberAdapter;
-import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +12,7 @@ import java.util.Optional;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class MemberServiceImpl implements MemberService, UserDetailsService{
+public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
 
@@ -63,13 +57,6 @@ public class MemberServiceImpl implements MemberService, UserDetailsService{
 //    }
 //
 
-    @Override
-    @Transactional
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Member member = memberRepository.findByEmail(email).get();
-        if(member == null){ throw new UsernameNotFoundException("Not Found account");}
-        return new MemberDTO(member);
-    }
 
 
 //    @Transactional
