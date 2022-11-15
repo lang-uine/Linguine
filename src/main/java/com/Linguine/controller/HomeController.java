@@ -1,5 +1,6 @@
 package com.Linguine.controller;
 
+import com.Linguine.domain.member.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/")
-    public String home(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+    public String home(@AuthenticationPrincipal CustomUserDetails userDetails, Model model) {
 //        SessionMember oauthMember = (SessionMember) httpSession.getAttribute("user");
 //        if (authentication == null) {
 //            model.addAttribute("activeUserName", "게스트");
