@@ -16,17 +16,10 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(@AuthenticationPrincipal CustomUserDetails userDetails, Model model) {
-//        SessionMember oauthMember = (SessionMember) httpSession.getAttribute("user");
-//        if (authentication == null) {
-//            model.addAttribute("activeUserName", "게스트");
-//        }else{
-//            UserDetails userDetails1 = (CustomUserDetails) authentication.getPrincipal();
-//            userDetails1.getUsername()
 
-//            System.out.println("authentication.getName() = " + userDetails1.getUsername());
-//            z
         if (userDetails != null) {
             log.info("login User -> {}", userDetails.toString());
+            model.addAttribute("activeUserName", userDetails.getMember().getName());
         } else {
             log.info("No user Accessed");
             model.addAttribute("activeUserName", "게스트");

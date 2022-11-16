@@ -48,9 +48,7 @@ public class CustomUserDetailsService implements UserDetailsService, OAuth2UserS
         // OAuth2UserService
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
         Member member = saveOrUpdate(attributes);
-        System.out.println("member.toString() = " + member.toString());
         session.setAttribute("user", new CustomUserDetails(member)); // SessionUser (직렬화된 dto 클래스 사용)
-//        httpSession.setAttribute("user", new CustomUserDetails(member)); // SessionUser (직렬화된 dto 클래스 사용)
 
         return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.getRole().getKey())),
                 attributes.getAttributes(),
@@ -59,7 +57,6 @@ public class CustomUserDetailsService implements UserDetailsService, OAuth2UserS
     }
     private Member saveOrUpdate(OAuthAttributes attributes){
         Member user = memberRepository.findByEmail(attributes.getEmail())
-//                .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                 .map(entity -> entity.updateOAuth(attributes.getName()))
                 .orElse(attributes.toEntity());
         return memberRepository.save(user);
