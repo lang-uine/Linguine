@@ -34,7 +34,7 @@ public void BoardRepositoryImplTest() throws Exception {
     FreePost freePost = FreePost.builder()
             .title("hi")
             .contents("hihi hello world")
-            .owner(memberService.findById(savedMember).get().getId())
+//            .owner(memberService.findById(savedMember).get().getId())
             .hitCnt(0)
             .commentsCnt(0)
             .build();
