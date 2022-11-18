@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Getter
 public class CustomUserDetails implements UserDetails, OAuth2User {
-    private Member member;
+    private final Member member;
     private Map<String, Object> attribute;
 
     public CustomUserDetails(Member member) {

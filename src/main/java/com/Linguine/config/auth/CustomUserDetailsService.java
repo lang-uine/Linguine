@@ -2,8 +2,7 @@ package com.Linguine.config.auth;
 
 import com.Linguine.domain.member.CustomUserDetails;
 import com.Linguine.domain.member.Member;
-import com.Linguine.domain.member.MemberDTO;
-import com.Linguine.domain.member.UserAdapter;
+import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService, OAuth2UserS
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Member member = memberRepository.findByEmail(email).orElseThrow(() ->
                 new UsernameNotFoundException("사용자가 존재하지 않습니다."));
-        return new UserAdapter(member);
+        return new MemberAdapter(member);
     }
 
     @Override
@@ -49,12 +48,13 @@ public class CustomUserDetailsService implements UserDetailsService, OAuth2UserS
         // OAuth2UserService
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
         Member member = saveOrUpdate(attributes);
-        session.setAttribute("user", new SessionMember(member)); // SessionUser (직렬화된 dto 클래스 사용)
+        session.setAttribute("user", new CustomUserDetails(member)); // SessionUser (직렬화된 dto 클래스 사용)
 
-        return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.getRole().getKey())),
-                attributes.getAttributes(),
-                attributes.getNameAttributeKey())
-                ;
+//        return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.getRole().getKey())),
+//                attributes.getAttributes(),
+//                attributes.getNameAttributeKey())
+//                ;
+        return new CustomUserDetails(member, )
     }
     private Member saveOrUpdate(OAuthAttributes attributes){
         Member user = memberRepository.findByEmail(attributes.getEmail())
