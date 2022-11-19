@@ -31,6 +31,10 @@ public class Member extends BaseTimeEntity implements UserDetails {
     private String nickName;
     private LocalDateTime lastLoginTime;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> collectors = new ArrayList<>();

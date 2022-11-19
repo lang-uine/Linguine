@@ -30,7 +30,7 @@ class MemberRepositoryTest {
                 .build();
         String savedE = member.getEmail();
         //when
-        Member judge = memberRepository.findByEmail(savedE);
+        Member judge = memberRepository.findByEmail(savedE).get();
 
         //then
         System.out.println("savedE = " + savedE);

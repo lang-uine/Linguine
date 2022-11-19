@@ -28,7 +28,7 @@ public class MemberServiceImpl implements MemberService,UserDetailsService{
     }
 
     @Override
-    public Member findByEmail(String email) {
+    public Optional<Member> findByEmail(String email) {
         return memberRepository.findByEmail(email);
     }
     public Optional<Member> findById(Long id) {
@@ -65,7 +65,7 @@ public class MemberServiceImpl implements MemberService,UserDetailsService{
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Member member = memberRepository.findByEmail(email);
+        Member member = memberRepository.findByEmail(email).get();
         if(member == null){ throw new UsernameNotFoundException("Not Found account");}
         return new MemberDTO(member);
     }
