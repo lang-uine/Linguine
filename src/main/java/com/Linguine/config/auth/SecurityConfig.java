@@ -1,11 +1,7 @@
 package com.Linguine.config.auth;
 
-import com.Linguine.domain.member.CustomUserDetails;
-import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.handler.AuthFailureHandler;
 import com.Linguine.domain.member.handler.AuthSucessHandler;
-import com.Linguine.service.MemberService;
-import com.Linguine.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,8 +11,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @RequiredArgsConstructor
@@ -26,8 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final AuthFailureHandler authFailureHandler;
     private final AuthSucessHandler authSucessHandler;
     private final CustomUserDetailsService customUserDetailsService;
-    private final CustomOAuth2UserService customOAuth2UserService;
-
     private final CustomOAuth2UserService customOAuth2UserService;
 
     @Bean
@@ -86,21 +78,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .rememberMeParameter("remember-me")
                 .and()
                 .oauth2Login()
-<<<<<<< Updated upstream
                 .loginPage("/login")
                 .successHandler(authSucessHandler)
                 .userInfoEndpoint() // oauth2 로그인 성공 후 가져올 때의 설정들
                 // 소셜로그인 성공 시 후속 조치를 진행할 UserService 인터페이스 구현체 등록
                 .userService(customOAuth2UserService) // 리소스 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시
-
-
-
         ;
-=======
-                .userInfoEndpoint() // oauth2 로그인 성공 후 가져올 때의 설정들
-                // 소셜로그인 성공 시 후속 조치를 진행할 UserService 인터페이스 구현체 등록
-                .userService(customOAuth2UserService); // 리소스 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시;
->>>>>>> Stashed changes
-    }
 
+    }
 }

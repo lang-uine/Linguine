@@ -42,15 +42,10 @@ spring:
           #2022-05-08_yeoooo: show_sql 옵션은 hibernate가 날리는 모든 쿼리를 보여준다.
         format_sql: true
           #2022-05-08_yeoooo: format_sql 옵션은 inline이 아닌 format에 맞춰서 보여준다.
-<<<<<<< Updated upstream
-  profiles:
-    include: oauth
-=======
 
   profiles:
     include: oauth
 
->>>>>>> Stashed changes
 logging:
   level:
     org.hibernate.SQL: debug

@@ -204,3 +204,14 @@ gradle-app.setting
 application-oauth.yml
 
 # End of https://www.toptal.com/developers/gitignore/api/gradle,intellij,java,macos
+
+#Build files
+*/.build
+build/
+*.gradle
+
+#IDE files
+.idea/*
+
+#oauth yml
+application-oauth.yml

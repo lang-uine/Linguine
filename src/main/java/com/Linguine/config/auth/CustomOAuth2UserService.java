@@ -1,18 +1,14 @@
 package com.Linguine.config.auth;
 
-<<<<<<< Updated upstream
 import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
-=======
->>>>>>> Stashed changes
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
-<<<<<<< Updated upstream
 import org.springframework.stereotype.Service;
 
 @Service
@@ -37,20 +33,14 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         Member member = saveOrUpdate(attributes);
         System.out.println("member.getEmail() = " + member.getEmail());
         System.out.println(oAuth2User.getAttributes().toString());
-        
+
         return new MemberAdapter(member, oAuth2User.getAttributes());
     }
-    private Member saveOrUpdate(OAuthAttributes attributes){
+
+    private Member saveOrUpdate(OAuthAttributes attributes) {
         Member member = memberRepository.findByEmail(attributes.getEmail())
                 .map(entity -> entity.updateOAuth(attributes.getName()))
                 .orElse(attributes.toEntity());
         return memberRepository.save(member);
-=======
-
-public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
-    @Override
-    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        return null;
->>>>>>> Stashed changes
     }
 }
