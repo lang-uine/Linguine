@@ -41,9 +41,6 @@ public class Member extends BaseTimeEntity implements UserDetails {
         collectors.add(() -> {
             return "ROLE_USER";
         });
-
-        //collectors.add(new SimpleGrantedAuthority("Role"));
-
         return collectors;
     }
 

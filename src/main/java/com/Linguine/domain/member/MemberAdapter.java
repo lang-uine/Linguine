@@ -15,7 +15,6 @@ public class MemberAdapter extends CustomUserDetails {
         this.member = member;
     }
 
-
     public MemberAdapter(Member member, Map<String, Object> attributes){
         super(member, attributes);
         this.member = member;

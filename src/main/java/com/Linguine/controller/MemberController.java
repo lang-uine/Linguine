@@ -2,6 +2,7 @@ package com.Linguine.controller;
 
 import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.MemberForm;
+import com.Linguine.domain.member.Role;
 import com.Linguine.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,6 +35,7 @@ public class MemberController {
                 .name(form.getName())
                 .nickName(form.getNickName())
                 .email(form.getEmail())
+                .role(Role.USER)
                 .password(new BCryptPasswordEncoder().encode(form.getPassword()))
                 .lastLoginTime(LocalDateTime.now())
                 .build();

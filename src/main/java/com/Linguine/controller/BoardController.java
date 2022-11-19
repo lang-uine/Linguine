@@ -6,6 +6,7 @@ import com.Linguine.domain.board.FreePost;
 import com.Linguine.domain.board.Post;
 import com.Linguine.domain.board.ReviewPost;
 import com.Linguine.domain.board.TradingPost;
+import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,6 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardService boardService;
-    private final HttpSession httpSession;
 
     //        @GetMapping("/boards/")//게시글 등록을 누르면 현재 url의 category를 따와서 어디에 글을 쓸건지 생각
 //        public String newFreepost(Model model, @RequestParam("category") String category ) {
@@ -38,17 +38,12 @@ public class BoardController {
         return "boards/postForm";
     }
 
-
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
-    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO, Model model) {
-        if (memberDTO == null) {
-            SessionMember oauthMember = (SessionMember)httpSession.getAttribute("user");
-            if (oauthMember == null) {
-                model.addAttribute("activeUserName", "게스트");
-            }
-
+    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
+        if (memberAdapter == null) {
+            model.addAttribute("activeUserName", "게스트");
         } else {
-            model.addAttribute("activeUserName", memberDTO.getMember().getNickName());
+            model.addAttribute("activeUserName", memberAdapter.getMember().getName());
         }
         model.addAttribute("posts", boardService.findByCategory(category));
         model.addAttribute("category", category);
@@ -56,14 +51,13 @@ public class BoardController {
     }
 
     @PostMapping(value =  "boards/write")
-    public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO) {
+    public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter) {
 
         if (category.equals("free")) {
             FreePost post = FreePost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberDTO.getMember().getId())
-//                    .registerTime(post.getRegisterTime())
+                    .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
                     .hitCnt(0)
                     .build();
@@ -74,8 +68,7 @@ public class BoardController {
             TradingPost post = TradingPost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberDTO.getMember().getId())
-//                    .registerTime(post.getRegisterTime())
+                    .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
                     .hitCnt(0)
                     //2022-07-1_yeoooo : 구매/판매 여부, 만기 여부, 가격
@@ -88,15 +81,12 @@ public class BoardController {
             ReviewPost post = ReviewPost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberDTO.getMember().getId())
-//                    .registerTime(post.getRegisterTime())
+                    .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
                     .hitCnt(0)
                     .build();
             boardService.save(post);
         }
-
-
 
         return "redirect:/boards?category="+category;
     }

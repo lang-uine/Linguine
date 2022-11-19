@@ -36,7 +36,7 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
 
     @Override
     public Map<String, Object> getAttributes() {
-        return null;
+        return this.attribute;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
 
     @Override
     public String getUsername() {
-        return member.getUsername();
+        return member.getEmail();
     }
 
     @Override
