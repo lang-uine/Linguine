@@ -1,10 +1,12 @@
 package com.Linguine.controller;
 
 
+import com.Linguine.config.auth.SessionMember;
 import com.Linguine.domain.board.FreePost;
 import com.Linguine.domain.board.Post;
 import com.Linguine.domain.board.ReviewPost;
 import com.Linguine.domain.board.TradingPost;
+import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 
@@ -35,13 +38,12 @@ public class BoardController {
         return "boards/postForm";
     }
 
-
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
-    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO, Model model) {
-        if (memberDTO == null) {
+    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
+        if (memberAdapter == null) {
             model.addAttribute("activeUserName", "게스트");
         } else {
-            model.addAttribute("activeUserName", memberDTO.getMember().getNickName());
+            model.addAttribute("activeUserName", memberAdapter.getMember().getName());
         }
         model.addAttribute("posts", boardService.findByCategory(category));
         model.addAttribute("category", category);
@@ -49,14 +51,13 @@ public class BoardController {
     }
 
     @PostMapping(value =  "boards/write")
-    public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberDTO memberDTO) {
+    public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter) {
 
         if (category.equals("free")) {
             FreePost post = FreePost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberDTO.getMember().getId())
-//                    .registerTime(post.getRegisterTime())
+                    .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
                     .hitCnt(0)
                     .build();
@@ -67,8 +68,7 @@ public class BoardController {
             TradingPost post = TradingPost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberDTO.getMember().getId())
-//                    .registerTime(post.getRegisterTime())
+                    .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
                     .hitCnt(0)
                     //2022-07-1_yeoooo : 구매/판매 여부, 만기 여부, 가격
@@ -81,15 +81,12 @@ public class BoardController {
             ReviewPost post = ReviewPost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberDTO.getMember().getId())
-//                    .registerTime(post.getRegisterTime())
+                    .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
                     .hitCnt(0)
                     .build();
             boardService.save(post);
         }
-
-
 
         return "redirect:/boards?category="+category;
     }

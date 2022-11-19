@@ -2,8 +2,6 @@ package com.Linguine.config.auth;
 
 import com.Linguine.domain.member.handler.AuthFailureHandler;
 import com.Linguine.domain.member.handler.AuthSucessHandler;
-import com.Linguine.service.MemberService;
-import com.Linguine.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,18 +11,15 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @RequiredArgsConstructor
 @EnableWebSecurity//시큐리티 필터
 @EnableGlobalMethodSecurity(prePostEnabled = true)// 특정 페이지에 특정 권한이 있는 유저만 접근을 허용할 경우 권한 및 인증을 미리 체크하겠다는 설정을 활성화
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private final MemberServiceImpl memberService;
     private final AuthFailureHandler authFailureHandler;
     private final AuthSucessHandler authSucessHandler;
-
+    private final CustomUserDetailsService customUserDetailsService;
     private final CustomOAuth2UserService customOAuth2UserService;
 
     @Bean
@@ -34,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(memberService).passwordEncoder(encryptPassword());
+        auth.userDetailsService(customUserDetailsService).passwordEncoder(encryptPassword());
     }
 
     @Override
@@ -50,10 +45,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		*/
         //http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 
-        http.csrf().disable()	// csrf 토큰을 비활성화
+        http.csrf().disable()    // csrf 토큰을 비활성화
                 .authorizeRequests() // 요청 URL에 따라 접근 권한을 설정
                 .antMatchers("/boards/write/**").authenticated()//2022-06-29_yeoooo: antPatter에 따라 인증이 필요한 경로
-                .antMatchers("/","/login/**","/js/**","/css/**","/image/**","/register/**","/boards/**").permitAll() // 해당 경로들은 접근을 허용
+                .antMatchers("/", "/login/**", "/js/**", "/css/**", "/image/**", "/register/**", "/boards/**").permitAll() // 해당 경로들은 접근을 허용
                 .anyRequest() // 다른 모든 요청은
                 .authenticated() // 인증된 유저만 접근을 허용
                 .and()
@@ -83,9 +78,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .rememberMeParameter("remember-me")
                 .and()
                 .oauth2Login()
+                .loginPage("/login")
+                .successHandler(authSucessHandler)
                 .userInfoEndpoint() // oauth2 로그인 성공 후 가져올 때의 설정들
                 // 소셜로그인 성공 시 후속 조치를 진행할 UserService 인터페이스 구현체 등록
-                .userService(customOAuth2UserService); // 리소스 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시;
-    }
+                .userService(customOAuth2UserService) // 리소스 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시
+        ;
 
+    }
 }

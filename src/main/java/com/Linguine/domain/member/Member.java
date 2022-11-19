@@ -29,8 +29,10 @@ public class Member extends BaseTimeEntity implements UserDetails {
     private String password;
     private String email;
     private String nickName;
-    private LocalDateTime lastLoginTime;
 
+    private String userName;
+    private LocalDateTime lastLoginTime;
+    
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
@@ -41,15 +43,12 @@ public class Member extends BaseTimeEntity implements UserDetails {
         collectors.add(() -> {
             return "ROLE_USER";
         });
-
-        //collectors.add(new SimpleGrantedAuthority("Role"));
-
         return collectors;
     }
 
     @Override
     public String getUsername() {
-        return this.getEmail();
+        return this.userName;
     }
 
 
@@ -74,17 +73,23 @@ public class Member extends BaseTimeEntity implements UserDetails {
     }
 
     @Builder
-    public Member(Long id, String email, String name, String nickName,String password, LocalDateTime lastLoginTime) {
+    public Member(Long id, String email, String name, String userName, String nickName,String password, LocalDateTime lastLoginTime, Role role) {
         super();
         this.id = id;
         this.name = name;
         this.nickName = nickName;
         this.email = email;
         this.password = password;
+        this.userName = userName;
         this.lastLoginTime = lastLoginTime;
+        this.role = role;
     }
 
 
+    public Member updateOAuth(String name) {
+        this.name = name;
+        return this;
+    }
 
     @Enumerated(EnumType.STRING)
     private MemberSpec spec;//2022-06-03_yeoooo: 멤버 종류(PROFESSOR, STUDENT)
