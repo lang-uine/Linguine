@@ -58,6 +58,7 @@ public class MemberServiceImpl implements MemberService{
 //
 
 
+<<<<<<< Updated upstream
 
 //    @Transactional
 //    @Override
@@ -75,4 +76,13 @@ public class MemberServiceImpl implements MemberService{
 //        System.out.println("member = " + member.toString());
 //        return new MemberAdapter(member);
 //    }
+=======
+    @Override
+    @Transactional
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Member member = memberRepository.findByEmail(email).get();
+        if(member == null){ throw new UsernameNotFoundException("Not Found account");}
+        return new MemberDTO(member);
+    }
+>>>>>>> Stashed changes
 }

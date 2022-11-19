@@ -17,4 +17,6 @@ public class LinguineApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LinguineApplication.class, args);
 	}
+
+
 }

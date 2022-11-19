@@ -42,12 +42,18 @@ spring:
           #2022-05-08_yeoooo: show_sql 옵션은 hibernate가 날리는 모든 쿼리를 보여준다.
         format_sql: true
           #2022-05-08_yeoooo: format_sql 옵션은 inline이 아닌 format에 맞춰서 보여준다.
+<<<<<<< Updated upstream
   profiles:
     include: oauth
+=======
+
+  profiles:
+    include: oauth
+
+>>>>>>> Stashed changes
 logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.type: trace
         #2022-05-08_yeoooo: jpa, hibernate가 날리는 모든 쿼리를 보여준다.
         #2022-05-08_yeoooo: 하지만 show_sql(sys.out.print)과는 다르게 log로 보여준다. 권장.
-

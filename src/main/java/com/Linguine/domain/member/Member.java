@@ -32,7 +32,9 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     private String userName;
     private LocalDateTime lastLoginTime;
-
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Role role;
 
     @Override
