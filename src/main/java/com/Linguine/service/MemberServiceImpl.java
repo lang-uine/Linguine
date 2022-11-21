@@ -57,32 +57,4 @@ public class MemberServiceImpl implements MemberService{
 //    }
 //
 
-
-<<<<<<< Updated upstream
-
-//    @Transactional
-//    @Override
-//    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-//        Member member = memberRepository.findByEmail(email).get();
-//        System.out.println("member = " + member.toString());
-//        if(member == null){ throw new UsernameNotFoundException("Not Found account");}
-//        return new MemberDTO(member);
-//    }
-
-//    @Override
-//    @Transactional
-//    public CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        Member member = memberRepository.findByUserName(username).orElseThrow(() -> new UsernameNotFoundException("사용자가 존재하지 않습니다."));
-//        System.out.println("member = " + member.toString());
-//        return new MemberAdapter(member);
-//    }
-=======
-    @Override
-    @Transactional
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Member member = memberRepository.findByEmail(email).get();
-        if(member == null){ throw new UsernameNotFoundException("Not Found account");}
-        return new MemberDTO(member);
-    }
->>>>>>> Stashed changes
 }
