@@ -32,7 +32,7 @@ public class BoardController {
 //            return "/boards/newPost";
 //    }
     @RequestMapping(value = "/boards/write", method = RequestMethod.GET)
-    public String post(Model model, @RequestParam("category") String category) {
+    public String getPostForm(Model model, @RequestParam("category") String category) {
         model.addAttribute("category", category);
         model.addAttribute("newPostForm", new PostForm());
         return "boards/postForm";
@@ -57,7 +57,7 @@ public class BoardController {
             FreePost post = FreePost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberAdapter.getMember().getId())
+                    .writer(memberAdapter.getMember())
                     .commentsCnt(0)
                     .hitCnt(0)
                     .build();
@@ -68,7 +68,7 @@ public class BoardController {
             TradingPost post = TradingPost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberAdapter.getMember().getId())
+                    .writer(memberAdapter.getMember())
                     .commentsCnt(0)
                     .hitCnt(0)
                     //2022-07-1_yeoooo : 구매/판매 여부, 만기 여부, 가격
@@ -81,7 +81,7 @@ public class BoardController {
             ReviewPost post = ReviewPost.builder()
                     .title(form.getTitle())
                     .contents(form.getContent())
-                    .owner(memberAdapter.getMember().getId())
+                    .writer(memberAdapter.getMember())
                     .commentsCnt(0)
                     .hitCnt(0)
                     .build();

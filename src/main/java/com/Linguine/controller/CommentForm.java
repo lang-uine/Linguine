@@ -1,2 +1,8 @@
-package com.Linguine.controller;public class CommentForm {
+package com.Linguine.controller;
+
+import lombok.Getter;
+
+@Getter
+public class CommentForm {
+    private String content;
 }

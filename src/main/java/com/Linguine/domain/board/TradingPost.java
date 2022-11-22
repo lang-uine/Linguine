@@ -1,5 +1,6 @@
 package com.Linguine.domain.board;
 
+import com.Linguine.domain.member.Member;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -19,8 +20,8 @@ public class TradingPost extends Post {
     private boolean isExpired;
 
     @Builder
-    public TradingPost(String title,String contents, Long owner, int commentsCnt, int hitCnt, int price, boolean isBuying, boolean isExpired) {
-        super(title,contents,owner, commentsCnt, hitCnt);
+    public TradingPost(String title, String contents, Member writer, int commentsCnt, int hitCnt, int price, boolean isBuying, boolean isExpired) {
+        super(title,contents,writer, commentsCnt, hitCnt);
         this.price = price;
         this.isBuying = false;
         this.isExpired = false;

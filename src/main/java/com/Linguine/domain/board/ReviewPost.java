@@ -1,5 +1,6 @@
 package com.Linguine.domain.board;
 
+import com.Linguine.domain.member.Member;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ReviewPost extends Post{
     @Builder
-    public ReviewPost(String title, String contents,Long owner, int commentsCnt, int hitCnt) {
-        super(title, contents,owner,commentsCnt, hitCnt);
+    public ReviewPost(String title, String contents, Member writer, int commentsCnt, int hitCnt) {
+        super(title, contents, writer, commentsCnt, hitCnt);
     }
 }

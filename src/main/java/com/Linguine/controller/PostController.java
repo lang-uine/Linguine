@@ -1,10 +1,12 @@
 package com.Linguine.controller;
 
+import com.Linguine.domain.board.Comments;
 import com.Linguine.domain.board.Post;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.service.BoardService;
 import com.Linguine.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.attoparser.dom.Comment;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,21 +24,29 @@ public class PostController {
 //    private final Logger logger;
 
     @RequestMapping(value = "/boards/free/post", method = RequestMethod.GET)
-    public String post(@RequestParam("id") Long id, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model){
+    public String getPost(@RequestParam("id") Long id, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model){
         Post post = boardService.findOne(id);
         model.addAttribute("post", post);
-        model.addAttribute("writer", memberService.findById(post.getOwner()).get().getName());
+        model.addAttribute("writer", post.getWriter().getName());
         model.addAttribute("comments", boardService.findAllCommentsById(id));
+        model.addAttribute("newCommentsForm", new CommentForm());
         model.addAttribute("activeUserName", memberAdapter.getMember().getName());
-
+        System.out.println("getPostid = " + id);
         return "boards/post";
     }
 
-//    @RequestMapping(value = "/boards/free/post", method = RequestMethod.POST)
-//    public String commentPost(@RequestParam("id") Long id, Model model) {
-//        Post post = boardService.findOne(id);
-//
-//    }
+    @PostMapping(value = "/boards/free/post")
+    public String commentPost(@RequestParam("id") Long id, CommentForm commentForm) {
+        System.out.println("id = " + id);
+        Post foundOne = boardService.findOne(id);
+        boardService.saveComments(Comments
+                .builder()
+                .member(foundOne.getWriter())
+                .post(foundOne)
+                .contents(commentForm.getContent())
+                .build());
+        return "redirect:/";
+    }
 
 
 }
