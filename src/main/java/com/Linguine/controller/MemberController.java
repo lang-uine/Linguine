@@ -51,25 +51,5 @@ public class MemberController {
     public String password(Model model) {
         return "/members/password";
     }
-
-
-//    @GetMapping("/members/new")
-//    public String createForm(Model model) {
-//        model.addAttribute("memberForm", new MemberForm());
-//        return "/members/memberForm";
-//    }
-
-//    @PostMapping("/members/new")
-//    public String create(@Valid MemberForm form, BindingResult result) {
-//        Member member = new Member();
-//        member.setName(form.getName());
-//        member.setPublic_Id(form.getPublic_id());
-//        member.setNickName(form.getNickName());
-//        member.setPassword(form.getPassword());
-//        member.setPh(form.getPh());
-//        member.setEmail(form.getEmail());
-//        memberService.join(member);
-//
-//        return "redirect:/";
-//    }
+    
 }
