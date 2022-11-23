@@ -27,6 +27,7 @@ spring:
     url: jdbc:h2:tcp://localhost/~/dev/java/projects/Linguine
     username: sa
     password:
+
 # 2022-06-30_yeoooo:  이미지 파일 전송 설정
   servlet:
     multipart:
@@ -34,7 +35,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
         #2022-05-08_yeoooo: DDL이 설정되어있다면 자동으로 테이블을 drop하고 다시 만들어준다.
     properties:
       hibernate:
@@ -42,6 +43,12 @@ spring:
           #2022-05-08_yeoooo: show_sql 옵션은 hibernate가 날리는 모든 쿼리를 보여준다.
         format_sql: true
           #2022-05-08_yeoooo: format_sql 옵션은 inline이 아닌 format에 맞춰서 보여준다.
+#  sql:
+#    init:
+#      platform: h2
+#      encoding: UTF-8
+#      mode: always
+#      mode: never
 
   profiles:
     include: oauth

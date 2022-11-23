@@ -37,7 +37,7 @@ public class PostController {
 
     @PostMapping(value = "/boards/free/post")
     public String commentPost(@RequestParam("id") Long id, CommentForm commentForm) {
-        System.out.println("id = " + id);
+        System.out.println(commentForm.getContent());
         Post foundOne = boardService.findOne(id);
         boardService.saveComments(Comments
                 .builder()

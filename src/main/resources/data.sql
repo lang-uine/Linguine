@@ -1,0 +1,2 @@
+-- INSERT INTO MEMBER VALUES(1L, null, null, 'test@test.com', null, 'tester', 'testor', '$2a$12$9wcHsQp/kJTtrgmh5g5YZ.mFIQhkv6lHp5gF7AGvEoXT0SndlFLJu', 0, null, null);
+-- INSERT INTO POST VALUES ('free', 1L, null, null, 0, 'gdzz', 0, 'test post', null, null, null, 1L);
