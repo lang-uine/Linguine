@@ -6,6 +6,7 @@ import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.service.BoardService;
 import com.Linguine.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.attoparser.dom.Comment;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
+@Slf4j
 public class PostController {
 
     private final BoardService boardService;
@@ -37,7 +39,7 @@ public class PostController {
 
     @PostMapping(value = "/boards/free/post")
     public String commentPost(@RequestParam("id") Long id, CommentForm commentForm) {
-        System.out.println(commentForm.getContent());
+        log.info("comment => {}", commentForm.getContent());
         Post foundOne = boardService.findOne(id);
         boardService.saveComments(Comments
                 .builder()
