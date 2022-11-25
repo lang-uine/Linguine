@@ -1,10 +1,12 @@
 package com.Linguine.domain.board;
 
+import com.Linguine.domain.member.BaseTimeEntity;
 import com.Linguine.domain.member.Member;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,7 +17,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 //@Table(name = "comments")
-public class Comments {
+public class Comments extends BaseTimeEntity {
     @Id
     @GeneratedValue
     @Column(name = "comment_id")

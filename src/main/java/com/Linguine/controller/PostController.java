@@ -33,20 +33,19 @@ public class PostController {
         model.addAttribute("comments", boardService.findAllCommentsById(id));
         model.addAttribute("newCommentsForm", new CommentForm());
         model.addAttribute("activeUserName", memberAdapter.getMember().getName());
-        System.out.println("getPostid = " + id);
         return "boards/post";
     }
 
     @PostMapping(value = "/boards/free/post")
-    public String commentPost(@RequestParam("id") Long id, CommentForm commentForm) {
-        log.info("comment => {}", commentForm.getContent());
+    public String commentPost(@RequestParam("id") Long id, CommentForm commentForm, @AuthenticationPrincipal MemberAdapter memberAdapter) {
         Post foundOne = boardService.findOne(id);
         boardService.saveComments(Comments
                 .builder()
-                .member(foundOne.getWriter())
+                .member(memberAdapter.getMember())
                 .post(foundOne)
                 .contents(commentForm.getContent())
                 .build());
+
         return "redirect:/";
     }
 

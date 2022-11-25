@@ -32,14 +32,16 @@
                     <tr th:each="comment:${comments}">
                         <div class = "container" style="border-top: 1px solid #F2F2F2">
 <!--                            <td th:text="${comment.getMember().getNickName()}"/>-->
-                            <td th:text="${comment.getMember().getName()}"/>
+                            <td>
+                                <a style="text-decoration: blink" th:text="${comment.getMember().getName()}" href="#"></a>
+                            </td>
                             <br>
                             <td th:text="${comment.getContents()}" style="font-size: 8px"/>
                         </div>
                     </tr>
                 <form th:action="@{/boards/free/post(id = ${post.getId()})}" th:object="${newCommentsForm}" method="post">
                     <container>
-                        <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%"></textarea>
+                        <textarea th:field="*{content}" placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%"></textarea>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </container>
                 </form>
