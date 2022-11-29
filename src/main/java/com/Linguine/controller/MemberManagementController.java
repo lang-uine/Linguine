@@ -23,8 +23,7 @@ public class MemberManagementController {
         List<Member> memberList = memberService.findAll();
         model.addAttribute("members", memberList);
         model.addAttribute("activeUserName", memberAdapter.getMember().getName());
-
-
+        
         return "management/memberManagement";
     }
 }
