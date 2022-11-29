@@ -4,7 +4,7 @@ import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.MemberDTO;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 public interface MemberService{
@@ -14,6 +14,5 @@ public interface MemberService{
     public void validateDuplicateNickName(Member member);
 //    public List<Member> findMembers();
     public Optional<Member> findById(Long memberId);
-
-
+    List<Member> findAll();
 }

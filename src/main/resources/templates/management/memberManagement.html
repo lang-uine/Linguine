@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body class="sb-nav-fixed">
+<div th:replace="fragments/bodyHeader :: bodyHeader"/>
+<nav th:replace="fragments/navigation :: navigation(${activeUserName})"/>
+<div id="layoutSidenav">
+    <div th:replace="fragments/sidenav :: #layoutSidenav_nav(${activeUserName})"/>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container" style="margin-top: 50px;">
+                <h2 style="margin-top: 3px">회원 관리</h2>
+                <div style="border-top: 2px solid #0a53be;"/>
+
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="d-flex">
+                            <h4 class = "col-1" text = "ID">ID</h4>
+                            <h4 class = "col" text = "Email">Email</h4>
+                            <h4 class = "col" text = "Name">Name</h4>
+                            <h4 class = "col-5" text = "Role">Role</h4>
+                        </div>
+                    </div>
+                    <ul class = "list-group member-list">
+                        <li class="list-group-item" th:each="member : ${members}">
+                            <div class = "d-flex">
+                                <div class = "col-1" th:text = "${member.getId()}"></div>
+                                <div class = "col" th:text = "${member.getEmail()}"></div>
+                                <div class = "col" th:text = "${member.getName()}"></div>
+                                <div class = "col" th:text = "${member.getRole()}"></div>
+                                <div class = "col-1">
+                                    <a class="col btn btn-sm btn-warning" th:text="수정"/>
+                                </div>
+                                <div class = "col-1">
+                                    <a class="col btn btn-sm btn-danger" th:text="삭제"/>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
