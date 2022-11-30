@@ -15,4 +15,6 @@ public interface MemberService{
 //    public List<Member> findMembers();
     public Optional<Member> findById(Long memberId);
     List<Member> findAll();
+
+    Long deleteById(Long id);
 }
