@@ -1,8 +1,6 @@
 package com.Linguine.service;
 
 import com.Linguine.domain.member.Member;
-import com.Linguine.domain.member.MemberDTO;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 import java.util.Optional;
