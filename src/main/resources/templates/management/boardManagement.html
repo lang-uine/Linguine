@@ -11,7 +11,8 @@
   <div id="layoutSidenav_content">
     <main>
       <div class="container" style="margin-top: 50px;">
-        <h2 style="margin-top: 3px">회원 관리</h2>
+        <h2 style="margin-top: 3px">게시글 관리</h2>
+        <a class="btn btn-outline-dark" style="padding: 2px; margin: 2px;" th:href="@{/management/board(category=${category})}" th:text ="${category}" th:each="category: ${categories}"></a>
         <div style="border-top: 2px solid #0a53be;"/>
 
         <div class="container-fluid">
@@ -27,8 +28,8 @@
             <li class="list-group-item" th:each="post : ${postList}">
               <div class = "d-flex">
                 <div class = "col-1" th:text = "${post.getId()}"></div>
-                <div class = "col" th:text = "${post.getTitle()}"></div>
-                <div class = "col" th:text = "${post.getMember().getId()}"></div>
+<!--                <div class = "col" th:text = "${post.getTitle()}"></div>-->
+<!--                <div class = "col" th:text = "${post.getMember().getId()}"></div>-->
 <!--                <div class = "col" th:text = "${member.getRole()}"></div>-->
 <!--                <div class = "col-1">-->
 <!--                  <a class="col btn btn-sm btn-warning" th:text="수정"/>-->

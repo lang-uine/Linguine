@@ -2,10 +2,7 @@ package com.Linguine.controller;
 
 
 import com.Linguine.config.auth.SessionMember;
-import com.Linguine.domain.board.FreePost;
-import com.Linguine.domain.board.Post;
-import com.Linguine.domain.board.ReviewPost;
-import com.Linguine.domain.board.TradingPost;
+import com.Linguine.domain.board.*;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.service.BoardService;
@@ -19,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -39,23 +38,24 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
-    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
+    public String boardSelection(@RequestParam(value = "category", required = false) String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         if (memberAdapter == null) {
             model.addAttribute("activeUserName", "게스트");
         } else {
             model.addAttribute("activeUserName", memberAdapter.getMember().getName());
         }
-        model.addAttribute("posts", boardService.findByCategory(category));
+        model.addAttribute("posts", boardService.findByCategory(Category.valueOf(category)));
         model.addAttribute("category", category);
         return "boards/" + category + "board";
     }
 
-    @PostMapping(value =  "boards/write")
+    @PostMapping(value = "boards/write")
     public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter) {
 
         if (category.equals("free")) {
             FreePost post = FreePost.builder()
                     .title(form.getTitle())
+                    .category(Category.free)
                     .contents(form.getContent())
                     .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
@@ -67,6 +67,7 @@ public class BoardController {
 
             TradingPost post = TradingPost.builder()
                     .title(form.getTitle())
+                    .category(Category.trade)
                     .contents(form.getContent())
                     .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
@@ -80,6 +81,7 @@ public class BoardController {
         } else {
             ReviewPost post = ReviewPost.builder()
                     .title(form.getTitle())
+                    .category(Category.review)
                     .contents(form.getContent())
                     .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
@@ -88,9 +90,10 @@ public class BoardController {
             boardService.save(post);
         }
 
-        return "redirect:/boards?category="+category;
+        return "redirect:/boards?category=" + category;
     }
-//    @PostMapping("boards/tradeboard/newPost")
+
+    //    @PostMapping("boards/tradeboard/newPost")
 //    public String tradepost(@Valid PostForm form, BindingResult result) {
 //        TradingPost post = new TradingPost();
 //        post.setTitle(form.getTitle());
@@ -106,6 +109,5 @@ public class BoardController {
 //        boardService.save(post);
 //        return "redirect:/boards/reviewboard";
 //    }
-
 
 }

@@ -19,8 +19,8 @@ public class TradingPost extends Post {
     private boolean isExpired;
 
     @Builder
-    public TradingPost(String title,String contents, Long owner, int commentsCnt, int hitCnt, int price, boolean isBuying, boolean isExpired) {
-        super(title,contents,owner, commentsCnt, hitCnt);
+    public TradingPost(String title,String contents, Category category, Long owner, int commentsCnt, int hitCnt, int price, boolean isBuying, boolean isExpired) {
+        super(title,category, contents, owner, commentsCnt, hitCnt);
         this.price = price;
         this.isBuying = false;
         this.isExpired = false;
