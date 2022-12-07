@@ -13,6 +13,7 @@ public interface BoardService {
     public Long save(Post post);
     public Long saveComments(Comments comments);
 
+    Long deletePost(Long id);
     public Optional<Post> findById(Long id);
     public List<Post> findAllPost();
     public List<? extends Post> findByCategory(Category category);

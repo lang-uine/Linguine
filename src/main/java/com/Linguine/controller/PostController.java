@@ -23,22 +23,20 @@ public class PostController {
     private final BoardService boardService;
     private final MemberService memberService;
 //    private final Logger logger;
-
-    @RequestMapping(value = "/boards/free/post", method = RequestMethod.GET)
+    @RequestMapping(value = "/boards/Free/post", method = RequestMethod.GET)
     public String post(@RequestParam("id") Long id, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model){
         Optional<Post> post = boardService.findById(id);
         model.addAttribute("post", post.get());
         model.addAttribute("writer", memberService.findById(post.get().getOwner()).get().getName());
         model.addAttribute("comments", boardService.findAllCommentsById(id));
         model.addAttribute("activeUserName", memberAdapter.getMember().getName());
-
         return "boards/post";
     }
 
 //    @RequestMapping(value = "/boards/free/post", method = RequestMethod.POST)
 //    public String commentPost(@RequestParam("id") Long id, Model model) {
 //        Optional<Post> post = boardService.findById(id);
-//        post.get().co
+//        post.get
 //
 //    }
 

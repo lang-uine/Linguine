@@ -52,10 +52,10 @@ public class BoardController {
     @PostMapping(value = "boards/write")
     public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter) {
 
-        if (category.equals("free")) {
+        if (category.equals("Free")) {
             FreePost post = FreePost.builder()
                     .title(form.getTitle())
-                    .category(Category.free)
+                    .category(Category.Free)
                     .contents(form.getContent())
                     .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
@@ -63,11 +63,11 @@ public class BoardController {
                     .build();
             boardService.save(post);
 
-        } else if (category.equals("trade")) {
+        } else if (category.equals("Trade")) {
 
             TradingPost post = TradingPost.builder()
                     .title(form.getTitle())
-                    .category(Category.trade)
+                    .category(Category.Trade)
                     .contents(form.getContent())
                     .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)
@@ -81,7 +81,7 @@ public class BoardController {
         } else {
             ReviewPost post = ReviewPost.builder()
                     .title(form.getTitle())
-                    .category(Category.review)
+                    .category(Category.Review)
                     .contents(form.getContent())
                     .owner(memberAdapter.getMember().getId())
                     .commentsCnt(0)

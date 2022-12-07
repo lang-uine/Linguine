@@ -31,7 +31,7 @@
 
                                 <td th:text="${i.index+1}"></td>
                                 <!--                <td> <a th:text="${post.getTitle()}" th:name = "postid" th th:value="${post.getId()}" th:href="'/boards/free/'+${post.getId()}+'_'+${post.getTitle()}"></a></td>-->
-                                <td><a th:href="@{/boards/free/post(id=${post.getId()})}"
+                                <td><a th:href="@{/boards/Free/post(id=${post.getId()})}"
                                        th:text="${post.getTitle()}"></a></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
                             </tr>
