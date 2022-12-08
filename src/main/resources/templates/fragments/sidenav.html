@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <div id="layoutSidenav_nav" th:fragment= "sidenav(activeUserName)">
+    <div id="layoutSidenav_nav" th:fragment= "sidenav(activeUser)">
 <!--    <div id="layoutSidenav_nav" th:fragments="sidenav">-->
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
@@ -115,7 +115,8 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                <div th:text="${activeUserName}"></div>
+                <div th:if="${activeUser != '게스트'}" th:text="${activeUser.getName()}"/>
+                <div th:unless="${activeUser != '게스트'}" th:text="게스트"/>
             </div>
         </nav>
     </div>
