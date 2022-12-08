@@ -40,9 +40,9 @@ public class BoardController {
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
     public String boardSelection(@RequestParam(value = "category", required = false) String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         if (memberAdapter == null) {
-            model.addAttribute("activeUserName", "게스트");
+            model.addAttribute("activeUser", "게스트");
         } else {
-            model.addAttribute("activeUserName", memberAdapter.getMember().getName());
+            model.addAttribute("activeUser", memberAdapter.getMember());
         }
         model.addAttribute("posts", boardService.findByCategory(Category.valueOf(category)));
         model.addAttribute("category", category);

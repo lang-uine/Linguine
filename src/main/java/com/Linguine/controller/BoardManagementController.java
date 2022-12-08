@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.Optional;
 
 @Controller
@@ -23,7 +22,7 @@ public class BoardManagementController {
     @GetMapping("management/board")
     public String getPostList(Model model, @AuthenticationPrincipal MemberAdapter memberAdapter, @RequestParam(value = "category", required = false) Optional<String> category) {
         model.addAttribute("categories", Category.values());
-        model.addAttribute("activeUser", memberAdapter);
+        model.addAttribute("activeUser", memberAdapter.getMember());
         if (category.isEmpty()) {
             model.addAttribute("postList", boardService.findAllPost());
         } else {

@@ -29,7 +29,7 @@ public class PostController {
         model.addAttribute("post", post.get());
         model.addAttribute("writer", memberService.findById(post.get().getOwner()).get().getName());
         model.addAttribute("comments", boardService.findAllCommentsById(id));
-        model.addAttribute("activeUserName", memberAdapter.getMember().getName());
+        model.addAttribute("activeUser", memberAdapter.getMember());
         return "boards/post";
     }
 

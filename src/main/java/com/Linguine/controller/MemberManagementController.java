@@ -26,7 +26,7 @@ public class MemberManagementController {
     public String getMembers(@AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         List<Member> memberList = memberService.findAll();
         model.addAttribute("members", memberList);
-        model.addAttribute("activeUserName", memberAdapter.getMember().getName());
+        model.addAttribute("activeUser", memberAdapter.getMember());
 
         return "management/memberManagement";
     }
