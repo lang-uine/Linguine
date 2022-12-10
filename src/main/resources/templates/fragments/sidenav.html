@@ -115,8 +115,10 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                <div th:if="${activeUser != '게스트'}" th:text="${activeUser.getName()}"/>
-                <div th:unless="${activeUser != '게스트'}" th:text="게스트"/>
+<!--                <div th:if="${activeUser != '게스트'}" th:text="${activeUser.getName()}"/>-->
+<!--                <div th:unless="${activeUser != '게스트'}" th:text="게스트"/>-->
+                <div th:if="${activeUser == null}" th:text="게스트"/>
+                <div th:unless="${activeUser == null}" th:text="${activeUser.getName()}"/>
             </div>
         </nav>
     </div>

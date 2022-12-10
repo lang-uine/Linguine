@@ -17,20 +17,20 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <li th:if="${activeUser != '게스트'}">
-              <a class="dropdown-item" th:href="@{/profile/get(id=${activeUser.getId()})}">Profile</a>
+          <li th:if="${activeUser != null}">
+<!--              <a class="dropdown-item" th:href="@{/profile/get(id=${activeUser.getId()})}">Profile</a>-->
           </li>
-        <li th:if="${activeUser != '게스트' && activeUser.getRole == 'ROLE_MANAGER'}">
+<!--        <li th:if="${activeUser != '게스트' && activeUser.getRole == 'ROLE_MANAGER'}">-->
           <a class="dropdown-item" href="/management/board">BoardManagement</a>
-        </li>
-        <li th:if="${activeUser != '게스트' && activeUser.getRole == 'ROLE_MANAGER'}">
+<!--        </li>-->
+<!--        <li th:if="${activeUser != '게스트' && activeUser.getRole == 'ROLE_MANAGER'}">-->
           <a class="dropdown-item" href="/management/member">MemberManagement</a>
-        </li>
+<!--        </li>-->
         <li>
-          <hr th:if="${activeUser != '게스트'}" class="dropdown-divider"/>
+          <hr th:if="${activeUser != null}" class="dropdown-divider"/>
         </li>
-        <div th:if="${activeUser != '게스트'}"> <li><a class="dropdown-item" href="/logout">Logout</a></li></div>
-        <div th:unless="${activeUser != '게스트'}"> <li><a class="dropdown-item" href="/login">Login</a></li></div>
+        <div th:if="${activeUser != null}"> <li><a class="dropdown-item" href="/logout">Logout</a></li></div>
+        <div th:unless="${activeUser != null}"> <li><a class="dropdown-item" href="/login">Login</a></li></div>
       </ul>
     </li>
   </ul>
