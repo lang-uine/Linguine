@@ -16,6 +16,7 @@ import java.util.List;
 @Entity
 @EqualsAndHashCode(of= {"id"}, callSuper = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 //2022-06-03_yeoooo: 테스트를 위해 임시로 열어둔 Setter,Builder등으로 교체되어야 함 -> 교체완료
 public class Member extends BaseTimeEntity implements UserDetails {
 
@@ -99,6 +100,7 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     @OneToMany(mappedBy = "member")
     private List<Comments> comments = new ArrayList<>();
+
 
 
 }
