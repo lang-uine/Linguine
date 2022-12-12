@@ -32,10 +32,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserDetailsService).passwordEncoder(encryptPassword());
 
-        auth.inMemoryAuthentication()
-                .withUser("admin")
-                .password(encryptPassword().encode("1234"))
-                .roles(String.valueOf(Role.ADMIN));
+//        auth.inMemoryAuthentication()
+//                .withUser("admin")
+//                .password(encryptPassword().encode("1234"))
+//                .roles(String.valueOf(Role.ADMIN));
     }
 
     @Override
