@@ -1,2 +1,2 @@
 insert into member (id, register_time, update_time, email, last_login_time, name, nick_name, password, role, spec, user_name)
-values (1L, null, null, 'admin', null, 'admin', 'admin',   '$2a$12$TI3cWWSB/dcXh1n/4e9un.qNTqO7AK.pp3heG.ghVGIK2LZJWw1OK', 'ADMIN', NULL, NULL);
+values (1L, null, null, 'admin', null, 'admin', 'admin',   '$2a$12$pehci6O4NX2kq50jpyB4dedly5psClcTcGZw1kMtza1xJKnB2awwO', 'ADMIN', NULL, NULL);

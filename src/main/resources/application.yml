@@ -27,6 +27,7 @@ spring:
     url: jdbc:h2:tcp://localhost/~/dev/java/projects/Linguine
     username: sa
     password:
+
 # 2022-06-30_yeoooo:  이미지 파일 전송 설정
   servlet:
     multipart:
@@ -46,8 +47,11 @@ spring:
   profiles:
     include: oauth
 
-
-
+  sql:
+    init:
+      platform: h2
+      mode: never
+      encoding: UTF-8
 
 logging:
   level:
