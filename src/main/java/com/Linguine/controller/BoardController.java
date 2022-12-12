@@ -31,7 +31,7 @@ public class BoardController {
 //            return "/boards/newPost";
 //    }
     @RequestMapping(value = "/boards/write", method = RequestMethod.GET)
-    public String post(Model model, @RequestParam("category") String category) {
+    public String getPostForm(Model model, @RequestParam("category") String category) {
         model.addAttribute("category", category);
         model.addAttribute("newPostForm", new PostForm());
         return "boards/postForm";
@@ -92,6 +92,15 @@ public class BoardController {
 
         return "redirect:/boards?category=" + category;
     }
+
+
+
+//     <form th:action="@{/boards/Free/post/id = ${id}}" th:object="${newCommentsForm}" method="post">
+//                    <container>
+//                        <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%"></textarea>
+//                        <button type="submit" class="btn btn-primary">Submit</button>
+//                    </container>
+//                </form>
 
     //    @PostMapping("boards/tradeboard/newPost")
 //    public String tradepost(@Valid PostForm form, BindingResult result) {
