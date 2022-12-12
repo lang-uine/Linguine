@@ -1,5 +1,6 @@
 package com.Linguine.config.auth;
 
+import com.Linguine.domain.member.Role;
 import com.Linguine.domain.member.handler.AuthFailureHandler;
 import com.Linguine.domain.member.handler.AuthSucessHandler;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserDetailsService).passwordEncoder(encryptPassword());
+
+//        auth.inMemoryAuthentication()
+//                .withUser("admin")
+//                .password(encryptPassword().encode("1234"))
+//                .roles(String.valueOf(Role.ADMIN));
     }
 
     @Override

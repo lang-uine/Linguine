@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class FreePost extends Post {
     @Builder
-    public FreePost(String title, String contents, Long owner, int commentsCnt, int hitCnt) {
-        super(title, contents, owner, commentsCnt, hitCnt);
+    public FreePost(String title, Category category, String contents, Long owner, int commentsCnt, int hitCnt) {
+        super(title, category, contents, owner, commentsCnt, hitCnt);
+
     }
 }
