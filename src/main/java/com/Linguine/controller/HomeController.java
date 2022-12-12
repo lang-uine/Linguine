@@ -1,19 +1,14 @@
 package com.Linguine.controller;
 
 import com.Linguine.domain.member.MemberAdapter;
+import com.Linguine.domain.member.Role;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import javax.swing.text.html.Option;
-import java.util.Map;
-import java.util.Optional;
-import java.util.function.Supplier;
 
 
 @Controller
@@ -39,9 +34,16 @@ public class HomeController {
                 log.info("[HomeController] Guest Logined");
             }
         } else {
-            model.addAttribute("activeUser", memberAdapter);
+            model.addAttribute("activeUser", memberAdapter.getMember());
+
             log.info("[HomeController] User Logined");
+            log.info("[HomeController] User Logined {}", Role.values()[0]);
+            log.info("[HomeController] User Logined {}", Role.values()[1]);
+            log.info("[HomeController] User Logined {}", Role.values()[2]);
+
+
         }
+        model.addAttribute("ROLES", Role.values());
         return "index";
 
     }
