@@ -9,6 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,10 +24,11 @@ public class MemberManagementController {
 
 
     @GetMapping("/management/member")
-    public String getMembers(@AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
+    public String getMembers(@AuthenticationPrincipal MemberAdapter memberAdapter, Model model, int period) {
         List<Member> memberList = memberService.findAll();
         model.addAttribute("members", memberList);
         model.addAttribute("activeUser", memberAdapter.getMember());
+        model.addAttribute("period", period);
 
         return "management/memberManagement";
     }
@@ -36,5 +38,13 @@ public class MemberManagementController {
         memberService.deleteById(id);
         log.info("[MemberManagementController] Member Deleted Id => {}", id);
         return "redirect:/management/member";
+    }
+
+    @RequestMapping("/management/member/suspend/{id}")
+    public String suspendMember(@AuthenticationPrincipal MemberAdapter memberAdapter, @PathVariable("id") Long id, int period) {
+        Member found = memberService.findById(id).get();
+        found.suspend(period);
+        log.info("[MemberManagementController] Member ID - {} is Suspended.", id);
+        return "redirect:";
     }
 }

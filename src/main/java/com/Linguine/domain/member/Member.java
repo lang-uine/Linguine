@@ -3,6 +3,7 @@ package com.Linguine.domain.member;
 import com.Linguine.domain.board.Comments;
 import com.Linguine.domain.board.Post;
 import lombok.*;
+import org.springframework.lang.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -33,7 +34,9 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     private String userName;
     private LocalDateTime lastLoginTime;
-    
+
+    @Nullable
+    private Lock locked;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
@@ -84,6 +87,11 @@ public class Member extends BaseTimeEntity implements UserDetails {
         this.userName = userName;
         this.lastLoginTime = lastLoginTime;
         this.role = role;
+        this.locked = new Lock();
+    }
+
+    public void suspend(int period) {
+        this.locked = new Lock(true, LocalDateTime.now().plusDays(period));
     }
 
 
