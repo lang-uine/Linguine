@@ -24,11 +24,10 @@ public class MemberManagementController {
 
 
     @GetMapping("/management/member")
-    public String getMembers(@AuthenticationPrincipal MemberAdapter memberAdapter, Model model, int period) {
+    public String getMembers(@AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         List<Member> memberList = memberService.findAll();
         model.addAttribute("members", memberList);
         model.addAttribute("activeUser", memberAdapter.getMember());
-        model.addAttribute("period", period);
 
         return "management/memberManagement";
     }
@@ -41,10 +40,12 @@ public class MemberManagementController {
     }
 
     @RequestMapping("/management/member/suspend/{id}")
-    public String suspendMember(@AuthenticationPrincipal MemberAdapter memberAdapter, @PathVariable("id") Long id, int period) {
+    public String suspendMember(@AuthenticationPrincipal MemberAdapter memberAdapter, @PathVariable("id") Long id) {
         Member found = memberService.findById(id).get();
-        found.suspend(period);
+        found.suspend();
+        memberService.join(found);
+        // 2022-12-15_yeoooo : Lock이 Entity가 아니기 때문에 변경감지를 해주지 못하기 때문에 수동 저장
         log.info("[MemberManagementController] Member ID - {} is Suspended.", id);
-        return "redirect:";
+        return "redirect:/management/member";
     }
 }
