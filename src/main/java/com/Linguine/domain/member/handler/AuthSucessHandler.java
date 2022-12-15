@@ -1,5 +1,6 @@
 package com.Linguine.domain.member.handler;
 
+import com.Linguine.domain.member.Member;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;

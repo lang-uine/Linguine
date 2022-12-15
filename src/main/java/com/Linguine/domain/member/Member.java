@@ -90,14 +90,13 @@ public class Member extends BaseTimeEntity implements UserDetails {
         this.locked = new Lock();
     }
 
-    public void suspend(int period) {
-        this.locked = new Lock(true, LocalDateTime.now().plusDays(period));
-    }
-
-
     public Member updateOAuth(String name) {
         this.name = name;
         return this;
+    }
+
+    public void suspend() {
+        locked.suspend();
     }
 
     @Enumerated(EnumType.STRING)
