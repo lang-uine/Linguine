@@ -31,7 +31,7 @@
                                 <div class = "col" th:text = "${member.getName()}"></div>
                                 <div class = "col" th:text = "${member.getRole()}"></div>
                                 <div class = "col-1">
-                                    <a class="col btn btn-sm btn-warning" th:text="정지"/>
+                                    <a class="col btn btn-sm btn-warning" th:href="@{/management/member/suspend/{id}(id=${member.getId()})}" th:text="정지"/>
                                 </div>
 
                                 <div class = "col-1">
