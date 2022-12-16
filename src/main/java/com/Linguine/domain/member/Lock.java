@@ -1,9 +1,6 @@
 package com.Linguine.domain.member;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.apache.tomcat.jni.Local;
 import org.springframework.lang.Nullable;
 
@@ -17,6 +14,7 @@ import java.time.LocalDateTime;
 @ToString
 public class Lock{
     @NotNull
+    @Setter
     private boolean locked;
     @Nullable
     private LocalDateTime period;
@@ -31,6 +29,11 @@ public class Lock{
         this.locked = false;
         this.count = 0;
     }
+
+    public boolean isLocked() {
+        return locked;
+    }
+
     public void suspend() {
         this.locked = true;
         this.countUp();

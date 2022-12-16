@@ -1,9 +1,11 @@
 package com.Linguine.domain.member.handler;
 
 import com.Linguine.domain.member.Member;
+import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,16 @@ public class AuthSucessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+        MemberAdapter memberAdapter = (MemberAdapter) authentication.getPrincipal();
+
+        if (memberAdapter.getMember().getLocked().isLocked()) {
+            if (memberAdapter.getMember().getLocked().getPeriod().isAfter(LocalDateTime.now())) {
+                throw new DisabledException("This account has been suspended");
+            } else {
+                memberAdapter.getMember().getLocked().setLocked(false);
+            }
+        }
+
         memberRepository.updateMemberLastLogin(authentication.getName(), LocalDateTime.now());
         setDefaultTargetUrl("/");
         super.onAuthenticationSuccess(request, response, authentication);
