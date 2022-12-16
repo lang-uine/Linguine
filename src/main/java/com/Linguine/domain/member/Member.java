@@ -3,6 +3,7 @@ package com.Linguine.domain.member;
 import com.Linguine.domain.board.Comments;
 import com.Linguine.domain.board.Post;
 import lombok.*;
+import org.springframework.lang.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,7 +17,6 @@ import java.util.List;
 @Entity
 @EqualsAndHashCode(of= {"id"}, callSuper = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString
 //2022-06-03_yeoooo: 테스트를 위해 임시로 열어둔 Setter,Builder등으로 교체되어야 함 -> 교체완료
 public class Member extends BaseTimeEntity implements UserDetails {
 
@@ -33,7 +33,9 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     private String userName;
     private LocalDateTime lastLoginTime;
-    
+
+    @Nullable
+    private Lock locked;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
@@ -84,12 +86,16 @@ public class Member extends BaseTimeEntity implements UserDetails {
         this.userName = userName;
         this.lastLoginTime = lastLoginTime;
         this.role = role;
+        this.locked = new Lock();
     }
-
 
     public Member updateOAuth(String name) {
         this.name = name;
         return this;
+    }
+
+    public void suspend() {
+        locked.suspend();
     }
 
     @Enumerated(EnumType.STRING)
