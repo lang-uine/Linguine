@@ -12,7 +12,7 @@
         <main>
             <div class="container" style="margin-top: 50px";>
 
-                <a style="size: 10px; color: navy; text-decoration: blink" th:href="@{/boards(category=${post.getCategory()})}">< 이전 게시판</a>
+                <a style="size: 10px; color: navy; text-decoration: blink" th:href="@{/boards/{category}/(category=${post.getCategory()})}">< 이전 게시판</a>
                 <h4 th:text="${post.getTitle()}" style="margin-top: 3px"/>
                 <div class="container-fluid">
                     <span style="font-size: 12px">글쓴이</span>
