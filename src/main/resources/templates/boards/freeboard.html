@@ -30,7 +30,7 @@
                             <tr th:each="post,i : ${posts}">
 
                                 <td th:text="${i.index+1}"></td>
-                                <td><a th:href="@{/boards/Free/post(id=${post.getId()})}"
+                                <td><a th:href="@{/boards/{category}/{id}(id=${post.getId()}, category=${post.getCategory()})}"
                                        th:text="${post.getTitle()}"></a></td>
                                 <td th:text="${post.getRegisterTime()}"></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
