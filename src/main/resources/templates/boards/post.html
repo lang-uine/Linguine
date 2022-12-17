@@ -34,10 +34,14 @@
                         <div class = "container" style="border-top: 1px solid #F2F2F2">
                             <a th:href="@{/profile/get(id=${comment.getMember().getId()})}" style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>
                             <br>
-                            <td th:text="${comment.getContents()}" style="font-size: 8px"/>
+
+                            <td class="col-10" th:text="${comment.getContents()}" style="font-size: 8px"/>
+                            <a class="btn btn-outline-danger float-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
+                            <a class="btn btn-outline-warning float-end col-1 btn-sm" th:text="수정" th:action="@{/boards/{category}/{postId}/update(id = ${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
+                            <!-- 2022-12-17_yeoooo : 수정 버튼에 collapse나 form을 추가해야 함-->
                         </div>
                     </tr>
-                <form role="form" th:action="@{/boards/{category}/post(id = ${post.getId()}, category=${post.getCategory()})}" th:object="${form}" method="post">
+                <form role="form" th:action="@{/boards/{category}/{id}(id = ${post.getId()}, category=${post.getCategory()})}" th:object="${form}" method="post">
                     <container>
                         <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%" th:field="*{content}"></textarea>
                         <button type="submit" class="btn btn-primary">Submit</button>
