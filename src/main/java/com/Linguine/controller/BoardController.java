@@ -20,7 +20,7 @@ import javax.validation.Valid;
 @Slf4j
 public class BoardController {
     private final BoardService boardService;
-    
+
     @RequestMapping(value = "/boards/{category}/write", method = RequestMethod.GET)
     public String getPostForm(Model model, @PathVariable("category") String category) {
         model.addAttribute("category", category);
