@@ -14,7 +14,6 @@ import java.util.List;
 @Entity
 @Getter
 @NoArgsConstructor
-//@Table(name = "comments")
 public class Comments {
     @Id
     @GeneratedValue
