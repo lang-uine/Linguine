@@ -49,6 +49,7 @@ public class MemberServiceImpl implements MemberService{
         }
     }
 
+<<<<<<< HEAD
 
 
 //    @Override
@@ -57,4 +58,19 @@ public class MemberServiceImpl implements MemberService{
 //    }
 //
 
+=======
+    @Override
+    public List<Member> findAll() {
+        List<Member> found = memberRepository.findAll();
+        return found;
+    }
+
+
+    @Override
+    public Long deleteById(Long id) {
+        Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalStateException("존재하지 않는 회원 입니다."));
+        memberRepository.deleteById(id);
+        return id;
+    }
+>>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
 }

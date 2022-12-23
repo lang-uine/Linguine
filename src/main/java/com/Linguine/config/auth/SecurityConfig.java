@@ -1,5 +1,6 @@
 package com.Linguine.config.auth;
 
+import com.Linguine.domain.member.Role;
 import com.Linguine.domain.member.handler.AuthFailureHandler;
 import com.Linguine.domain.member.handler.AuthSucessHandler;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserDetailsService).passwordEncoder(encryptPassword());
+
+//        auth.inMemoryAuthentication()
+//                .withUser("admin")
+//                .password(encryptPassword().encode("1234"))
+//                .roles(String.valueOf(Role.ADMIN));
     }
 
     @Override
@@ -49,8 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests() // 요청 URL에 따라 접근 권한을 설정
                 .antMatchers("/boards/write/**").authenticated()//2022-06-29_yeoooo: antPatter에 따라 인증이 필요한 경로
                 .antMatchers("/", "/login/**", "/js/**", "/css/**", "/image/**", "/register/**", "/boards/**").permitAll() // 해당 경로들은 접근을 허용
-                .anyRequest() // 다른 모든 요청은
-                .authenticated() // 인증된 유저만 접근을 허용
+//                .anyRequest() // 다른 모든 요청은
+//                .authenticated() // 인증된 유저만 접근을 허용
                 .and()
                 .formLogin() // 로그인 폼은
                 .usernameParameter("inputEmail")

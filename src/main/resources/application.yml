@@ -50,8 +50,16 @@ spring:
 #      mode: always
       mode: never
 
+    defer-datasource-initialization: true
+      #2022-12-15_yeoooo: 외부 스크립트 초기화용 옵션(2.5.0 이후)
   profiles:
     include: oauth
+
+  sql:
+    init:
+      platform: h2
+      mode: always
+      encoding: UTF-8
 
 logging:
   level:

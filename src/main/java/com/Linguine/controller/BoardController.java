@@ -2,10 +2,7 @@ package com.Linguine.controller;
 
 
 import com.Linguine.config.auth.SessionMember;
-import com.Linguine.domain.board.FreePost;
-import com.Linguine.domain.board.Post;
-import com.Linguine.domain.board.ReviewPost;
-import com.Linguine.domain.board.TradingPost;
+import com.Linguine.domain.board.*;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.domain.member.MemberDTO;
 import com.Linguine.service.BoardService;
@@ -19,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -39,23 +38,24 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/boards", method = RequestMethod.GET)
-    public String boardSelection(@RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
+    public String boardSelection(@RequestParam(value = "category", required = false) String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         if (memberAdapter == null) {
-            model.addAttribute("activeUserName", "게스트");
+            model.addAttribute("activeUser", "게스트");
         } else {
-            model.addAttribute("activeUserName", memberAdapter.getMember().getName());
+            model.addAttribute("activeUser", memberAdapter.getMember());
         }
-        model.addAttribute("posts", boardService.findByCategory(category));
+        model.addAttribute("posts", boardService.findByCategory(Category.valueOf(category)));
         model.addAttribute("category", category);
         return "boards/" + category + "board";
     }
 
-    @PostMapping(value =  "boards/write")
+    @PostMapping(value = "boards/write")
     public String post(@Valid PostForm form, BindingResult result, @RequestParam("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter) {
 
-        if (category.equals("free")) {
+        if (category.equals("Free")) {
             FreePost post = FreePost.builder()
                     .title(form.getTitle())
+                    .category(Category.Free)
                     .contents(form.getContent())
                     .writer(memberAdapter.getMember())
                     .commentsCnt(0)
@@ -63,10 +63,11 @@ public class BoardController {
                     .build();
             boardService.save(post);
 
-        } else if (category.equals("trade")) {
+        } else if (category.equals("Trade")) {
 
             TradingPost post = TradingPost.builder()
                     .title(form.getTitle())
+                    .category(Category.Trade)
                     .contents(form.getContent())
                     .writer(memberAdapter.getMember())
                     .commentsCnt(0)
@@ -80,6 +81,7 @@ public class BoardController {
         } else {
             ReviewPost post = ReviewPost.builder()
                     .title(form.getTitle())
+                    .category(Category.Review)
                     .contents(form.getContent())
                     .writer(memberAdapter.getMember())
                     .commentsCnt(0)
@@ -88,9 +90,19 @@ public class BoardController {
             boardService.save(post);
         }
 
-        return "redirect:/boards?category="+category;
+        return "redirect:/boards?category=" + category;
     }
-//    @PostMapping("boards/tradeboard/newPost")
+
+
+
+//     <form th:action="@{/boards/Free/post/id = ${id}}" th:object="${newCommentsForm}" method="post">
+//                    <container>
+//                        <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%"></textarea>
+//                        <button type="submit" class="btn btn-primary">Submit</button>
+//                    </container>
+//                </form>
+
+    //    @PostMapping("boards/tradeboard/newPost")
 //    public String tradepost(@Valid PostForm form, BindingResult result) {
 //        TradingPost post = new TradingPost();
 //        post.setTitle(form.getTitle());
@@ -106,6 +118,5 @@ public class BoardController {
 //        boardService.save(post);
 //        return "redirect:/boards/reviewboard";
 //    }
-
 
 }

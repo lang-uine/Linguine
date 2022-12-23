@@ -41,18 +41,25 @@ public class Post extends BaseTimeEntity {
     private int commentsCnt;
     private int hitCnt;
 
+    private Category category;
+
     @CreatedDate
     private LocalDateTime registerTime;
 
     @OneToMany(mappedBy = "post")//, cascade = CascadeType.ALL)
     public List<Comments> comments = new ArrayList<>();
 
+<<<<<<< HEAD
     public Post(String title, String contents, Member member, int commentsCnt, int hitCnt) {
+=======
+    public Post(String title, Category category, String contents, Long owner, int commentsCnt, int hitCnt) {
+>>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
         this.title = title;
         this.contents = contents;
         this.writer = member;
         this.commentsCnt = commentsCnt;
         this.hitCnt = hitCnt;
+        this.category = category;
 //        this.registerTime = getNow();
     }
 

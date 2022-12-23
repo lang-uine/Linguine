@@ -16,7 +16,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class FreePost extends Post {
     @Builder
+<<<<<<< HEAD
     public FreePost(String title, String contents, Member writer, int commentsCnt, int hitCnt) {
         super(title, contents, writer, commentsCnt, hitCnt);
+=======
+    public FreePost(String title, Category category, String contents, Long owner, int commentsCnt, int hitCnt) {
+        super(title, category, contents, owner, commentsCnt, hitCnt);
+
+>>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
     }
 }
