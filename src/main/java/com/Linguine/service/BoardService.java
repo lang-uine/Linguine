@@ -13,6 +13,9 @@ public interface BoardService {
     public Long save(Post post);
     public Long saveComments(Comments comments);
 
+    public Optional<Comments> findCommentById(Long id);
+
+    public Long deleteComments(Comments comments);
     Long deletePost(Long id);
     public Optional<Post> findById(Long id);
     public List<Post> findAllPost();

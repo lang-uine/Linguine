@@ -8,13 +8,10 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @Getter
 @NoArgsConstructor
-//@Table(name = "comments")
 public class Comments {
     @Id
     @GeneratedValue
