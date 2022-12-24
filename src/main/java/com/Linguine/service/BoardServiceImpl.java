@@ -18,6 +18,7 @@ import java.util.Optional;
 @Transactional(readOnly = true)
 @Slf4j
 public class BoardServiceImpl implements BoardService{
+
     //2022-05-08-yeoooo 1개의 생성자는 Autowired 없이 바로 의존성 주입
     private final BoardRepository boardRepository;
     private final CommentRepository commentRepository;
@@ -34,6 +35,23 @@ public class BoardServiceImpl implements BoardService{
     public Long saveComments(Comments comments) {
         commentRepository.save(comments);
         comments.getPost().addCountComment();
+        return comments.getId();
+    }
+
+    public Optional<Comments> findCommentById(Long id) {
+        Optional<Comments> comment = commentRepository.findById(id);
+        if (comment.isPresent()) {
+            return comment;
+        } else {
+            throw new RuntimeException("There is no such comment");
+        }
+    }
+
+    @Override
+    @Transactional
+    public Long deleteComments(Comments comments) {
+        commentRepository.delete(comments);
+        comments.getPost().subCountComment();
         return comments.getId();
     }
 

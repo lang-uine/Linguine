@@ -34,10 +34,11 @@ public class Post extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     //2022_06_03_yeoooo-포스트와 멤버는 N:1연관관계
     @JoinColumn(name = "member_id")
-    private Member writer;
+    private Member member;
 
     private String title;
     private String contents;
+    private Long owner;
     private int commentsCnt;
     private int hitCnt;
 
@@ -49,14 +50,11 @@ public class Post extends BaseTimeEntity {
     @OneToMany(mappedBy = "post")//, cascade = CascadeType.ALL)
     public List<Comments> comments = new ArrayList<>();
 
-<<<<<<< HEAD
-    public Post(String title, String contents, Member member, int commentsCnt, int hitCnt) {
-=======
+
     public Post(String title, Category category, String contents, Long owner, int commentsCnt, int hitCnt) {
->>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
         this.title = title;
         this.contents = contents;
-        this.writer = member;
+        this.owner = owner;
         this.commentsCnt = commentsCnt;
         this.hitCnt = hitCnt;
         this.category = category;
@@ -65,6 +63,9 @@ public class Post extends BaseTimeEntity {
 
     public void addCountComment() {
         this.commentsCnt += 1;
+    }
+    public void subCountComment() {
+        this.commentsCnt -= 1;
     }
 
     public String getNow() {

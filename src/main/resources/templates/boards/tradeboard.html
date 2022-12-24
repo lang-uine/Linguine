@@ -31,14 +31,18 @@
 
                                 <td th:text="${i.index+1}"></td>
                                 <!--                <td> <a th:text="${post.getTitle()}" th:name = "postid" th th:value="${post.getId()}" th:href="'/boards/free/'+${post.getId()}+'_'+${post.getTitle()}"></a></td>-->
+<<<<<<< HEAD
                                 <td><a th:href="@{/boards/Free/post(id=${post.getId()})}"
+=======
+                                <td><a th:href="@{/boards/{category}/{id}/(category=${category}, id=${post.getId()})}"
+>>>>>>> 1060d61c4165f5acca2d90bbe480f8bab0099579
                                        th:text="${post.getTitle()}"></a></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                    <a th:align="center" class="btn btn-lg btn-secondary" th:href="@{/boards/write(category=${category})}">게시글 등록</a>
+                    <a th:align="center" class="btn btn-lg btn-secondary" th:href="@{/boards/{category}/write/(category=${category})}">게시글 등록</a>
                 </div>
             </div>
         </main>

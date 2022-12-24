@@ -10,14 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @Getter
 @NoArgsConstructor
-//@Table(name = "comments")
-public class Comments extends BaseTimeEntity {
+public class Comments {
     @Id
     @GeneratedValue
     @Column(name = "comment_id")

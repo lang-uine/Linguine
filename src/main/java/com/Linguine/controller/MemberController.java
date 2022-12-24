@@ -51,5 +51,5 @@ public class MemberController {
     public String password(Model model) {
         return "/members/password";
     }
-    
+
 }

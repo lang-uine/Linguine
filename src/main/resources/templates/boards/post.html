@@ -12,7 +12,11 @@
         <main>
             <div class="container" style="margin-top: 50px";>
 
+<<<<<<< HEAD
                 <a style="size: 10px; color: navy; text-decoration: blink" th:href="@{/boards(category=${post.getCategory()})}">< 이전 게시판</a>
+=======
+                <a style="size: 10px; color: navy; text-decoration: blink" th:href="@{/boards/{category}/(category=${post.getCategory()})}">< 이전 게시판</a>
+>>>>>>> 1060d61c4165f5acca2d90bbe480f8bab0099579
                 <h4 th:text="${post.getTitle()}" style="margin-top: 3px"/>
                 <div class="container-fluid">
                     <span style="font-size: 12px">글쓴이</span>
@@ -33,6 +37,7 @@
                     <tr th:each="comment:${comments}">
                         <div class = "container" style="border-top: 1px solid #F2F2F2">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!--                            <td th:text="${comment.getMember().getNickName()}"/>-->
                             <td>
                                 <a style="text-decoration: blink" th:text="${comment.getMember().getName()}" href="#"></a>
@@ -40,10 +45,18 @@
 =======
                             <a th:href="@{/profile/get(id=${comment.getMember().getId()})}" style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>
 >>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
+=======
+                            <a th:href="@{/profile/get(id=${comment.getMember().getId()})}" style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>
+>>>>>>> 1060d61c4165f5acca2d90bbe480f8bab0099579
                             <br>
-                            <td th:text="${comment.getContents()}" style="font-size: 8px"/>
+
+                            <td class="col-10" th:text="${comment.getContents()}" style="font-size: 8px"/>
+                            <a class="btn btn-outline-danger float-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
+                            <a class="btn btn-outline-warning float-end col-1 btn-sm" th:text="수정" th:action="@{/boards/{category}/{postId}/update(id = ${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
+                            <!-- 2022-12-17_yeoooo : 수정 버튼에 collapse나 form을 추가해야 함-->
                         </div>
                     </tr>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <form th:action="@{/boards/free/post(id = ${post.getId()})}" th:object="${newCommentsForm}" method="post">
                     <container>
@@ -53,6 +66,11 @@
                     <container>
                         <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%" th:field="*{content}"></textarea>
 >>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
+=======
+                <form role="form" th:action="@{/boards/{category}/{id}(id = ${post.getId()}, category=${post.getCategory()})}" th:object="${form}" method="post">
+                    <container>
+                        <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%" th:field="*{content}"></textarea>
+>>>>>>> 1060d61c4165f5acca2d90bbe480f8bab0099579
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </container>
                 </form>

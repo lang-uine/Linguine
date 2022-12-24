@@ -49,16 +49,6 @@ public class MemberServiceImpl implements MemberService{
         }
     }
 
-<<<<<<< HEAD
-
-
-//    @Override
-//    public List<Member> findMembers() {
-//        return memberRepository.findAll();
-//    }
-//
-
-=======
     @Override
     public List<Member> findAll() {
         List<Member> found = memberRepository.findAll();
@@ -72,5 +62,5 @@ public class MemberServiceImpl implements MemberService{
         memberRepository.deleteById(id);
         return id;
     }
->>>>>>> cbe4720783716bc62b6bc726abec4aecf72ea603
+
 }
