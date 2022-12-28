@@ -50,30 +50,22 @@
 <!--                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"-->
 <!--                       aria-expanded="false" aria-controls="collapseLayouts">-->
 <!--                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>-->
-<<<<<<< HEAD
-                        <a class="nav-link" th:href="@{/boards(category=${'Free'})}">자유 게시판</a>
-                        <a class="nav-link" th:href="@{/boards(category=${'Trade'})}">거래 게시판</a>
-                        <a class="nav-link" th:href="@{/boards(category=${'Review'})}">리뷰&팁 게시판</a>
-=======
+
                         <a class="nav-link" th:href="@{/boards/{category}/(category =${'Free'})}">자유 게시판</a>
                         <a class="nav-link" th:href="@{/boards/{category}/(category =${'Trade'})}">거래 게시판</a>
                         <a class="nav-link" th:href="@{/boards/{category}/(category =${'Review'})}">리뷰 & 팁 게시판</a>
->>>>>>> 1060d61c4165f5acca2d90bbe480f8bab0099579
-                    </a>
                     <!--                    END OF CATEGORY-CONTENT-->
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                          data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-
-<<<<<<< HEAD
                             <a class="nav-link" th:href="@{/boards(category=${'Free'})}">자유 게시판</a>
                             <a class="nav-link" th:href="@{/boards(category=${'Trade'})}">거래 게시판</a>
                             <a class="nav-link" th:href="@{/boards(category=${'Review'})}">리뷰&팁 게시판</a>
-=======
+
                             <a class="nav-link" th:href="@{/boards/{category}/(category =${'Free'})}">자유 게시판</a>
                             <a class="nav-link" th:href="@{/boards/{category}/(category =${'Trade'})}">거래 게시판</a>
                             <a class="nav-link" th:href="@{/boards/{category}/(category =${'Review'})}">리뷰 & 팁 게시판</a>
->>>>>>> 1060d61c4165f5acca2d90bbe480f8bab0099579
+
                             <!--                            <a class="nav-link" href="/boards/tradeboard">중고거래 게시판</a>-->
                             <!--                            <a class="nav-link" href="/boards/reviewboard">리뷰&팁 게시판</a>-->
                             <!--                    <OPTIONAL DARK MODE-->

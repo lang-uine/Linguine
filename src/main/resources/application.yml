@@ -55,11 +55,6 @@ spring:
   profiles:
     include: oauth
 
-  sql:
-    init:
-      platform: h2
-      mode: always
-      encoding: UTF-8
 
 logging:
   level:
