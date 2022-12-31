@@ -18,5 +18,6 @@ public class FreePost extends Post {
     @Builder
     public FreePost(String title, Category category, String contents, Long owner, int commentsCnt, int hitCnt) {
         super(title, category, contents, owner, commentsCnt, hitCnt);
+
     }
 }

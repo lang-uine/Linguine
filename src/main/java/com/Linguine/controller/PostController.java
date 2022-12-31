@@ -23,7 +23,6 @@ public class PostController {
     private final BoardService boardService;
     private final MemberService memberService;
 
-    //    private final Logger logger;
     @RequestMapping(value = "/boards/{category}/{id}", method = RequestMethod.GET)
     public String post(@PathVariable("id") Long id, @PathVariable("category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         Optional<Post> post = boardService.findById(id);
@@ -44,7 +43,6 @@ public class PostController {
                 .contents(form.getContent())
                 .comment_password(form.getPassword())
                 .build();
-
         log.info("[PostController] New comment posted -> {}", form.getContent());
         boardService.saveComments(comments);
 

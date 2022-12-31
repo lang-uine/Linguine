@@ -31,8 +31,6 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         // OAuth2UserService
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
         Member member = saveOrUpdate(attributes);
-        System.out.println("member.getEmail() = " + member.getEmail());
-        System.out.println(oAuth2User.getAttributes().toString());
 
         return new MemberAdapter(member, oAuth2User.getAttributes());
     }
