@@ -38,7 +38,6 @@ public class BoardServiceImpl implements BoardService{
         return comments.getId();
     }
 
-    @Override
     public Optional<Comments> findCommentById(Long id) {
         Optional<Comments> comment = commentRepository.findById(id);
         if (comment.isPresent()) {
@@ -55,7 +54,6 @@ public class BoardServiceImpl implements BoardService{
         comments.getPost().subCountComment();
         return comments.getId();
     }
-
 
     @Override
     @Transactional

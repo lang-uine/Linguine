@@ -1,5 +1,6 @@
 package com.Linguine.domain.board;
 
+import com.Linguine.domain.member.Member;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

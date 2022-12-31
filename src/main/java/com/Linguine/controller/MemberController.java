@@ -52,5 +52,4 @@ public class MemberController {
         return "/members/password";
     }
 
-
 }

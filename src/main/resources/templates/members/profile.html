@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body class = "sb-nav-fixed">
+<div th:replace="fragments/bodyHeader :: bodyHeader"/>
+<nav th:replace="fragments/navigation :: navigation(${activeUserName})"/>
+<div id="layoutSidenav">
+    <div th:replace="fragments/sidenav :: #layoutSidenav_nav (${activeUserName})"/>
+    <!--        <div th:replace="fragments/sidenav :: #layoutSidenav_nav"/>-->
+    <div id="layoutSidenav_content">
+        <main>
+            <container>
+                <div class="col-2">
+                    <h1 th:text="프로필"/>
+                </div>
+
+
+            </container>
+        </main>
+        <footer th:replace="fragments/footer :: footer" />
+    </div>
+</div>
+</body>
+</html>

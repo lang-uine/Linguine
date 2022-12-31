@@ -1,6 +1,5 @@
 package com.Linguine.controller;
 
-
 import com.Linguine.domain.board.*;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.service.BoardService;
@@ -15,11 +14,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 
+
 @Controller
 @RequiredArgsConstructor
 @Slf4j
 public class BoardController {
     private final BoardService boardService;
+
 
     @RequestMapping(value = "/boards/{category}/write", method = RequestMethod.GET)
     public String getPostForm(Model model, @PathVariable("category") String category) {
@@ -84,7 +85,6 @@ public class BoardController {
 
         return "redirect:/boards/"+category;
     }
-
 
 
 }

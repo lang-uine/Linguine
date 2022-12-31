@@ -43,17 +43,18 @@ spring:
           #2022-05-08_yeoooo: show_sql 옵션은 hibernate가 날리는 모든 쿼리를 보여준다.
         format_sql: true
           #2022-05-08_yeoooo: format_sql 옵션은 inline이 아닌 format에 맞춰서 보여준다.
+  sql:
+    init:
+      platform: h2
+      encoding: UTF-8
+#      mode: always
+      mode: never
 
     defer-datasource-initialization: true
       #2022-12-15_yeoooo: 외부 스크립트 초기화용 옵션(2.5.0 이후)
   profiles:
     include: oauth
 
-  sql:
-    init:
-      platform: h2
-      mode: always
-      encoding: UTF-8
 
 logging:
   level:
