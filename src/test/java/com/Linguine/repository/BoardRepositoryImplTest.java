@@ -2,10 +2,13 @@ package com.Linguine.repository;
 
 import com.Linguine.domain.board.Comments;
 import com.Linguine.domain.board.FreePost;
+import com.Linguine.domain.board.Post;
 import com.Linguine.domain.member.Member;
 import com.Linguine.service.BoardService;
 import com.Linguine.service.MemberService;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +18,7 @@ import java.util.List;
 
 @SpringBootTest
 class BoardRepositoryImplTest {
+    Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
     BoardService boardService;
     @Autowired
@@ -42,17 +46,17 @@ public void BoardRepositoryImplTest() throws Exception {
     Long savedPost = boardService.save(freePost);
 
     Comments comments1 = Comments.builder()
-            .post(boardService.findOne(savedPost))
+            .post(boardService.findById(savedPost).get())
             .member(memberService.findById(savedMember).get())
             .contents("is this hello world?")
             .build();
     Comments comments2 = Comments.builder()
-            .post(boardService.findOne(savedPost))
+            .post(boardService.findById(savedPost).get())
             .member(memberService.findById(savedMember).get())
             .contents("No?")
             .build();
     Comments comments3 = Comments.builder()
-            .post(boardService.findOne(savedPost))
+            .post(boardService.findById(savedPost).get())
             .member(memberService.findById(savedMember).get())
             .contents("i think right")
             .build();
@@ -67,8 +71,8 @@ public void BoardRepositoryImplTest() throws Exception {
     List<Comments> res = boardService.findAllCommentsById(savedPost);
 
     //then
-    System.out.println("res = " + res);
-    System.out.println(boardService.findOne(savedPost).getCommentsCnt());
+    log.info("res = " + res);
+    log.info(boardService.findById(savedPost).get().getContents());
 
 }
 
