@@ -1,9 +1,4 @@
 #spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/?serverTimezone=UTC&characterEncoding=UTF-8
-#    username: admin
-#    password: sodelicious206
 #
 #    jpa:
 #      hibernate:
@@ -21,12 +16,19 @@
 #        org.hibernate.type: trace
 #        #2022-05-08_yeoooo jpa, hibernate가 날리는 모든 쿼리를 보여준다.
 #        #2022-05-08_yeoooo 하지만 show_sql(sys.out.print)과는 다르게 log로 보여준다. 권장.
+
 spring:
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:tcp://localhost/~/dev/java/projects/Linguine
+#    username: sa
+#    password:
+
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:tcp://localhost/~/dev/java/projects/Linguine
-    username: sa
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/linguine?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: root
 
 # 2022-06-30_yeoooo:  이미지 파일 전송 설정
   servlet:
@@ -48,10 +50,10 @@ spring:
 
   sql:
     init:
-      platform: h2
+      platform: mysql
       encoding: UTF-8
-      mode: always
-#      mode: never
+#      mode: always
+      mode: never
 
   profiles:
     include: oauth
