@@ -1,7 +1,10 @@
 package com.Linguine.controller;
 
+import com.Linguine.domain.board.Category;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.domain.member.Role;
+import com.Linguine.repository.BoardRepository;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 @RequiredArgsConstructor
 public class HomeController {
+	
+	private final BoardRepository boardRepository;
 
     @GetMapping("/")
     public String home(@AuthenticationPrincipal Authentication admin, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
@@ -37,13 +42,16 @@ public class HomeController {
             model.addAttribute("activeUser", memberAdapter.getMember());
 
             log.info("[HomeController] User Logined");
-            log.info("[HomeController] User Logined {}", Role.values()[0]);
-            log.info("[HomeController] User Logined {}", Role.values()[1]);
-            log.info("[HomeController] User Logined {}", Role.values()[2]);
-
 
         }
+        
         model.addAttribute("ROLES", Role.values());
+        model.addAttribute("HOT", boardRepository.findHotBoard());
+        model.addAttribute("FREE", boardRepository.findByCategory(Category.Free));
+        model.addAttribute("REVIEW", boardRepository.findByCategory(Category.Review));
+        model.addAttribute("TRADE", boardRepository.findByCategory(Category.Trade));
+        
+        
         return "index";
 
     }
