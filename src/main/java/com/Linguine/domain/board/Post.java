@@ -67,6 +67,9 @@ public class Post extends BaseTimeEntity {
     public void subCountComment() {
         this.commentsCnt -= 1;
     }
+    public void addCountHit() {
+    	this.hitCnt += 1;
+    }
 
     public String getNow() {
         LocalDateTime now = LocalDateTime.now();

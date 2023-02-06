@@ -2,6 +2,7 @@ package com.Linguine.domain.board;
 
 import com.Linguine.domain.member.Member;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 @Entity
 @DiscriminatorValue("trade")
 @NoArgsConstructor
+@Getter
 public class TradingPost extends Post {
     private int price;
     private boolean isBuying;
