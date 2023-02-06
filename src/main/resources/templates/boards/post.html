@@ -21,7 +21,7 @@
 <!--                    <a style="font-size: 12px;" th:href="@{/profile/get(id=${post.getOwner()})}" th:text="${writer}"></a>-->
                     <a style="font-size: 12px;"  th:text="${writer}"></a>
                     <br/>
-                    <span style="font-size: 10px" th:text="LastUpdate"/>
+                    <span style="font-size: 10px;" th:text="|Last Update: ${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}|"/>
                 </div>
                 <hr/>
                 <span th:utext="${post.getContents()}"/>

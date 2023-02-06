@@ -22,8 +22,11 @@
                             <tr>
                                 <th>게시글 번호</th>
                                 <th>제목</th>
+                                <th>게시일</th>
                                 <th>댓글 수</th>
-                                <th>거래</th>
+                                <!--2023-02-06: yeooo_ v1 . 거래기능 업데이트 필요 -->
+                                <!--<th>거래</th>-->
+                                <th>조회 수</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -33,7 +36,11 @@
                                 <!--                <td> <a th:text="${post.getTitle()}" th:name = "postid" th th:value="${post.getId()}" th:href="'/boards/free/'+${post.getId()}+'_'+${post.getTitle()}"></a></td>-->
                                 <td><a th:href="@{/boards/{category}/{id}/(category=${category}, id=${post.getId()})}"
                                        th:text="${post.getTitle()}"></a></td>
+                                <td th:text="${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}"></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
+                                <!--2023-02-06: yeooo_ v1 . 거래기능 업데이트 필요 -->
+                                <!--<td th:text="${post.getIsExpired()}"></td>-->
+                                <td th:text="${post.getHitCnt()}"></td>
                             </tr>
                             </tbody>
                         </table>

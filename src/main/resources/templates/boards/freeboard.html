@@ -32,7 +32,7 @@
                                 <td th:text="${i.index+1}"></td>
                                 <td><a th:href="@{/boards/{category}/{id}(id=${post.getId()}, category=${post.getCategory()})}"
                                        th:text="${post.getTitle()}"></a></td>
-                                <td th:text="${post.getRegisterTime()}"></td>
+                                <td th:text="${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}"></td>
                                 <td th:text="${post.getCommentsCnt()}"></td>
                             </tr>
                             </tbody>

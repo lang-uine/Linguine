@@ -21,26 +21,28 @@
                         <div class="card col-xl-6 col-md-6">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                더미게시판
+                                Hot! 게시판
                             </div>
                         <div class="card-body">
-                            <table id="dummyboard" class="stripe row-border hover nowrap">
+                            <table id="hotboard" class="stripe row-border hover nowrap">
                                 <thead>
                                 <tr>
                                     <th>게시글 번호</th>
                                     <th>제목</th>
                                     <th>게시일</th>
                                     <th>댓글 수</th>
+                                    <th>조회 수</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="post,i : ${posts}">
+                                <tr th:each="post,i : ${HOT}">
 
                                     <td th:text="${i.index+1}"></td>
                                     <td><a th:href="@{/boards/{category}/{id}(id=${post.getId()}, category=${post.getCategory()})}"
                                         th:text="${post.getTitle()}"></a></td>
-                                    <td th:text="${post.getRegisterTime()}"></td>
+                                    <td th:text="${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}"></td>
                                     <td th:text="${post.getCommentsCnt()}"></td>
+                                    <td th:text="${post.getHitCnt()}"></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -60,16 +62,18 @@
                                     <th>제목</th>
                                     <th>게시일</th>
                                     <th>댓글 수</th>
+                                    <th>조회 수</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="post,i : ${posts}">
+                                <tr th:each="post,i : ${FREE}">
 
                                     <td th:text="${i.index+1}"></td>
                                     <td><a th:href="@{/boards/{category}/{id}(id=${post.getId()}, category=${post.getCategory()})}"
                                         th:text="${post.getTitle()}"></a></td>
-                                    <td th:text="${post.getRegisterTime()}"></td>
+                                    <td th:text="${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}"></td>
                                     <td th:text="${post.getCommentsCnt()}"></td>
+                                    <td th:text="${post.getHitCnt()}"></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -89,16 +93,18 @@
                                     <th>제목</th>
                                     <th>게시일</th>
                                     <th>댓글 수</th>
+                                    <th>조회 수</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="post,i : ${posts}">
+                                <tr th:each="post,i : ${REVIEW}">
 
                                     <td th:text="${i.index+1}"></td>
                                     <td><a th:href="@{/boards/{category}/{id}(id=${post.getId()}, category=${post.getCategory()})}"
                                         th:text="${post.getTitle()}"></a></td>
-                                    <td th:text="${post.getRegisterTime()}"></td>
+                                    <td th:text="${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}"></td>
                                     <td th:text="${post.getCommentsCnt()}"></td>
+                                    <td th:text="${post.getHitCnt()}"></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -118,16 +124,18 @@
                                     <th>제목</th>
                                     <th>게시일</th>
                                     <th>댓글 수</th>
+                                    <th>조회 수</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="post,i : ${posts}">
+                                <tr th:each="post,i : ${TRADE}">
 
                                     <td th:text="${i.index+1}"></td>
                                     <td><a th:href="@{/boards/{category}/{id}(id=${post.getId()}, category=${post.getCategory()})}"
                                         th:text="${post.getTitle()}"></a></td>
-                                    <td th:text="${post.getRegisterTime()}"></td>
+                                    <td th:text="${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}"></td>
                                     <td th:text="${post.getCommentsCnt()}"></td>
+                                    <td th:text="${post.getHitCnt()}"></td>
                                 </tr>
                                 </tbody>
                             </table>

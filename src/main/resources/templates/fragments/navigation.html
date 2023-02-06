@@ -20,7 +20,7 @@
 <!--          <li th:if="${activeUser != null and activeUser.getRole().toString() != 'ADMIN'}">-->
 <!--              <a class="dropdown-item" th:href="@{/profile/get(id=${activeUser.getId()})}">Profile</a>-->
 <!--          </li>-->
-          <li th:if="${activeUser != null and activeUser.getRole().toString()== 'ADMIN'}">
+          <li th:if="${activeUser != null and activeUser.getRole()== 'ADMIN'}">
             <a class="dropdown-item" href="/management/board">BoardManagement</a>
             <a class="dropdown-item" href="/management/member">MemberManagement</a>
           </li>

@@ -45,5 +45,15 @@ window.addEventListener('DOMContentLoaded', event => {
 
     });
 
+    $('#hotboard').DataTable({
+        searching: false,
+        lengthChange: false,
+        length: 10,
+        info: false,
+        order:[0,'desc'],
+        ordering: false
+
+    });
+
 
 });
