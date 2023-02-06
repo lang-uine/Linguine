@@ -19,11 +19,11 @@ public interface MemberRepository extends JpaRepository<Member, Long>{
     @Modifying
     @Query(value = UPDATE_MEMBER_LAST_LOGIN, nativeQuery = true)
     public int updateMemberLastLogin(@Param("email") String email, @Param("lastLoginTime") LocalDateTime lastLoginTime);
-    public Optional<Member> findByEmail(String email);
-    public List<Member> findAllByNickName(String nickName);
-    public List<Member> findAllByEmail(String email);
+    public Optional<Member> findByEmail(@Param("email") String email);
+    public List<Member> findAllByNickName(@Param("nickName")String nickName);
+    public List<Member> findAllByEmail(@Param("email") String email);
     List<Member> findAll();
-    public Optional<Member> findByUserName(String userName);
+    public Optional<Member> findByUserName(@Param("userName") String userName);
 
     void deleteById(Long id);
 }

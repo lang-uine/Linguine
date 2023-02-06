@@ -5,6 +5,7 @@ import com.Linguine.domain.board.Post;
 import com.Linguine.domain.member.MemberAdapter;
 import com.Linguine.service.BoardService;
 import com.Linguine.service.MemberService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,7 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Controller
 @RequiredArgsConstructor
@@ -35,11 +39,11 @@ public class PostController {
     }
 
     @PostMapping(value = "/boards/{category}/{id}")
-    public String saveComment(@PathVariable("id") Long id, @PathVariable("category") String category, @Valid CommentForm form, Model model) {
+    public String saveComment(@PathVariable("id") Long id, @PathVariable("category") String category, @Valid CommentForm form, Model model,  @AuthenticationPrincipal MemberAdapter memberAdapter) {
         Optional<Post> post = boardService.findById(id);
         Comments comments = Comments.builder()
                 .post(post.get())
-                .member(memberService.findById(post.get().getOwner()).get())
+                .member(memberService.findById(memberAdapter.getMember().getId()).get())
                 .contents(form.getContent())
                 .comment_password(form.getPassword())
                 .build();

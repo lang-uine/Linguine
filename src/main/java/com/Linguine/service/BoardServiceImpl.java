@@ -69,7 +69,9 @@ public class BoardServiceImpl implements BoardService{
 
 
     public Optional<Post> findById(Long postId) {
-        return boardRepository.findById(postId);
+    	Optional<Post> foundOne = boardRepository.findById(postId);
+    	foundOne.get().addCountHit();
+        return foundOne;
     }
 
     @Override
