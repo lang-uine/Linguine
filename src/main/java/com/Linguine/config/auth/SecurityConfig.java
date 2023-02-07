@@ -53,8 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()    // csrf 토큰을 비활성화
                 .authorizeRequests() // 요청 URL에 따라 접근 권한을 설정
-                .antMatchers("/boards/**/write").authenticated()//2022-06-29_yeoooo: antPatter에 따라 인증이 필요한 경로
-                .antMatchers("/", "/login/**", "/js/**", "/css/**", "/image/**", "/register/**", "/boards/**").permitAll() // 해당 경로들은 접근을 허용
+                .antMatchers("/boards/**/write", "boards/**/**").authenticated()//2022-06-29_yeoooo: antPatter에 따라 인증이 필요한 경로
+                .antMatchers("/", "/login/**", "/js/**", "/css/**", "/image/**", "/register/**", "/boards/Free/", "/boards/Trade/", "/boards/Review").permitAll() // 해당 경로들은 접근을 허용
                 .antMatchers("/management/**").hasRole("ADMIN")
                 .anyRequest() // 다른 모든 요청은
                 .authenticated() // 인증된 유저만 접근을 허용
