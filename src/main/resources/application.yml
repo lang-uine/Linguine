@@ -52,8 +52,8 @@ spring:
     init:
       platform: mysql
       encoding: UTF-8
-#      mode: always
-      mode: never
+      mode: always
+#      mode: never
 
   profiles:
     include: oauth
