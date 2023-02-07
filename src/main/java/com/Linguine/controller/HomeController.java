@@ -33,15 +33,15 @@ public class HomeController {
                  * 개발용 관리자 계정
                  */
                 model.addAttribute("activeUser", admin);
-                log.info("[HomeController] Admin Logined");
+                log.info("[HomeController] Admin Logged in");
             }else{
                 model.addAttribute("activeUser", null);
-                log.info("[HomeController] Guest Logined");
+                log.info("[HomeController] Guest Logged in");
             }
         } else {
             model.addAttribute("activeUser", memberAdapter.getMember());
 
-            log.info("[HomeController] User Logined");
+            log.info("[HomeController] User Logged in");
 
         }
         

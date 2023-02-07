@@ -121,8 +121,10 @@
                 <div class="small">Logged in as:</div>
 <!--                <div th:if="${activeUser != '게스트'}" th:text="${activeUser.getName()}"/>-->
 <!--                <div th:unless="${activeUser != '게스트'}" th:text="게스트"/>-->
-                <div th:if="${activeUser == null}" th:text="게스트"/>
-                <div th:unless="${activeUser == null}" th:text="${activeUser.getName()}"/>
+                <div th:if="${#strings.isEmpty(activeUser)}" th:text="게스트"/>
+<!--                <div th:if="${#strings.isEmpty(activeUser == null}" th:text="게스트"/>-->
+                <div th:unless="${#strings.isEmpty(activeUser)}" th:text="${activeUser.getName()}"/>
+<!--                <div th:unless="${activeUser == null}" th:text="${activeUser.getName()}"/>-->
             </div>
         </nav>
     </div>

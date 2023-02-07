@@ -32,10 +32,10 @@ public class BoardController {
     @RequestMapping(value = "/boards/{category}", method = RequestMethod.GET)
     public String boardSelection(@PathVariable(value = "category") String category, @AuthenticationPrincipal MemberAdapter memberAdapter, Model model) {
         if (memberAdapter == null) {
-            model.addAttribute("activeUser", "게스트");
+            model.addAttribute("activeUser", null);
         } else {
             model.addAttribute("activeUser", memberAdapter.getMember());
-        }
+        }   
         model.addAttribute("posts", boardService.findByCategory(Category.valueOf(category)));
         model.addAttribute("category", category);
         log.info("[BoardController] {} board selected.", category);

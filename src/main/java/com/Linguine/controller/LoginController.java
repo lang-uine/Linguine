@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.time.LocalDateTime;
 
 @Controller
 @RequiredArgsConstructor
@@ -25,7 +26,8 @@ public class LoginController{
     @GetMapping("/login")
     public String getLoginPage(Model model,
                                @RequestParam(value = "error", required = false) String error,
-                               @RequestParam(value = "exception", required = false) String exception) {
+                               @RequestParam(value = "exception", required = false) String exception
+                               ) {
         model.addAttribute("error", error);
         model.addAttribute("exception", exception);
         return "/members/login";

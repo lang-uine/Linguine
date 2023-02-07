@@ -20,7 +20,10 @@
 <!--          <li th:if="${activeUser != null and activeUser.getRole().toString() != 'ADMIN'}">-->
 <!--              <a class="dropdown-item" th:href="@{/profile/get(id=${activeUser.getId()})}">Profile</a>-->
 <!--          </li>-->
-          <li th:if="${activeUser != null and activeUser.getRole()== 'ADMIN'}">
+<!--           2023-02-07
+              @yeoooo
+              @ 프로필 기능 업데이트 필요-->
+          <li th:if="${activeUser != null and activeUser.getRole() == 'ADMIN'}">
             <a class="dropdown-item" href="/management/board">BoardManagement</a>
             <a class="dropdown-item" href="/management/member">MemberManagement</a>
           </li>
