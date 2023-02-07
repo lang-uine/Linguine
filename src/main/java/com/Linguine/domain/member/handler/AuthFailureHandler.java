@@ -20,7 +20,7 @@ public class AuthFailureHandler extends SimpleUrlAuthenticationFailureHandler {
         String msg = "Invalid Email or Password";
 
         if (exception instanceof DisabledException) {
-            msg = "This account has been suspended";
+            msg = exception.getMessage();
         } else if (exception instanceof CredentialsExpiredException) {
             msg = "CredentialExpiredException account";
         } else if (exception instanceof BadCredentialsException) {

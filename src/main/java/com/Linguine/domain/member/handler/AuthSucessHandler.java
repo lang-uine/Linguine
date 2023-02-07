@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RequiredArgsConstructor
 @Component
@@ -29,7 +30,7 @@ public class AuthSucessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
         if (memberAdapter.getMember().getLocked().isLocked()) {
             if (memberAdapter.getMember().getLocked().getPeriod().isAfter(LocalDateTime.now())) {
-                throw new DisabledException("This account has been suspended");
+                throw new DisabledException("This account has been suspended until "+memberAdapter.getMember().getLocked().getPeriod().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
             } else {
                 memberAdapter.getMember().getLocked().setLocked(false);
             }
