@@ -35,7 +35,7 @@ public class BoardController {
             model.addAttribute("activeUser", null);
         } else {
             model.addAttribute("activeUser", memberAdapter.getMember());
-        }   
+        }
         model.addAttribute("posts", boardService.findByCategory(Category.valueOf(category)));
         model.addAttribute("category", category);
         log.info("[BoardController] {} board selected.", category);

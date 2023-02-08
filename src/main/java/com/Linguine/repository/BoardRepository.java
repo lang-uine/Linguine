@@ -12,8 +12,8 @@ import java.util.List;
 
 public interface BoardRepository extends JpaRepository<Post, Long> {
 
-	static final String FIND_HOT_BY_CATEGORY = "SELECT * FROM POST WHERE CATEGORY LIKE :category ORDER BY Hit_Cnt Limit 10";
-	static final String FIND_ALL_HOT = "SELECT * FROM POST ORDER BY Hit_Cnt Limit 10";
+	static final String FIND_HOT_BY_CATEGORY = "SELECT * FROM POST WHERE CATEGORY LIKE :category ORDER BY Hit_Cnt desc Limit 5";
+	static final String FIND_ALL_HOT = "SELECT * FROM POST ORDER BY register_time desc Limit 5";
     public List<Post> findByCategory(@Param("category") Category category);
 //
 //    public List<Comments> findAllCommentsById(Long id);
