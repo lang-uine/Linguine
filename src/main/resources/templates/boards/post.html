@@ -18,7 +18,7 @@
                     <span style="font-size: 12px">글쓴이</span>
                     <br/>
                     <!-- 2022-12-31_yeoooo : profile 기능 추가 예정-->
-<!--                    <a style="font-size: 12px;" th:href="@{/profile/get(id=${post.getOwner()})}" th:text="${writer}"></a>-->
+                    <!--                    <a style="font-size: 12px;" th:href="@{/profile/get(id=${post.getOwner()})}" th:text="${writer}"></a>-->
                     <a style="font-size: 12px;"  th:text="${writer}"></a>
                     <br/>
                     <span style="font-size: 10px;" th:text="|Last Update: ${#temporals.format(post.getRegisterTime(), 'yyyy-MM-dd HH:mm')}|"/>
@@ -28,24 +28,44 @@
                 <hr/>
                 <h5>댓글</h5>
                 <!-- 2022-07-2_yeoooo : 동적 댓글 객체 추가-->
-                    <!-- 2022-07-2_yeoooo : 댓글 작성자-->
-                    <!-- 2022-07-2_yeoooo : 댓글 내용-->
-                    <!-- 2022-07-2_yeoooo : 댓글 날짜-->
-                    <!-- 2022-07-2_yeoooo : textarea;  전송 -->
-                    <tr th:each="comment:${comments}">
-                        <div class = "container" style="border-top: 1px solid #F2F2F2">
+                <!-- 2022-07-2_yeoooo : 댓글 작성자-->
+                <!-- 2022-07-2_yeoooo : 댓글 내용-->
+                <!-- 2022-07-2_yeoooo : 댓글 날짜-->
+                <!-- 2022-07-2_yeoooo : textarea;  전송 -->
+<!--                <tr th:each="comment:${comments}">-->
+<!--                    <div style="border-top: 1px solid #F2F2F2">-->
 
-                            <!-- 2022-12-31_yeoooo : 수정 기능 추가 필요-->
-<!--                            <a th:href="@{/profile/get(id=${comment.getMember().getId()})}" style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>-->
-                            <a style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>
-                            <br>
+<!--                        &lt;!&ndash; 2022-12-31_yeoooo : 수정 기능 추가 필요&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <a th:href="@{/profile/get(id=${comment.getMember().getId()})}" style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>&ndash;&gt;-->
+<!--                        <div class="col-10">-->
+<!--                            <div class = "row">-->
+<!--                                <a style = "text-decoration: blink;" th:text="${comment.getMember().getName()}"/>-->
 
-                            <td class="col-10" th:text="${comment.getContents()}" style="font-size: 8px"/>
-                            <a class="btn btn-outline-danger float-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
-<!--                            <a class="btn btn-outline-warning float-end col-1 btn-sm" th:text="수정" th:action="@{/boards/{category}/{postId}/update(id = ${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>-->
-                            <!-- 2022-12-17_yeoooo : 수정 버튼에 collapse나 form을 추가해야 함-->
+<!--                                <td class="col-10" th:text="${comment.getContents()}" style="font-size: 8px"/>-->
+<!--                                &lt;!&ndash;                            <a class="btn btn-outline-warning float-end col-1 btn-sm" th:text="수정" th:action="@{/boards/{category}/{postId}/update(id = ${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>&ndash;&gt;-->
+<!--                                &lt;!&ndash; 2022-12-17_yeoooo : 수정 버튼에 collapse나 form을 추가해야 함&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-2">-->
+<!--                            <div class="btn btn-outline-dangerfloat-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </tr>-->
+
+
+                <ul class="list-group products">
+                    <li class="list-group-item mt-2" th:each="comment:${comments}">
+                        <div class="d-flex">
+                            <div class="col">
+                                <a style = "text-decoration: blink; font-size: 14px;" th:text="${comment.getMember().getName()}"/>
+                                <div th:text="${comment.getContents()}" style="font-size: 12px"/>
+                            </div>
+                            <div th:if="${comment.getMember().getId() == activeUser.getId()}" class="btn btn-outline-danger float-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
                         </div>
-                    </tr>
+                    </li>
+                </ul>
+
+
                 <form role="form" th:action="@{/boards/{category}/{id}(id = ${post.getId()}, category=${post.getCategory()})}" th:object="${form}" method="post">
                     <container>
                         <textarea placeholder="댓글을 작성해 주세요" style="resize: none; width: 100%; height: 40%" th:field="*{content}"></textarea>
@@ -55,14 +75,14 @@
 
 
 
-                </div>
+            </div>
 
 
         </main>
 
 
     </div>
-    </div>
+</div>
 </div>
 
 
