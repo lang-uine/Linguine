@@ -60,7 +60,7 @@
                                 <a style = "text-decoration: blink; font-size: 14px;" th:text="${comment.getMember().getName()}"/>
                                 <div th:text="${comment.getContents()}" style="font-size: 12px"/>
                             </div>
-                            <div th:if="${comment.getMember().getId() == activeUser.getId()}" class="btn btn-outline-danger float-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
+                            <a th:if="${comment.getMember().getId() == activeUser.getId()}" class="btn btn-outline-danger float-end col-1 btn-sm" th:text="삭제" th:href="@{/boards/{category}/{postId}/delete(id=${comment.getId()}, category = ${post.getCategory()}, postId = ${post.getId()})}"/>
                         </div>
                     </li>
                 </ul>
