@@ -3,6 +3,8 @@ package com.Linguine.domain.member;
 import com.Linguine.domain.board.Comments;
 import com.Linguine.domain.board.Post;
 import lombok.*;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.lang.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -107,6 +109,18 @@ public class Member extends BaseTimeEntity implements UserDetails {
     @OneToMany(mappedBy = "member")
     private List<Comments> comments = new ArrayList<>();
 
-
-
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+                .append("id", id)
+                .append("name",name)
+                .append("nickName",nickName)
+                .append("email",email)
+                .append("password",password)
+                .append("userName",userName)
+                .append("lastLoginTime",lastLoginTime)
+                .append("role",role)
+                .append("locked",locked)
+                .toString();
+    }
 }

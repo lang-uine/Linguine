@@ -1,6 +1,7 @@
 package com.Linguine.repository;
 
 import com.Linguine.domain.member.Member;
+import lombok.ToString;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -22,6 +23,7 @@ public interface MemberRepository extends JpaRepository<Member, Long>{
     public Optional<Member> findByEmail(@Param("email") String email);
     public List<Member> findAllByNickName(@Param("nickName")String nickName);
     public List<Member> findAllByEmail(@Param("email") String email);
+
     List<Member> findAll();
     public Optional<Member> findByUserName(@Param("userName") String userName);
 

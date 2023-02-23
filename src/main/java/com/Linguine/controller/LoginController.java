@@ -20,9 +20,6 @@ import java.time.LocalDateTime;
 @Controller
 @RequiredArgsConstructor
 public class LoginController{
-
-    private final MemberServiceImpl memberService;
-
     @GetMapping("/login")
     public String getLoginPage(Model model,
                                @RequestParam(value = "error", required = false) String error,
