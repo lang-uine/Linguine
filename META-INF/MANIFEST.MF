@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Class-Path: com.Linguine
-Main-Class: LinguineApplication
+Main-Class: com.Linguine.LinguineApplication
+
 
 
 
