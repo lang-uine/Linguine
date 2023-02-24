@@ -27,7 +27,7 @@ public class LoginController{
                                ) {
         model.addAttribute("error", error);
         model.addAttribute("exception", exception);
-        return "/members/login";
+        return "members/login";
     }
 
 

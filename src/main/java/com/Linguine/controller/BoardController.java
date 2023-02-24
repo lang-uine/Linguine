@@ -39,7 +39,7 @@ public class BoardController {
         model.addAttribute("posts", boardService.findByCategory(Category.valueOf(category)));
         model.addAttribute("category", category);
         log.info("[BoardController] {} board selected.", category);
-        return "boards/" + category+"board";
+        return "boards/" + category.toLowerCase()+"board";
     }
 
     @PostMapping(value = "boards/write")

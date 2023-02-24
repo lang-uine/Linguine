@@ -2,9 +2,6 @@ package com.Linguine.service;
 
 import com.Linguine.domain.member.Member;
 import com.Linguine.domain.member.Role;
-import com.Linguine.service.MemberService;
-import com.Linguine.service.MemberServiceImpl;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.NoSuchElementException;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class MemberServiceImplTest {
 
@@ -35,7 +31,7 @@ class MemberServiceImplTest {
         memberService.join(member);
         long saved = member.getId();
         //when
-        Member judge = memberService.findById(saved).orElseThrow(() -> new NoSuchElementException());
+        Member judge = memberService.findById(saved).orElseThrow(NoSuchElementException::new);
 
         //then
         org.assertj.core.api.Assertions.assertThat(member.getId()).isEqualTo(judge.getId());

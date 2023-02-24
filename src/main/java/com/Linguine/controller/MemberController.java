@@ -23,7 +23,7 @@ public class MemberController {
     @GetMapping("/register")
     public String registerForm(Model model) {
         model.addAttribute("memberForm", new MemberForm());
-        return "/members/register";
+        return "members/register";
     }
 
     @PostMapping("/register")
@@ -47,7 +47,7 @@ public class MemberController {
 
     }
 
-    @GetMapping("/password")
+    @GetMapping("password")
     public String password(Model model) {
         return "/members/password";
     }

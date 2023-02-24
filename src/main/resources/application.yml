@@ -23,6 +23,9 @@ spring:
 #    url: jdbc:h2:tcp://localhost/~/dev/java/projects/Linguine
 #    username: sa
 #    password:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -34,6 +37,7 @@ spring:
   servlet:
     multipart:
       enabled: true
+
 
   jpa:
     database: mysql
