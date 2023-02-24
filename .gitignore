@@ -174,7 +174,7 @@ Temporary Items
 *.icloud
 
 ### Gradle ###
-.gradle
+
 **/build/
 !src/**/build/
 
