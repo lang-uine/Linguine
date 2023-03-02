@@ -3,6 +3,7 @@ package com.Linguine.config.auth;
 import com.Linguine.domain.member.Role;
 import com.Linguine.domain.member.handler.AuthFailureHandler;
 import com.Linguine.domain.member.handler.AuthSucessHandler;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
